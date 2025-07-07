@@ -1,0 +1,353 @@
+# Arabic translations for Braysint Construction Materials Website
+# Copyright (C) 2025 Black Rock And Yellow Sands International
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Braysint Website\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-26 16:42+0000\n"
+"PO-Revision-Date: 2025-06-26 16:42+0000\n"
+"Last-Translator: Admin\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "Premium Wood & Construction Materials"
+msgstr "خشب فاخر ومواد بناء"
+
+msgid "Home"
+msgstr "الرئيسية"
+
+msgid "Products"
+msgstr "المنتجات"
+
+msgid "About"
+msgstr "نبذة عنا"
+
+msgid "Contact"
+msgstr "اتصل بنا"
+
+msgid "Search products..."
+msgstr "ابحث عن المنتجات..."
+
+msgid "Discover our extensive collection of high-quality hardwood, parquet, and plywood. Perfect for construction professionals, contractors, and DIY enthusiasts."
+msgstr "اكتشف مجموعتنا الواسعة من الخشب الصلب والباركيه والخشب الرقائقي عالي الجودة. مثالية لمحترفي البناء والمقاولين وعشاق الأعمال اليدوية."
+
+msgid "Browse Products"
+msgstr "تصفح المنتجات"
+
+msgid "Get Quote"
+msgstr "احصل على عرض سعر"
+
+msgid "Product Categories"
+msgstr "فئات المنتجات"
+
+msgid "Hardwood"
+msgstr "الخشب الصلب"
+
+msgid "Premium oak, maple, walnut and more"
+msgstr "بلوط وقيقب وجوز فاخر والمزيد"
+
+msgid "Parquet"
+msgstr "الباركيه"
+
+msgid "Beautiful flooring solutions"
+msgstr "حلول أرضيات جميلة"
+
+msgid "Plywood"
+msgstr "الخشب الرقائقي"
+
+msgid "Versatile building materials"
+msgstr "مواد بناء متعددة الاستخدامات"
+
+msgid "Engineered Wood"
+msgstr "الخشب المُصنع"
+
+msgid "Modern composite solutions"
+msgstr "حلول مركبة حديثة"
+
+msgid "Featured Products"
+msgstr "المنتجات المميزة"
+
+msgid "View Details"
+msgstr "عرض التفاصيل"
+
+msgid "View All Products"
+msgstr "عرض جميع المنتجات"
+
+msgid "Why Choose Braysint?"
+msgstr "لماذا تختار برايسنت؟"
+
+msgid "About Braysint"
+msgstr "حول برايسنت"
+
+msgid "Contact Braysint"
+msgstr "تواصل مع برايسنت"
+
+msgid "Premium Quality"
+msgstr "جودة فائقة"
+
+msgid "Carefully selected materials that meet the highest industry standards."
+msgstr "مواد مختارة بعناية تلبي أعلى معايير الصناعة."
+
+msgid "Sustainable"
+msgstr "مستدام"
+
+msgid "Environmentally responsible sourcing from certified forests."
+msgstr "مصادر مسؤولة بيئياً من غابات معتمدة."
+
+msgid "Fast Delivery"
+msgstr "توصيل سريع"
+
+msgid "Quick and reliable delivery to keep your projects on schedule."
+msgstr "توصيل سريع وموثوق للحفاظ على مواعيد مشاريعك."
+
+msgid "Expert Support"
+msgstr "دعم خبراء"
+
+msgid "Professional guidance from our experienced team."
+msgstr "إرشاد مهني من فريقنا ذو الخبرة."
+
+msgid "Ready to Start Your Project?"
+msgstr "جاهز لبدء مشروعك؟"
+
+msgid "Get in touch with our experts for personalized recommendations and competitive pricing."
+msgstr "تواصل مع خبرائنا للحصول على توصيات شخصية وأسعار تنافسية."
+
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+msgid "Browse Catalog"
+msgstr "تصفح الكتالوج"
+
+msgid "Premium quality wood, parquet, and plywood for all your construction needs. We provide sustainable and durable materials for professionals and DIY enthusiasts."
+msgstr "خشب وباركيه وخشب رقائقي عالي الجودة لجميع احتياجات البناء الخاصة بك. نوفر مواد مستدامة ومتينة للمحترفين وعشاق الأعمال اليدوية."
+
+msgid "Black Rock And Yellow Sands International"
+msgstr "شركة الصخرة السوداء والرمال الصفراء الدولية"
+
+msgid "Company"
+msgstr "الشركة"
+
+msgid "About Us"
+msgstr "نبذة عنا"
+
+msgid "Careers"
+msgstr "الوظائف"
+
+msgid "Blog"
+msgstr "المدونة"
+
+msgid "Contact Info"
+msgstr "معلومات الاتصال"
+
+msgid "123 Construction Ave, Builder City, BC 12345"
+msgstr "شارع البناء 123، مدينة البناء، BC 12345"
+
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+msgid "Terms of Service"
+msgstr "شروط الخدمة"
+
+msgid "Our Story"
+msgstr "قصتنا"
+
+msgid "Founded with a passion for quality craftsmanship and sustainable forestry, Braysint has been serving the construction industry for over two decades."
+msgstr "تأسست برايسنت بشغف للعمل اليدوي عالي الجودة وحفاظًا على الموارد الحرجية المستدامة، وتقدم الخدمة لصناعة البناء لأكثر من عقدين."
+
+msgid "We specialize in providing premium wood materials including hardwood, parquet, and plywood to contractors, builders, and DIY enthusiasts across the region."
+msgstr "نحن متخصصون في توفير مواد خشبية عالية الجودة بما في ذلك الخشب الصلب، الباركيه، والخشب الرقائقي للمقاولين والبنائين ومحبي الأعمال اليدوية في جميع أنحاء المنطقة."
+
+msgid "Our Vision"
+msgstr "رؤيتنا"
+
+msgid "To be the leading supplier of sustainable wood materials while maintaining the highest standards of quality and customer service."
+msgstr "أن نكون المورد الرائد للمواد الخشبية المستدامة مع الحفاظ على أعلى معايير الجودة وخدمة العملاء."
+
+msgid "Our Mission"
+msgstr "مهمتنا"
+
+msgid "To provide construction professionals with reliable, high-quality wood products while promoting sustainable forestry practices."
+msgstr "لتزويد المحترفين في البناء بمنتجات خشبية موثوقة وعالية الجودة مع الترويج للممارسات الحرجية المستدامة."
+
+msgid "Why Choose Us?"
+msgstr "لماذا تختارنا؟"
+
+msgid "25+ Years Experience"
+msgstr "خبرة لأكثر من 25 عامًا"
+
+msgid "Sustainable Sourcing"
+msgstr "توفير مستدام"
+
+msgid "Get in touch with our team for quotes, product information, or any questions about our wood materials."
+msgstr "تواصل مع فريقنا للحصول على أسعار، معلومات عن المنتجات، أو أية أسئلة حول مواد الخشب لدينا."
+
+msgid "Visit Our Showroom"
+msgstr "زر معرضنا"
+
+msgid "123 Construction Ave"
+msgstr "شارع البناء 123"
+
+msgid "Builder City, BC 12345"
+msgstr "مدينة البناء، BC 12345"
+
+msgid "Call Us"
+msgstr "اتصل بنا"
+
+msgid "Email Us"
+msgstr "أرسل لنا بريدًا إلكترونيًا"
+
+msgid "Business Hours"
+msgstr "ساعات العمل"
+
+msgid "Mon-Fri: 7:00 AM - 6:00 PM"
+msgstr "من الإثنين إلى الجمعة: من 7:00 صباحًا حتى 6:00 مساءً"
+
+msgid "Sat: 8:00 AM - 4:00 PM"
+msgstr "يوم السبت: من 8:00 صباحًا حتى 4:00 مساءً"
+
+msgid "Sun: Closed"
+msgstr "يوم الأحد: مغلق"
+
+msgid "Send Us a Message"
+msgstr "أرسل لنا رسالة"
+
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+msgid "Email Address"
+msgstr "البريد الإلكتروني"
+
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+msgid "Subject"
+msgstr "موضوع الرسالة"
+
+msgid "Select a subject"
+msgstr "اختر موضوعًا"
+
+msgid "Request a Quote"
+msgstr "طلب تسعير"
+
+msgid "Product Information"
+msgstr "معلومات المنتج"
+
+msgid "Delivery Inquiry"
+msgstr "استفسار عن التوصيل"
+
+msgid "Customer Support"
+msgstr "دعم العملاء"
+
+msgid "Other"
+msgstr "غير ذلك"
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "Please provide details about your inquiry..."
+msgstr "يرجى تقديم تفاصيل حول استفسارك..."
+
+msgid "Send Message"
+msgstr "إرسال الرسالة"
+
+msgid "Need Immediate Assistance?"
+msgstr "تحتاج مساعدة فورية؟"
+
+msgid "Our sales team is ready to help you find the perfect wood materials for your project."
+msgstr "فريق المبيعات لدينا جاهز لمساعدتك في العثور على المواد الخشبية المثالية لمشروعك."
+
+msgid "Call Now"
+msgstr "اتصل الآن"
+
+msgid "Email Sales"
+msgstr "أرسل بريدًا إلى المبيعات"
+
+msgid "Filter Products"
+msgstr "تصفية المنتجات"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Category"
+msgstr "الفئة"
+
+msgid "All Categories"
+msgstr "جميع الفئات"
+
+msgid "Wood Type"
+msgstr "نوع الخشب"
+
+msgid "All Types"
+msgstr "جميع الأنواع"
+
+msgid "Wood Species"
+msgstr "أنواع الخشب"
+
+msgid "All Species"
+msgstr "جميع الأنواع"
+
+msgid "Sort By"
+msgstr "ترتيب حسب"
+
+msgid "Name A-Z"
+msgstr "الاسم من أ إلى ي"
+
+msgid "Price: Low to High"
+msgstr "السعر: من الأقل إلى الأعلى"
+
+msgid "Price: High to Low"
+msgstr "السعر: من الأعلى إلى الأقل"
+
+msgid "Newest First"
+msgstr "الأحدث أولاً"
+
+msgid "Apply Filters"
+msgstr "تطبيق المرشحات"
+
+msgid "Clear All"
+msgstr "مسح الكل"
+
+msgid "Our Products"
+msgstr "منتجاتنا"
+
+msgid "product"
+msgstr "منتج"
+
+msgid "found"
+msgstr "تم العثور عليها"
+
+msgid "Out of Stock"
+msgstr "غير متوفر"
+
+msgid "No products found"
+msgstr "لم يتم العثور على منتجات"
+
+msgid "Try adjusting your search criteria or browse all products."
+msgstr "حاول تعديل معايير البحث أو تصفح جميع المنتجات."
+
+msgid "Sidab, Muscat, Sultanate of Oman"
+msgstr "سيداب، مسقط، سلطنة عمان"
+
+msgid "Sidab, Muscat"
+msgstr "سيداب، مسقط"
+
+msgid "Sultanate of Oman"
+msgstr "سلطنة عمان"
+
+msgid "CR:"
+msgstr "رقم التسجيل:"
+
+msgid "VATIN:"
+msgstr "الرقم الضريبي:"
+
+msgid "Email Business"
+msgstr "أرسل بريدًا للأعمال"

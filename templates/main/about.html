@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "About Us" %} - Black Rock And Yellow Sands International{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="section-title text-center">{% trans "About Black Rock And Yellow Sands International" %}</h1>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h3>{% trans "Who We Are" %}</h3>
+                    <p class="lead">{% trans "Black Rock And Yellow Sands International is a wholesale supplier of construction plywood of extreme quality, meeting all emission standards, especially for formaldehyde." %}</p>
+                    <p>{% trans "Our target clients are contractors, construction professionals, and manufacturers who demand top-quality plywood for their projects. We understand that in professional construction and manufacturing, material quality is non-negotiable." %}</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center">
+                        {% load static %}
+                        <img src="{% static 'images/about_us_image.png' %}" 
+                             alt="Construction Industry Excellence" 
+                             class="img-fluid" 
+                             style="max-width: 125%; height: auto; max-height: 500px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-eye fa-3x text-primary mb-3"></i>
+                            <h4>{% trans "Our Vision" %}</h4>
+                            <p>{% trans "To be the preferred wholesale supplier of premium construction plywood for professionals who demand uncompromising quality and reliable supply chains." %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
+                            <h4>{% trans "Our Mission" %}</h4>
+                            <p>{% trans "To deliver consistent, high-quality construction plywood that meets professional standards, with reliable supply chains and competitive wholesale pricing." %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5">
+                <h3 class="text-center mb-4">{% trans "What Sets Us Apart" %}</h3>
+                <div class="row g-4 mt-3">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-certificate fa-lg"></i>
+                            </div>
+                            <h6>{% trans "CARB Compliant" %}</h6>
+                            <p class="small text-muted">{% trans "All emission standards met" %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-industry fa-lg"></i>
+                            </div>
+                            <h6>{% trans "Wholesale Focus" %}</h6>
+                            <p class="small text-muted">{% trans "Volume pricing for professionals" %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-microscope fa-lg"></i>
+                            </div>
+                            <h6>{% trans "Quality Control" %}</h6>
+                            <p class="small text-muted">{% trans "Extreme quality standards" %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-hard-hat fa-lg"></i>
+                            </div>
+                            <h6>{% trans "Professional Grade" %}</h6>
+                            <p class="small text-muted">{% trans "For contractors & manufacturers" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

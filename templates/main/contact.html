@@ -1,0 +1,492 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Contact Us" %} - Black Rock And Yellow Sands International{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<style>
+/* Desert Sunset Interactive Background */
+.desert-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: url('{% static "images/desert-sunset-background.jpg" %}') center center/cover no-repeat;
+    opacity: 0;
+    filter: blur(8px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.05); /* Slight zoom to avoid edge artifacts when blurred */
+}
+
+.desert-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 40%, rgba(255, 193, 7, 0.4) 0%, transparent 30%),
+        linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.1) 100%);
+    backdrop-filter: blur(2px);
+}
+
+.desert-background.revealed {
+    opacity: 0.25;
+    filter: blur(5px);
+}
+
+/* Frosted glass overlay */
+.glass-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.glass-overlay.fade {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px) saturate(100%);
+    -webkit-backdrop-filter: blur(8px) saturate(100%);
+}
+
+/* Ensure content remains readable */
+body {
+    position: relative;
+    z-index: 1;
+}
+
+/* Animate sun rays */
+@keyframes sunRays {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sun-rays {
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.sun-rays.visible {
+    opacity: 0.3;
+    animation: sunRays 20s linear infinite;
+}
+
+.sun-rays::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), transparent);
+    transform-origin: 1px 0;
+    box-shadow: 
+        0 0 0 2px rgba(255, 215, 0, 0.6),
+        40px 0 0 0 rgba(255, 215, 0, 0.4),
+        -40px 0 0 0 rgba(255, 215, 0, 0.4),
+        0 40px 0 0 rgba(255, 215, 0, 0.4),
+        0 -40px 0 0 rgba(255, 215, 0, 0.4),
+        28px 28px 0 0 rgba(255, 215, 0, 0.3),
+        -28px -28px 0 0 rgba(255, 215, 0, 0.3),
+        28px -28px 0 0 rgba(255, 215, 0, 0.3),
+        -28px 28px 0 0 rgba(255, 215, 0, 0.3);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Desert Background Elements -->
+<div class="desert-background" id="desertBg"></div>
+<div class="glass-overlay" id="glassOverlay"></div>
+<div class="sun-rays" id="sunRays"></div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="section-title text-center">{% trans "Contact Black Rock And Yellow Sands International" %}</h1>
+            <p class="text-center lead mb-5">{% trans "Get in touch with our team for quotes, product information, or any questions about our wood materials." %}</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
+                            <h4>{% trans "Visit Our Showroom" %}</h4>
+                            <p class="mb-0">{% trans "Sultanate of Oman, Muscat" %}<br>{% trans "Sidab, b.n. 1/286/1" %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                            <h4>{% trans "Business Hours" %}</h4>
+                            <p class="mb-0">{% trans "Sunday - Friday: 8:00 - 18:00" %}<br>{% trans "Saturday: Closed" %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-phone fa-3x text-primary mb-3"></i>
+                            <h4>{% trans "Call Us" %}</h4>
+                            <p class="mb-0">+968 96896989</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="text-center mb-4">{% trans "Send Us a Message" %}</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">{% trans "Full Name" %} *</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">{% trans "Email Address" %} *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">{% trans "Phone Number" %}</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="company" class="form-label">{% trans "Company" %}</label>
+                                    <input type="text" class="form-control" id="company">
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">{% trans "Subject" %} *</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">{% trans "Select a subject" %}</option>
+                                        <option value="quote">{% trans "Request a Quote" %}</option>
+                                        <option value="product">{% trans "Product Information" %}</option>
+                                        <option value="delivery">{% trans "Delivery Inquiry" %}</option>
+                                        <option value="support">{% trans "Customer Support" %}</option>
+                                        <option value="other">{% trans "Other" %}</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">{% trans "Message" %} * <small class="text-muted">({% trans "Max 1000 characters, no links allowed" %})</small></label>
+                                    <textarea class="form-control" id="message" rows="5" required maxlength="1000" placeholder="{% trans 'Please provide details about your inquiry. Note: Links and URLs are not allowed in messages.' %}"></textarea>
+                                    <div class="form-text text-end">
+                                        <span id="charCount">0</span>/1000 {% trans "characters" %}
+                                        <span id="linkWarning" class="text-danger ms-2" style="display: none;">⚠️ {% trans "Links not allowed" %}</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Human Verification -->
+                                <div class="col-12">
+                                    <div class="form-check p-3" style="background: var(--bg-light); border-radius: 8px; border: 2px solid var(--border-color);">
+                                        <input class="form-check-input" type="checkbox" id="humanVerification" required style="transform: scale(1.3); margin-right: 10px;">
+                                        <label class="form-check-label" for="humanVerification" style="font-weight: 500; color: var(--text-color);">
+                                            <i class="fas fa-user-check me-2" style="color: #28a745;"></i>
+                                            {% trans "I am a human and not a robot" %} *
+                                        </label>
+                                        <div class="form-text mt-2">
+                                            <small class="text-muted">{% trans "Please check this box to verify that you are human" %}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="fas fa-paper-plane me-2"></i>{% trans "Send Message" %}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light rounded p-4 text-center">
+                        <h4>{% trans "Need Immediate Assistance?" %}</h4>
+                        <p class="mb-3">{% trans "Our sales team is ready to help you find the perfect wood materials for your project." %}</p>
+                        <a href="tel:+96896896989" class="btn btn-primary me-3">
+                            <i class="fas fa-phone me-2"></i>{% trans "Call Now" %}
+                        </a>
+                        <a href="mailto:business@braysint.com" class="btn btn-outline-primary">
+                            <i class="fas fa-envelope me-2"></i>{% trans "Email Business" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Desert Sunset Interactive Effect
+document.addEventListener('DOMContentLoaded', function() {
+    const desertBg = document.getElementById('desertBg');
+    const glassOverlay = document.getElementById('glassOverlay');
+    const sunRays = document.getElementById('sunRays');
+    
+    let isRevealed = false;
+    let animationId = null;
+    
+    // Throttle function for performance
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+    
+    // Mouse tracking function
+    function handleMouseMove(e) {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        
+        animationId = requestAnimationFrame(() => {
+            const windowWidth = window.innerWidth;
+            const mouseX = e.clientX;
+            
+            // Calculate percentage from left (0%) to right (100%)
+            const mousePercentage = (mouseX / windowWidth) * 100;
+            
+            // Start revealing when mouse is past 30% from left
+            const threshold = 30;
+            // Maximum reveal at center of screen (50% from left)
+            const maxRevealPoint = 50;
+            
+            if (mousePercentage > threshold && !isRevealed) {
+                // Start revealing the desert background
+                isRevealed = true;
+                desertBg.classList.add('revealed');
+                glassOverlay.classList.add('fade');
+                sunRays.classList.add('visible');
+            } else if (mousePercentage <= threshold && isRevealed) {
+                // Hide the desert background
+                isRevealed = false;
+                desertBg.classList.remove('revealed');
+                glassOverlay.classList.remove('fade');
+                sunRays.classList.remove('visible');
+            }
+            
+            // Progressive reveal based on mouse position (for smooth transition)
+            if (mousePercentage > threshold) {
+                // Calculate progress from threshold to logo position (not screen edge)
+                const revealProgress = Math.min((mousePercentage - threshold) / (maxRevealPoint - threshold), 1);
+                
+                // Adjust opacity and blur based on mouse position
+                const baseOpacity = 0.25;
+                const maxOpacity = 0.35;
+                const opacity = baseOpacity + (revealProgress * (maxOpacity - baseOpacity));
+                
+                const baseBlur = 5;
+                const minBlur = 2;
+                const blur = baseBlur - (revealProgress * (baseBlur - minBlur));
+                
+                if (isRevealed) {
+                    desertBg.style.opacity = opacity;
+                    desertBg.style.filter = `blur(${blur}px)`;
+                    
+                    // Adjust glass overlay
+                    const glassOpacity = 0.85 - (revealProgress * 0.15);
+                    glassOverlay.style.background = `rgba(255, 255, 255, ${glassOpacity})`;
+                    
+                    // Adjust sun rays
+                    const raysOpacity = 0.2 + (revealProgress * 0.15);
+                    sunRays.style.opacity = raysOpacity;
+                }
+            }
+        });
+    }
+    
+    // Add throttled mouse move event listener
+    const throttledMouseMove = throttle(handleMouseMove, 16); // ~60fps
+    document.addEventListener('mousemove', throttledMouseMove);
+    
+    // Mouse leave event to reset
+    document.addEventListener('mouseleave', function() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        
+        isRevealed = false;
+        desertBg.classList.remove('revealed');
+        glassOverlay.classList.remove('fade');
+        sunRays.classList.remove('visible');
+        
+        // Reset styles
+        desertBg.style.opacity = '';
+        desertBg.style.filter = '';
+        glassOverlay.style.background = '';
+        sunRays.style.opacity = '';
+    });
+    
+    // Touch events for mobile devices
+    document.addEventListener('touchmove', function(e) {
+        if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            handleMouseMove({ clientX: touch.clientX });
+        }
+    });
+    
+    document.addEventListener('touchend', function() {
+        // Reset on touch end for mobile
+        setTimeout(() => {
+            isRevealed = false;
+            desertBg.classList.remove('revealed');
+            glassOverlay.classList.remove('fade');
+            sunRays.classList.remove('visible');
+        }, 1000);
+    });
+    
+    // Character counter for message field
+    const messageField = document.getElementById('message');
+    const charCountDisplay = document.getElementById('charCount');
+    
+    function updateCharCount() {
+        const currentLength = messageField.value.length;
+        charCountDisplay.textContent = currentLength;
+        
+        // Change color based on character count
+        if (currentLength > 900) {
+            charCountDisplay.style.color = '#dc3545'; // Red when approaching limit
+        } else if (currentLength > 800) {
+            charCountDisplay.style.color = '#fd7e14'; // Orange when getting close
+        } else {
+            charCountDisplay.style.color = '#6c757d'; // Default gray
+        }
+    }
+    
+    messageField.addEventListener('input', function() {
+        updateCharCount();
+        checkForLinks();
+    });
+    messageField.addEventListener('paste', function() {
+        // Small delay to allow paste content to be processed
+        setTimeout(function() {
+            updateCharCount();
+            checkForLinks();
+        }, 10);
+    });
+    
+    // Link detection function
+    function checkForLinks() {
+        const message = messageField.value;
+        const linkWarning = document.getElementById('linkWarning');
+        const submitButton = document.querySelector('button[type="submit"]');
+        
+        // Patterns to detect URLs and links
+        const urlPatterns = [
+            /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi,
+            /www\.[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}/gi,
+            /[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.(com|org|net|gov|edu|co|uk|de|fr|it|es|ru|cn|jp|au|ca|br|in)/gi,
+            /\b\w+\.(com|org|net|gov|edu|co|uk|de|fr|it|es|ru|cn|jp|au|ca|br|in)\b/gi
+        ];
+        
+        let hasLinks = false;
+        for (let pattern of urlPatterns) {
+            if (pattern.test(message)) {
+                hasLinks = true;
+                break;
+            }
+        }
+        
+        if (hasLinks) {
+            linkWarning.style.display = 'inline';
+            messageField.style.borderColor = '#dc3545';
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.6';
+            submitButton.style.cursor = 'not-allowed';
+        } else {
+            linkWarning.style.display = 'none';
+            messageField.style.borderColor = '';
+            submitButton.disabled = false;
+            submitButton.style.opacity = '';
+            submitButton.style.cursor = '';
+        }
+    }
+    
+    // Human verification checkbox
+    const humanCheckbox = document.getElementById('humanVerification');
+    const submitButton = document.querySelector('button[type="submit"]');
+    
+    function updateSubmitButton() {
+        const isHuman = humanCheckbox.checked;
+        const message = messageField.value;
+        const hasLinks = document.getElementById('linkWarning').style.display !== 'none';
+        
+        if (!isHuman || hasLinks || !message.trim()) {
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.6';
+            submitButton.style.cursor = 'not-allowed';
+        } else {
+            submitButton.disabled = false;
+            submitButton.style.opacity = '';
+            submitButton.style.cursor = '';
+        }
+    }
+    
+    humanCheckbox.addEventListener('change', updateSubmitButton);
+    messageField.addEventListener('input', updateSubmitButton);
+    
+    // Form submission validation
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        const message = messageField.value;
+        const isHuman = humanCheckbox.checked;
+        
+        // Final validation before submission
+        if (!isHuman) {
+            e.preventDefault();
+            alert('Please verify that you are human by checking the checkbox.');
+            return false;
+        }
+        
+        // Check for links one more time
+        const urlPatterns = [
+            /https?:\/\//gi,
+            /www\./gi,
+            /\.(com|org|net|gov|edu|co|uk|de|fr|it|es|ru|cn|jp|au|ca|br|in)/gi
+        ];
+        
+        for (let pattern of urlPatterns) {
+            if (pattern.test(message)) {
+                e.preventDefault();
+                alert('Links and URLs are not allowed in messages. Please remove any links and try again.');
+                return false;
+            }
+        }
+        
+        // If we get here, the form is valid
+        console.log('Form submitted successfully');
+    });
+    
+    // Initial count update
+    updateCharCount();
+    updateSubmitButton();
+});
+</script>
+{% endblock %}

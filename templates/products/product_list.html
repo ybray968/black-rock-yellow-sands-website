@@ -1,0 +1,559 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Our Products" %} - Black Rock And Yellow Sands International{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>{% trans "Our Products" %}</h1>
+                <p class="text-muted mb-0">{{ products|length }} {% trans "product" %}{{ products|length|pluralize }} {% trans "found" %}</p>
+            </div>
+            
+            {% if products %}
+            <div class="row g-4">
+                {% for product in products %}
+                <div class="col-12" id="product-{{ product.id }}">
+                    <div class="card border-0 shadow-sm mb-4" style="background: var(--white);">
+                        <div class="card-body p-4">
+                            <div class="row mb-4">
+                                <div class="col-md-5">
+                                    {% if product.images.first %}
+                                        <img src="{{ product.images.first.image.url }}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                    {% else %}
+                                        {% load static %}
+                                        {% if 'Birch Exterior' in product.name or 'Exterior Birch' in product.name %}
+                                            <img src="{% static 'images/plywood-birch-exterior.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Interior Birch' in product.name or 'Birch Interior' in product.name %}
+                                            <img src="{% static 'images/plywood-birch-interior.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Parquet' in product.name %}
+                                            <img src="{% static 'images/plywood-parquet.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Shield Acu' in product.name %}
+                                            <img src="{% static 'images/plywood-shield-acu.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Shield' in product.name %}
+                                            <img src="{% static 'images/plywood-shield.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Deco' in product.name %}
+                                            <img src="{% static 'images/plywood-deco.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Antislip HEX' in product.name %}
+                                            <img src="{% static 'images/plywood-antislip-hex.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Antislip MT' in product.name or 'Antislip Wire' in product.name %}
+                                            <img src="{% static 'images/plywood-antislip-mt.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% else %}
+                                            <img src="{% static 'images/plywood_deck_product_image_for_web.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% endif %}
+                                    {% endif %}
+                                    
+                                    <!-- Application Field Image Section -->
+                                    {% if product.category.slug == 'plywood' %}
+                                    <div class="mt-3">
+                                        {% load static %}
+                                        <img src="{% static 'images/' %}{{ product.name|lower|slugify }}-application.png" class="img-fluid rounded" alt="{{ product.name }} {% trans 'Applications' %}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-7">
+                                    <h2 class="card-title mb-3" style="color: var(--text-color);">{{ product.name }}</h2>
+                                    
+                                    <div class="mb-3">
+                                        <a href="{% url 'main:contact' %}" class="btn btn-primary">
+                                            <i class="fas fa-calculator me-2"></i>{% trans "Get Quote" %}
+                                        </a>
+                                        {% if product.in_stock %}
+                                            <span class="badge bg-success ms-2">{% trans "In Stock" %}</span>
+                                        {% else %}
+                                            <span class="badge bg-warning ms-2">{% trans "Out of Stock" %}</span>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <p class="card-text mb-4" style="color: var(--light-text); line-height: 1.6;">{{ product.description|safe }}</p>
+                                    
+                                    <!-- Advantages Section (for plywood and parquet products) -->
+                                    {% if product.category.slug == 'plywood' or product.category.slug == 'parquet' %}
+                                    <div class="advantages-section mb-4">
+
+                                        {% if 'Shield Acu' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-flask" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Moderately dangerous in terms of toxicity of combustion products" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-cloud" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Moderate smoke-generating capacity" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-fire-extinguisher" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Inflame-resistant and low flammable" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Advanced fire safety properties" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-volume-down" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Exceptional Sound-insulation properties" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% elif 'Shield' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-flask" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Moderately dangerous in terms of toxicity" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Safe combustion products" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-cloud" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Moderate smoke-generating capacity" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Controlled smoke emission" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-fire-extinguisher" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Inflame-resistant and low flammable" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Advanced fire safety properties" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-tools" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Excellent capacity to hold fasteners" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Superior fastening and assembly capabilities" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% elif 'Antislip HEX' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-stamp" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Possibility of deep imprints" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Advanced surface texturing capabilities" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-th" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Decorative antislip surface" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Hexagonal pattern combining beauty and function" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-sun" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Resistance to environmental conditions" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Mechanical damage resistance" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-weight-hanging" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "High load-bearing capacity" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Transport industry and construction applications" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% elif 'Antislip MT' in product.name or 'Antislip Wire' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-shield-alt" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Resistant to the impact of roller wheels" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Material handling equipment protection" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-ban" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Maximum slip resistance" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Wire-mesh antislip surface for safety" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-sun" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Resistance to environmental conditions" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Mechanical damage resistance" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-weight-hanging" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "High load-bearing capacity" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Heavy-duty commercial transport applications" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% elif 'Parquet' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-hammer" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "High strength and durability" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Enhanced strength properties with solid veneer option" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-tint" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Resistance to moisture impact" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Improved moisture resistance for flooring applications" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-ruler" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Special thickness tolerances" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Strict thickness control for parquet manufacturing" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-palette" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Complete absence of healthy color changes" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Consistent color quality in B and BB grades" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% elif 'Interior Birch' in product.name or 'Birch Interior' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-home" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Safe for human health" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Low formaldehyde emission levels" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-leaf" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Environmentally friendly" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Sustainable forestry practices" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-feather-alt" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Light weight" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Easy handling and installation" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-tree" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Beautiful birch texture" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Natural wood grain appearance" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% elif 'Deco' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-sun" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Resistance to moisture impact and UV-radiation" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Enhanced protection against environmental factors" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-layer-group" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Wear-resistant decorative surface of birch veneer" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Durable surface layer for decorative applications" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-tree" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Natural wood aesthetics" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Beautiful natural birch appearance" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-hand-sparkles" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Easy to maintain" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Simple cleaning and maintenance requirements" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% elif 'Deck' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-cog" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Strength and durability" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Ultra-durable birch plywood for construction" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-shield-alt" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "High resistance to surface abrasion" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Taber Test proven durability" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-sun" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Resistance to environmental conditions" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Mechanical damage resistance" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-tint" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Increased water-resistance" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Wide range of film colors and densities" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Durability Testing Section -->
+                                        <div class="mt-4 p-4" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color);">
+                                            <h6 style="color: var(--text-color); margin-bottom: 15px;">
+                                                <i class="fas fa-microscope me-2" style="color: #28a745;"></i>{% trans "Durability Testing" %}
+                                            </h6>
+                                            <p style="color: var(--light-text); line-height: 1.6; margin-bottom: 20px;">
+                                                {% trans "We are proud of our plywood durability. Our plywood regularly undergoes durability and abrasion tests in lab and on site. Click on the button below to view durability test results and learn more about our plywood" %}
+                                            </p>
+                                            <a href="{% url 'products:durability_testing' %}" class="btn btn-outline-primary">
+                                                <i class="fas fa-chart-line me-2"></i>{% trans "View Taber Test Results" %}
+                                            </a>
+                                        </div>
+                                        {% elif 'Exterior Birch' in product.name or 'Birch Exterior' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-link" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Excellent bonding properties" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Superior adhesive compatibility" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-tint" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Resistance to moisture impact" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "WBP grade waterproof performance" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-shield-alt" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Exceptional durability" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Long-lasting performance in harsh conditions" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-tools" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Easy to use and process" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Excellent machinability and finishing" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Product Specifications -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card border-0" style="background: var(--bg-light);">
+                                        <div class="card-header border-0" style="background: transparent;">
+                                            <h5 class="mb-0" style="color: var(--text-color);">
+                                                <i class="fas fa-clipboard-list me-2"></i>{% trans "Technical Specifications" %}
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <ul class="list-unstyled">
+                                                        {% for spec in product.specifications.all %}
+                                                        {% if 'Strength and durability' not in spec.name and 'Environmental resistance' not in spec.name and 'Water resistance' not in spec.name and 'Film variety' not in spec.name and 'High strength and durability' not in spec.name and 'Resistance to moisture impact' not in spec.name and 'Complete absence of healthy color changes' not in spec.name and 'Special thickness tolerances' not in spec.name and 'Extended list of putted defects' not in spec.name %}
+                                                        <li class="mb-2" style="display: flex; flex-wrap: nowrap;">
+                                                            <strong style="color: var(--text-color); min-width: 200px; flex-shrink: 0;">{{ spec.name }}:</strong>
+                                                            <span style="color: var(--light-text); margin-left: 10px;">{{ spec.value }}</span>
+                                                        </li>
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-5">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h3 class="text-muted">{% trans "No products found" %}</h3>
+                <p class="text-muted">{% trans "Try adjusting your filters or search terms." %}</p>
+                <a href="{% url 'products:list' %}" class="btn btn-primary">{% trans "View All Products" %}</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

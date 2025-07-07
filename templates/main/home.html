@@ -1,0 +1,419 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Premium Plywood Construction Materials" %} - Black Rock And Yellow Sands International{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<style>
+/* Desert Sunset Interactive Background */
+.desert-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: url('{% static "images/desert-sunset-background.jpg" %}') center center/cover no-repeat;
+    opacity: 0;
+    filter: blur(8px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.05); /* Slight zoom to avoid edge artifacts when blurred */
+}
+
+.desert-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 40%, rgba(255, 193, 7, 0.4) 0%, transparent 30%),
+        linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.1) 100%);
+    backdrop-filter: blur(2px);
+}
+
+.desert-background.revealed {
+    opacity: 0.25;
+    filter: blur(5px);
+}
+
+/* Frosted glass overlay */
+.glass-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.glass-overlay.fade {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px) saturate(100%);
+    -webkit-backdrop-filter: blur(8px) saturate(100%);
+}
+
+/* Hero section adjustments */
+.hero-section {
+    position: relative;
+    background: transparent !important;
+    z-index: 1;
+}
+
+/* Ensure content remains readable */
+body {
+    position: relative;
+    z-index: 1;
+}
+
+/* Animate sun rays */
+@keyframes sunRays {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sun-rays {
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.sun-rays.visible {
+    opacity: 0.3;
+    animation: sunRays 20s linear infinite;
+}
+
+.sun-rays::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), transparent);
+    transform-origin: 1px 0;
+    box-shadow: 
+        0 0 0 2px rgba(255, 215, 0, 0.6),
+        40px 0 0 0 rgba(255, 215, 0, 0.4),
+        -40px 0 0 0 rgba(255, 215, 0, 0.4),
+        0 40px 0 0 rgba(255, 215, 0, 0.4),
+        0 -40px 0 0 rgba(255, 215, 0, 0.4),
+        28px 28px 0 0 rgba(255, 215, 0, 0.3),
+        -28px -28px 0 0 rgba(255, 215, 0, 0.3),
+        28px -28px 0 0 rgba(255, 215, 0, 0.3),
+        -28px 28px 0 0 rgba(255, 215, 0, 0.3);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Desert Background Elements -->
+<div class="desert-background" id="desertBg"></div>
+<div class="glass-overlay" id="glassOverlay"></div>
+<div class="sun-rays" id="sunRays"></div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-normal mb-4" style="color: var(--text-color); line-height: 1.2;">{% trans "Premium Birch Plywood & Construction Materials Wholesale" %}</h1>
+                <p class="lead mb-5" style="color: var(--light-text); font-weight: 400;">{% trans "Discover our extensive collection of high-quality plywood construction materials. Perfect for construction professionals, contractors and manufacturers." %}</p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'products:list' %}" class="btn btn-primary">
+                        <i class="fas fa-search me-2"></i>{% trans "Browse Products" %}
+                    </a>
+                    <a href="{% url 'main:contact' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-calculator me-2"></i>{% trans "Get Quote" %}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    {% load static %}
+                    <img src="{% static 'images/brays-logo.png' %}" alt="Black Rock And Yellow Sands International Logo" class="logo-large img-fluid" style="max-height: 320px; opacity: 0.9;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">{% trans "Discover Products" %}</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <a href="{% url 'products:list' %}?category=plywood" class="category-card d-block h-100">
+                    <i class="fas fa-layer-group fa-3x mb-3"></i>
+                    <h4>{% trans "Plywood" %}</h4>
+                    <p class="mb-0">{% trans "Versatile building materials for construction" %}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products Section -->
+{% if featured_products %}
+<section class="py-5" style="background-color: var(--bg-light);">
+    <div class="container">
+        <h2 class="section-title text-center">{% trans "Featured Products" %}</h2>
+        <div class="row g-4">
+            {% for product in featured_products %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    {% if product.images.first %}
+                        <img src="{{ product.images.first.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                    {% else %}
+                        {% load static %}
+                        {% if 'Birch Exterior' in product.name or 'Exterior Birch' in product.name %}
+                            <img src="{% static 'images/plywood-birch-exterior.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Interior Birch' in product.name or 'Birch Interior' in product.name %}
+                            <img src="{% static 'images/plywood-birch-interior.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Parquet' in product.name %}
+                            <img src="{% static 'images/plywood-parquet.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Shield Acu' in product.name %}
+                            <img src="{% static 'images/plywood-shield-acu.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Shield' in product.name %}
+                            <img src="{% static 'images/plywood-shield.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Deco' in product.name %}
+                            <img src="{% static 'images/plywood-deco.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Antislip HEX' in product.name %}
+                            <img src="{% static 'images/plywood-antislip-hex.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Antislip MT' in product.name or 'Antislip Wire' in product.name %}
+                            <img src="{% static 'images/plywood-antislip-mt.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% else %}
+                            <img src="{% static 'images/plywood_deck_product_image_for_web.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% endif %}
+                    {% endif %}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text flex-grow-1">{{ product.description|truncatewords:15 }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'main:contact' %}" class="btn btn-primary btn-sm">
+                                <i class="fas fa-calculator me-1"></i>{% trans "Get Quote" %}
+                            </a>
+                            <a href="{% url 'products:list' %}#product-{{ product.id }}" class="btn btn-outline-primary btn-sm">{% trans "View Details" %}</a>
+                        </div>
+                        {% if product.wood_species %}
+                        <small class="text-muted mt-2">
+                            <i class="fas fa-tag me-1"></i>{{ product.get_wood_species_display }}
+                        </small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'products:list' %}" class="btn btn-primary btn-lg">
+                <i class="fas fa-arrow-right me-2"></i>{% trans "View All Products" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">{% trans "Why Choose Black Rock And Yellow Sands International?" %}</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-medal fa-2x"></i>
+                    </div>
+                    <h4>{% trans "Premium Quality" %}</h4>
+                    <p class="text-muted">{% trans "Carefully selected materials that meet the highest industry standards." %}</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-leaf fa-2x"></i>
+                    </div>
+                    <h4>{% trans "CARB Compliant" %}</h4>
+                    <p class="text-muted">{% trans "Formaldehyde emission level is absolutely safe for human health and the environment." %}</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-shipping-fast fa-2x"></i>
+                    </div>
+                    <h4>{% trans "Fast Delivery" %}</h4>
+                    <p class="text-muted">{% trans "Quick manufacturing and reliable delivery to keep your projects on schedule." %}</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <h4>{% trans "Expert Support" %}</h4>
+                    <p class="text-muted">{% trans "Professional guidance from our experienced team." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5" style="background-color: var(--bg-light); border-top: 1px solid var(--border-color);">
+    <div class="container text-center">
+        <h2 class="mb-4" style="color: var(--text-color);">{% trans "Ready to Start Your Project?" %}</h2>
+        <p class="lead mb-4" style="color: var(--light-text);">{% trans "Get in touch with our experts for personalized recommendations and competitive pricing." %}</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'main:contact' %}" class="btn btn-primary">
+                <i class="fas fa-phone me-2"></i>{% trans "Contact Us" %}
+            </a>
+            <a href="{% url 'products:list' %}" class="btn btn-outline-primary">
+                <i class="fas fa-search me-2"></i>{% trans "Browse Catalog" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+// Desert Sunset Interactive Effect
+document.addEventListener('DOMContentLoaded', function() {
+    const desertBg = document.getElementById('desertBg');
+    const glassOverlay = document.getElementById('glassOverlay');
+    const sunRays = document.getElementById('sunRays');
+    
+    let isRevealed = false;
+    let animationId = null;
+    
+    // Throttle function for performance
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+    
+    // Mouse tracking function
+    function handleMouseMove(e) {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        
+        animationId = requestAnimationFrame(() => {
+            const windowWidth = window.innerWidth;
+            const mouseX = e.clientX;
+            
+            // Calculate percentage from left (0%) to right (100%)
+            const mousePercentage = (mouseX / windowWidth) * 100;
+            
+            // Start revealing when mouse is past 30% from left
+            const threshold = 30;
+            // Maximum reveal at center of screen (50% from left)
+            const maxRevealPoint = 50;
+            
+            if (mousePercentage > threshold && !isRevealed) {
+                // Start revealing the desert background
+                isRevealed = true;
+                desertBg.classList.add('revealed');
+                glassOverlay.classList.add('fade');
+                sunRays.classList.add('visible');
+            } else if (mousePercentage <= threshold && isRevealed) {
+                // Hide the desert background
+                isRevealed = false;
+                desertBg.classList.remove('revealed');
+                glassOverlay.classList.remove('fade');
+                sunRays.classList.remove('visible');
+            }
+            
+            // Progressive reveal based on mouse position (for smooth transition)
+            if (mousePercentage > threshold) {
+                // Calculate progress from threshold to logo position (not screen edge)
+                const revealProgress = Math.min((mousePercentage - threshold) / (maxRevealPoint - threshold), 1);
+                
+                // Adjust opacity and blur based on mouse position
+                const baseOpacity = 0.25;
+                const maxOpacity = 0.35;
+                const opacity = baseOpacity + (revealProgress * (maxOpacity - baseOpacity));
+                
+                const baseBlur = 5;
+                const minBlur = 2;
+                const blur = baseBlur - (revealProgress * (baseBlur - minBlur));
+                
+                if (isRevealed) {
+                    desertBg.style.opacity = opacity;
+                    desertBg.style.filter = `blur(${blur}px)`;
+                    
+                    // Adjust glass overlay
+                    const glassOpacity = 0.85 - (revealProgress * 0.15);
+                    glassOverlay.style.background = `rgba(255, 255, 255, ${glassOpacity})`;
+                    
+                    // Adjust sun rays
+                    const raysOpacity = 0.2 + (revealProgress * 0.15);
+                    sunRays.style.opacity = raysOpacity;
+                }
+            }
+        });
+    }
+    
+    // Add throttled mouse move event listener
+    const throttledMouseMove = throttle(handleMouseMove, 16); // ~60fps
+    document.addEventListener('mousemove', throttledMouseMove);
+    
+    // Mouse leave event to reset
+    document.addEventListener('mouseleave', function() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        
+        isRevealed = false;
+        desertBg.classList.remove('revealed');
+        glassOverlay.classList.remove('fade');
+        sunRays.classList.remove('visible');
+        
+        // Reset styles
+        desertBg.style.opacity = '';
+        desertBg.style.filter = '';
+        glassOverlay.style.background = '';
+        sunRays.style.opacity = '';
+    });
+    
+    // Touch events for mobile devices
+    document.addEventListener('touchmove', function(e) {
+        if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            handleMouseMove({ clientX: touch.clientX });
+        }
+    });
+    
+    document.addEventListener('touchend', function() {
+        // Reset on touch end for mobile
+        setTimeout(() => {
+            isRevealed = false;
+            desertBg.classList.remove('revealed');
+            glassOverlay.classList.remove('fade');
+            sunRays.classList.remove('visible');
+        }, 1000);
+    });
+});
+</script>
+
+{% endblock %}
