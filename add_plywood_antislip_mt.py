@@ -12,10 +12,10 @@ django.setup()
 
 from products.models import Product, Category, ProductImage, ProductSpecification
 
-def add_plywood_antislip_wire():
-    """Add Plywood Antislip Wire product with all specifications from the slide"""
+def add_plywood_antislip_mt():
+    """Add Plywood Antislip MT product with all specifications from the slide"""
     
-    print("Adding Plywood Antislip Wire product...")
+    print("Adding Plywood Antislip MT product...")
     
     # Get or create plywood category (since this is a specialized plywood product)
     plywood_category, created = Category.objects.get_or_create(
@@ -31,12 +31,12 @@ def add_plywood_antislip_wire():
     else:
         print(f"Using existing category: {plywood_category.name}")
     
-    # Create Plywood Antislip Wire product
+    # Create Plywood Antislip MT product
     product_data = {
-        'name': 'Plywood Antislip Wire',
-        'slug': 'plywood-antislip-wire',
+        'name': 'Plywood Antislip MT',
+        'slug': 'plywood-antislip-mt',
         'category': plywood_category,
-        'description': '''Plywood Antislip Wire is a brand of wear-resistant film-faced birch plywood with antislip surface. Both sides of plywood are overlaid with phenolic film. One side has slip-resistant wire-mesh surface. Plywood Antislip Wire is perfect for the manufacturing of wear-resistant surfaces such as heavy-duty commercial transport floors. The films of various colors and densities are available. The edges of film-faced plywood are covered with acrylic paint to prevent moisture absorption.''',
+        'description': '''Plywood Antislip MT is a brand of wear-resistant film-faced birch plywood with antislip surface. Both sides of plywood are overlaid with phenolic film. One side has slip-resistant wire-mesh surface. Plywood Antislip MT is perfect for the manufacturing of wear-resistant surfaces such as heavy-duty commercial transport floors. The films of various colors and densities are available. The edges of film-faced plywood are covered with acrylic paint to prevent moisture absorption.''',
         'price': 0.00,  # Price to be determined
         'wood_type': 'hardwood',
         'wood_species': 'birch',
@@ -48,11 +48,11 @@ def add_plywood_antislip_wire():
         'featured': True,
         'in_stock': True,
         'stock_quantity': 100,
-        'meta_description': 'Plywood Antislip Wire - Premium film-faced birch plywood with antislip wire-mesh surface for heavy-duty commercial transport floors and wear-resistant applications.'
+        'meta_description': 'Plywood Antislip MT - Premium film-faced birch plywood with antislip wire-mesh surface for heavy-duty commercial transport floors and wear-resistant applications.'
     }
     
     product, created = Product.objects.get_or_create(
-        name='Plywood Antislip Wire',
+        name='Plywood Antislip MT',
         defaults=product_data
     )
     
@@ -125,8 +125,8 @@ def add_plywood_antislip_wire():
     specs_count = ProductSpecification.objects.filter(product=product).count()
     print(f"Technical Specifications: {specs_count}")
     
-    print(f"\n✅ Plywood Antislip Wire product setup complete!")
-    print(f"📝 Don't forget to save the product image as 'plywood-antislip-wire.png' in static/images/")
+    print(f"\n✅ Plywood Antislip MT product setup complete!")
+    print(f"📝 Don't forget to save the product image as 'plywood-antislip-mt.png' in static/images/")
 
 if __name__ == '__main__':
-    add_plywood_antislip_wire()
+    add_plywood_antislip_mt()
