@@ -203,7 +203,7 @@ msgstr "درجة مهنية"
 
 #: templates/main/about.html:1
 msgid "For contractors & manufacturers"
-msgstr ""
+msgstr "للمقاولين والمصنعين"
 
 #: templates/main/contact.html:1 templates/main/home.html:1
 msgid "Contact Us"
