@@ -533,9 +533,10 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <ul class="list-unstyled">
+                                                        <!-- DEBUG: Product: {{ product.name }} -->
                                                         <!-- DEBUG: Total specs: {{ product.specifications.all|length }} -->
                                                         {% for spec in product.specifications.all %}
-                                                        <!-- DEBUG: Spec name: {{ spec.name }} -->
+                                                        <!-- DEBUG: Spec {{ forloop.counter }}: {{ spec.name }} = {{ spec.value|slice:":50" }} -->
 {% if 'Strength and durability' not in spec.name and 'Environmental resistance' not in spec.name and 'Film variety' not in spec.name and 'High strength and durability' not in spec.name and 'Complete absence of healthy color changes' not in spec.name and 'Extended list of putted defects' not in spec.name %}
                                                         <li class="mb-2" style="display: flex; flex-wrap: nowrap;">
                                                             <strong style="color: var(--text-color); min-width: 200px; flex-shrink: 0;">
