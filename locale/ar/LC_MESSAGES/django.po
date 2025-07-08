@@ -67,8 +67,36 @@ msgid "Contact Info"
 msgstr "معلومات الاتصال"
 
 #: templates/base.html:1
-msgid "Sultanate of Oman, Muscat, Sidab, b.n. 1/286/1"
-msgstr "سلطنة عمان، مسقط، سيداب، ع.ب. 1/286/1"
+msgid "Sultanate of Oman"
+msgstr "سلطنة عمان"
+
+#: templates/base.html:1 templates/main/contact.html:1
+msgid "Muscat"
+msgstr "مسقط"
+
+#: templates/base.html:1 templates/main/contact.html:1
+msgid "Sidab"
+msgstr "صيداب"
+
+#: templates/base.html:1 templates/main/contact.html:1
+msgid "b.n."
+msgstr "ع.ب."
+
+#: templates/main/contact.html:1
+msgid "Sunday"
+msgstr "الأحد"
+
+#: templates/main/contact.html:1
+msgid "Friday"
+msgstr "الجمعة"
+
+#: templates/main/contact.html:1
+msgid "Saturday"
+msgstr "السبت"
+
+#: templates/main/contact.html:1
+msgid "Closed"
+msgstr "مغلق"
 
 #: templates/base.html:1
 msgid "CR:"

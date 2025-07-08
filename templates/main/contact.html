@@ -130,7 +130,7 @@ body {
                             <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
                             <h4>{% trans "Visit Our Showroom" %}</h4>
                             {% get_current_language as LANGUAGE_CODE %}
-                            <p class="mb-0">{% trans "Sultanate of Oman, Muscat" %}<br>{% trans "Sidab, b.n." %} {{ "1/286/1"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
+                            <p class="mb-0">{% trans "Sultanate of Oman" %}, {% trans "Muscat" %}<br>{% trans "Sidab" %}, {% trans "b.n." %} {{ "1/286/1"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@ body {
                             <i class="fas fa-clock fa-3x text-primary mb-3"></i>
                             <h4>{% trans "Business Hours" %}</h4>
                             {% get_current_language as LANGUAGE_CODE %}
-                            <p class="mb-0">{% trans "Sunday - Friday:" %} {{ "8:00 - 18:00"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}<br>{% trans "Saturday: Closed" %}</p>
+                            <p class="mb-0">{% trans "Sunday" %} - {% trans "Friday" %}: {{ "8:00 - 18:00"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}<br>{% trans "Saturday" %}: {% trans "Closed" %}</p>
                         </div>
                     </div>
                 </div>

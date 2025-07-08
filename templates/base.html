@@ -469,7 +469,7 @@
                 <div class="col-lg-4 mb-4">
                     <h6>{% trans "Contact Info" %}</h6>
                     {% get_current_language as LANGUAGE_CODE %}
-                    <p><i class="fas fa-map-marker-alt me-2"></i>{% trans "Sultanate of Oman, Muscat, Sidab, b.n." %} {{ "1/286/1"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>{% trans "Sultanate of Oman" %}, {% trans "Muscat" %}, {% trans "Sidab" %}, {% trans "b.n." %} {{ "1/286/1"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
                     <p><i class="fas fa-phone me-2"></i>{{ "+968 96896989"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
                     <p><i class="fas fa-envelope me-2"></i>business@braysint.com</p>
                     <p><i class="fas fa-certificate me-2"></i>{% trans "CR:" %} {{ "1476668"|to_arabic_digits_if_arabic:LANGUAGE_CODE }} | {% trans "VATIN:" %} {{ "OM1100344023"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
