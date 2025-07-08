@@ -533,18 +533,6 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <ul class="list-unstyled">
-                                                        <!-- Show thickness from product field -->
-{% if product.thickness and not product.specifications.filter(name__icontains='thickness').exists %}
-                                                        <li class="mb-2" style="display: flex; flex-wrap: nowrap;">
-                                                            <strong style="color: var(--text-color); min-width: 200px; flex-shrink: 0;">
-                                                                {% trans "Thickness" %}:
-                                                            </strong>
-                                                            <span style="color: var(--light-text); margin-left: 10px;">
-                                                                {{ product.thickness|to_arabic_digits_if_arabic:LANGUAGE_CODE }}
-                                                            </span>
-                                                        </li>
-                                                        {% endif %}
-                                                        
                                                         {% for spec in product.specifications.all %}
 {% if 'Strength and durability' not in spec.name and 'Environmental resistance' not in spec.name and 'Water resistance' not in spec.name and 'Film variety' not in spec.name and 'High strength and durability' not in spec.name and 'Resistance to moisture impact' not in spec.name and 'Complete absence of healthy color changes' not in spec.name and 'Extended list of putted defects' not in spec.name %}
                                                         <li class="mb-2" style="display: flex; flex-wrap: nowrap;">
