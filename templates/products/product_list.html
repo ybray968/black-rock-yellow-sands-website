@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load arabic_digits %}
 
 {% block title %}{% trans "Our Products" %} - Black Rock And Yellow Sands International{% endblock %}
 
@@ -9,7 +10,7 @@
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h1>{% trans "Our Products" %}</h1>
-                <p class="text-muted mb-0">{{ products|length }} {% trans "product" %}{{ products|length|pluralize }} {% trans "found" %}</p>
+                <p class="text-muted mb-0">{{ products|length|to_arabic_digits_if_arabic:LANGUAGE_CODE }} {% trans "product" %}{{ products|length|pluralize }} {% trans "found" %}</p>
             </div>
             
             {% if products %}
@@ -536,17 +537,17 @@
                                                         {% if 'Strength and durability' not in spec.name and 'Environmental resistance' not in spec.name and 'Water resistance' not in spec.name and 'Film variety' not in spec.name and 'High strength and durability' not in spec.name and 'Resistance to moisture impact' not in spec.name and 'Complete absence of healthy color changes' not in spec.name and 'Special thickness tolerances' not in spec.name and 'Extended list of putted defects' not in spec.name %}
                                                         <li class="mb-2" style="display: flex; flex-wrap: nowrap;">
                                                             <strong style="color: var(--text-color); min-width: 200px; flex-shrink: 0;">
-                                                                {% if LANGUAGE_CODE == 'ar' and spec.name_ar %}
-                                                                    {{ spec.name_ar }}:
+{% if LANGUAGE_CODE == 'ar' and spec.name_ar %}
+                                                                    {{ spec.name_ar | to_arabic_digits_if_arabic:LANGUAGE_CODE }}:
                                                                 {% else %}
-                                                                    {{ spec.name }}:
+                                                                    {{ spec.name | to_arabic_digits_if_arabic:LANGUAGE_CODE }}:
                                                                 {% endif %}
                                                             </strong>
                                                             <span style="color: var(--light-text); margin-left: 10px;">
                                                                 {% if LANGUAGE_CODE == 'ar' and spec.value_ar %}
-                                                                    {{ spec.value_ar }}
+                                                                    {{ spec.value_ar | to_arabic_digits_if_arabic:LANGUAGE_CODE }}
                                                                 {% else %}
-                                                                    {{ spec.value }}
+                                                                    {{ spec.value | to_arabic_digits_if_arabic:LANGUAGE_CODE }}
                                                                 {% endif %}
                                                             </span>
                                                         </li>
