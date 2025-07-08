@@ -130,7 +130,7 @@ body {
                             <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
                             <h4>{% trans "Visit Our Showroom" %}</h4>
                             {% get_current_language as LANGUAGE_CODE %}
-                            <p class="mb-0">{% trans "Sultanate of Oman" %}, {% trans "Muscat" %}<br>{% trans "Sidab" %}, {% trans "b.n." %} {{ "1/286/1"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
+                            <p class="mb-0">{% trans "Sultanate of Oman" %}, {% trans "Muscat" %}<br>{% trans "Sidab" %} {{ "1/286/1"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
                         </div>
                     </div>
                 </div>
@@ -190,10 +190,10 @@ body {
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label for="message" class="form-label">{% trans "Message" %} * <small class="text-muted">({% trans "Max 1000 characters, no links allowed" %})</small></label>
+                                    <label for="message" class="form-label">{% trans "Message" %} * <small class="text-muted">({% get_current_language as LANGUAGE_CODE %}{% if LANGUAGE_CODE == 'ar' %}الحد الأقصى {{ "1000"|to_arabic_digits_if_arabic:LANGUAGE_CODE }} حرف، الروابط غير مسموحة{% else %}Max 1000 characters, no links allowed{% endif %})</small></label>
                                     <textarea class="form-control" id="message" rows="5" required maxlength="1000" placeholder="{% trans 'Please provide details about your inquiry. Note: Links and URLs are not allowed in messages.' %}"></textarea>
                                     <div class="form-text text-end">
-                                        <span id="charCount">0</span>/1000 {% trans "characters" %}
+                                        {% get_current_language as LANGUAGE_CODE %}<span id="charCount">{{ "0"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</span>/{{ "1000"|to_arabic_digits_if_arabic:LANGUAGE_CODE }} {% trans "characters" %}
                                         <span id="linkWarning" class="text-danger ms-2" style="display: none;">⚠️ {% trans "Links not allowed" %}</span>
                                     </div>
                                 </div>

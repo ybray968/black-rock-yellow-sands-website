@@ -76,11 +76,9 @@ msgstr "مسقط"
 
 #: templates/base.html:1 templates/main/contact.html:1
 msgid "Sidab"
-msgstr "صيداب"
+msgstr "سيداب"
 
-#: templates/base.html:1 templates/main/contact.html:1
-msgid "b.n."
-msgstr "ع.ب."
+
 
 #: templates/main/contact.html:1
 msgid "Sunday"
@@ -231,9 +229,6 @@ msgstr "زر معرضنا"
 msgid "Sultanate of Oman, Muscat"
 msgstr "سلطنة عمان، مسقط"
 
-#: templates/main/contact.html:1
-msgid "Sidab, b.n. 1/286/1"
-msgstr "سيداب، ع.ب. 1/286/1"
 
 #: templates/main/contact.html:1
 msgid "Business Hours"
