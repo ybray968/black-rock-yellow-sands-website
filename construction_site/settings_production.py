@@ -47,6 +47,16 @@ SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 
+# CSRF settings for Railway
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+    'https://*.up.railway.app',
+]
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SAMESITE = 'Lax'  # Changed from Strict for language switching
+CSRF_USE_SESSIONS = False  # Use cookies instead for better compatibility
+
 # Static files storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
