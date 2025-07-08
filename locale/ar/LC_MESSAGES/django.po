@@ -687,3 +687,6 @@ msgstr "السبت: مغلق"
 
 msgid "I am a human and not a robot"
 msgstr "أنا إنسان ولست روبوت"
+
+msgid "Contact Black Rock And Yellow Sands International"
+msgstr "تواصل مع شركة الصخرة السوداء والرمال الصفراء الدولية"

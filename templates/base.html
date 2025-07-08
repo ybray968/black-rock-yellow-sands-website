@@ -390,7 +390,15 @@
                                 <li>
                                     <form action="{% url 'set_language' %}" method="post" style="display: inline;">
                                         {% csrf_token %}
-                                        <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+                                        {% with request.get_full_path as current_path %}
+                                            {% if current_path|slice:":3" == "/ar" %}
+                                                <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                            {% elif current_path|slice:":3" == "/en" %}
+                                                <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                            {% else %}
+                                                <input name="next" type="hidden" value="{{ current_path }}" />
+                                            {% endif %}
+                                        {% endwith %}
                                         <input name="language" type="hidden" value="{{ lang_code }}" />
                                         <button type="submit" class="dropdown-item">
                                             {% if lang_code == 'ar' %}
