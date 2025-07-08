@@ -272,3 +272,5 @@ For technical support or questions about this Django website, please contact the
 ## License
 
 This project is created for educational and commercial use. Modify as needed for your business requirements.
+#   F o r c e   r e d e p l o y   -   0 7 / 0 8 / 2 0 2 5   2 1 : 5 6 : 2 1  
+ 
