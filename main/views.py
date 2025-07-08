@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from products.models import Product, Category
 
 def home(request):
@@ -35,3 +36,7 @@ def about(request):
 def contact(request):
     """Contact page view"""
     return render(request, 'main/contact.html')
+
+def health_check(request):
+    """Health check endpoint for deployment platforms"""
+    return JsonResponse({'status': 'healthy', 'message': 'Application is running'})
