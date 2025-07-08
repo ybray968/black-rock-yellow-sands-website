@@ -61,6 +61,12 @@ def to_arabic_digits(value):
     for pattern in patterns:
         result = re.sub(pattern, convert_number, result)
     
+    # Also convert 'x' to '×' in dimensions when using Arabic digits
+    # Only if the string contains Arabic digits
+    if any(arabic_digit in result for arabic_digit in digit_map.values()):
+        # Replace 'x' with '×' in dimension patterns (number×number)
+        result = re.sub(r'([٠-٩]+)x([٠-٩]+)', r'\1×\2', result)
+    
     return mark_safe(result)
 
 @register.filter(name='to_arabic_digits_if_arabic')
