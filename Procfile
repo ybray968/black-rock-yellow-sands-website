@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput && python manage.py migrate --noinput && gunicorn construction_site.wsgi:application --bind 0.0.0.0:$PORT
+web: python -c "import polib; po = polib.pofile('locale/ar/LC_MESSAGES/django.po'); po.save_as_mofile('locale/ar/LC_MESSAGES/django.mo')" && python manage.py collectstatic --noinput && python manage.py migrate --noinput && gunicorn construction_site.wsgi:application --bind 0.0.0.0:$PORT
