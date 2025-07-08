@@ -53,7 +53,6 @@ class ProductListView(ListView):
                 custom_order=Case(
                     When(name__icontains='Deck', then=Value(1)),
                     When(name__icontains='Exterior Birch', then=Value(2)),
-                    When(name__icontains='Birch Exterior', then=Value(2)),
                     When(name__icontains='Interior Birch', then=Value(3)),
                     When(name__icontains='Birch Interior', then=Value(3)),
                     When(name__icontains='Parquet', then=Value(4)),

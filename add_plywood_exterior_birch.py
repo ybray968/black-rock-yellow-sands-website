@@ -13,12 +13,12 @@ category, created = Category.objects.get_or_create(
     defaults={'slug': 'plywood', 'description': 'High-quality plywood for construction and building needs'}
 )
 
-# Get or create the Plywood Birch Exterior product
+# Get or create the Plywood Exterior Birch product
 product, created = Product.objects.get_or_create(
         name="Plywood Exterior Birch (WBP)",
     defaults={
-        'slug': slugify('Plywood Birch Exterior WBP'),
-        'description': 'Plywood "Birch Exterior" is a brand of WBP birch plywood. It has increased water resistance due to the usage of a glue based on phenol-formaldehyde resin. Plywood Birch Exterior is made of 100% birch veneer and thus has such properties as high strength, durability, low weight and high performance. The plywood can be overlaid with HPL (high-pressure laminate) or fiberglass.\n\nWBP plywood can be used for many purposes including construction, shipbuilding, exterior and interior decoration works, commercial vehicles production, carriage building, packaging, sheathing, flooring, parquet manufacturing. Can be overlaid with protective and decorative HPL coating, dark brown phenolic film or modified UV resistant phenolic film available in different colors.',
+        'slug': slugify('Plywood Exterior Birch WBP'),
+        'description': 'Plywood Exterior Birch is a brand of WBP birch plywood. It has increased water resistance due to the usage of a glue based on phenol-formaldehyde resin. Plywood Exterior Birch is made of 100% birch veneer and thus has such properties as high strength, durability, low weight and high performance. The plywood can be overlaid with HPL (high-pressure laminate) or fiberglass.\n\nWBP plywood can be used for many purposes including construction, shipbuilding, exterior and interior decoration works, commercial vehicles production, carriage building, packaging, sheathing, flooring, parquet manufacturing. Can be overlaid with protective and decorative HPL coating, dark brown phenolic film or modified UV resistant phenolic film available in different colors.',
         'price': 55.00,
         'category': category,
         'wood_species': 'birch',
@@ -35,12 +35,12 @@ product, created = Product.objects.get_or_create(
 
 # Update the description if the product already exists
 if not created:
-    product.description = 'Plywood "Birch Exterior" is a brand of WBP birch plywood. It has increased water resistance due to the usage of a glue based on phenol-formaldehyde resin. Plywood Birch Exterior is made of 100% birch veneer and thus has such properties as high strength, durability, low weight and high performance. The plywood can be overlaid with HPL (high-pressure laminate) or fiberglass.\n\nWBP plywood can be used for many purposes including construction, shipbuilding, exterior and interior decoration works, commercial vehicles production, carriage building, packaging, sheathing, flooring, parquet manufacturing. Can be overlaid with protective and decorative HPL coating, dark brown phenolic film or modified UV resistant phenolic film available in different colors.'
+    product.description = 'Plywood Exterior Birch is a brand of WBP birch plywood. It has increased water resistance due to the usage of a glue based on phenol-formaldehyde resin. Plywood Exterior Birch is made of 100% birch veneer and thus has such properties as high strength, durability, low weight and high performance. The plywood can be overlaid with HPL (high-pressure laminate) or fiberglass.\n\nWBP plywood can be used for many purposes including construction, shipbuilding, exterior and interior decoration works, commercial vehicles production, carriage building, packaging, sheathing, flooring, parquet manufacturing. Can be overlaid with protective and decorative HPL coating, dark brown phenolic film or modified UV resistant phenolic film available in different colors.'
     product.save()
-    print('Plywood Birch Exterior product description updated successfully!')
+    print('Plywood Exterior Birch product description updated successfully!')
 
 if created:
-    print('Plywood Birch Exterior product added successfully!')
+    print('Plywood Exterior Birch product added successfully!')
     
     # Add detailed specifications
     specifications = [
@@ -62,4 +62,4 @@ if created:
     
     print('Product specifications added successfully!')
 else:
-    print('Plywood Birch Exterior product already exists.')
+    print('Plywood Exterior Birch product already exists.')
