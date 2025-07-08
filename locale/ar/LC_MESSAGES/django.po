@@ -343,6 +343,15 @@ msgstr "سيداب، مسقط"
 msgid "Sultanate of Oman"
 msgstr "سلطنة عمان"
 
+msgid "Sultanate of Oman, Muscat"
+msgstr "سلطنة عمان، مسقط"
+
+msgid "Sidab, b.n. 1/286/1"
+msgstr "سيداب، ع.ب. 1/286/1"
+
+msgid "Sultanate of Oman, Muscat, Sidab, b.n. 1/286/1"
+msgstr "سلطنة عمان، مسقط، سيداب، ع.ب. 1/286/1"
+
 msgid "CR:"
 msgstr "رقم التسجيل:"
 
