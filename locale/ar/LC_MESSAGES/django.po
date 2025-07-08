@@ -690,3 +690,12 @@ msgstr "أنا إنسان ولست روبوت"
 
 msgid "Contact Black Rock And Yellow Sands International"
 msgstr "تواصل مع شركة الصخرة السوداء والرمال الصفراء الدولية"
+
+msgid "Please provide details about your inquiry. Note: Links and URLs are not allowed in messages."
+msgstr "يرجى تقديم تفاصيل حول استفسارك. ملاحظة: الروابط وعناوين URL غير مسموح بها في الرسائل."
+
+msgid "characters"
+msgstr "حرف"
+
+msgid "Links not allowed"
+msgstr "الروابط غير مسموحة"
