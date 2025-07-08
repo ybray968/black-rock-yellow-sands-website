@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load arabic_digits %}
 
 {% block title %}{% trans "Contact Us" %} - Black Rock And Yellow Sands International{% endblock %}
 
@@ -128,7 +129,8 @@ body {
                         <div class="card-body text-center p-4">
                             <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
                             <h4>{% trans "Visit Our Showroom" %}</h4>
-                            <p class="mb-0">{% trans "Sultanate of Oman, Muscat" %}<br>{% trans "Sidab, b.n. 1/286/1" %}</p>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            <p class="mb-0">{% trans "Sultanate of Oman, Muscat" %}<br>{% trans "Sidab, b.n." %} {{ "1/286/1"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
                         </div>
                     </div>
                 </div>
@@ -137,7 +139,8 @@ body {
                         <div class="card-body text-center p-4">
                             <i class="fas fa-clock fa-3x text-primary mb-3"></i>
                             <h4>{% trans "Business Hours" %}</h4>
-                            <p class="mb-0">{% trans "Sunday - Friday: 8:00 - 18:00" %}<br>{% trans "Saturday: Closed" %}</p>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            <p class="mb-0">{% trans "Sunday - Friday:" %} {{ "8:00 - 18:00"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}<br>{% trans "Saturday: Closed" %}</p>
                         </div>
                     </div>
                 </div>
@@ -146,7 +149,8 @@ body {
                         <div class="card-body text-center p-4">
                             <i class="fas fa-phone fa-3x text-primary mb-3"></i>
                             <h4>{% trans "Call Us" %}</h4>
-                            <p class="mb-0">+968 96896989</p>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            <p class="mb-0">{{ "+968 96896989"|to_arabic_digits_if_arabic:LANGUAGE_CODE }}</p>
                         </div>
                     </div>
                 </div>
