@@ -67,7 +67,14 @@
                                         {% endif %}
                                     </div>
                                     
-                                    <p class="card-text mb-4" style="color: var(--light-text); line-height: 1.6;">{{ product.description|safe }}</p>
+                                    <p class="card-text mb-4" style="color: var(--light-text); line-height: 1.6;">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% if LANGUAGE_CODE == 'ar' and product.description_ar %}
+                                            {{ product.description_ar|safe }}
+                                        {% else %}
+                                            {{ product.description|safe }}
+                                        {% endif %}
+                                    </p>
                                     
                                     <!-- Advantages Section (for plywood and parquet products) -->
                                     {% if product.category.slug == 'plywood' or product.category.slug == 'parquet' %}

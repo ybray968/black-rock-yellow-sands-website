@@ -351,3 +351,339 @@ msgstr "الرقم الضريبي:"
 
 msgid "Email Business"
 msgstr "أرسل بريدًا للأعمال"
+
+msgid "Premium Plywood Construction Materials"
+msgstr "مواد البناء من الخشب الرقائقي الفاخر"
+
+msgid "Premium Birch Plywood & Construction Materials Wholesale"
+msgstr "الخشب الرقائقي البتولا الفاخر ومواد البناء بالجملة"
+
+msgid "Discover our extensive collection of high-quality plywood construction materials. Perfect for construction professionals, contractors and manufacturers."
+msgstr "اكتشف مجموعتنا الواسعة من مواد البناء من الخشب الرقائقي عالية الجودة. مثالية لمحترفي البناء والمقاولين والمصنعين."
+
+msgid "Discover Products"
+msgstr "اكتشف المنتجات"
+
+msgid "Versatile building materials for construction"
+msgstr "مواد بناء متعددة الاستخدامات للبناء"
+
+msgid "Why Choose Black Rock And Yellow Sands International?"
+msgstr "لماذا تختار شركة الصخرة السوداء والرمال الصفراء الدولية؟"
+
+msgid "CARB Compliant"
+msgstr "متوافق مع معايير CARB"
+
+msgid "Formaldehyde emission level is absolutely safe for human health and the environment."
+msgstr "مستوى انبعاث الفورمالديهايد آمن تماماً لصحة الإنسان والبيئة."
+
+msgid "Quick manufacturing and reliable delivery to keep your projects on schedule."
+msgstr "تصنيع سريع وتوصيل موثوق للحفاظ على مواعيد مشاريعك."
+
+msgid "Browse Catalog"
+msgstr "تصفح الكتالوج"
+
+msgid "Our Products"
+msgstr "منتجاتنا"
+
+msgid "product found"
+msgid_plural "products found"
+msgstr[0] "منتج واحد وجد"
+msgstr[1] "منتجين وجدوا"
+msgstr[2] "منتجات وجدت"
+
+msgid "Get Quote"
+msgstr "احصل على عرض سعر"
+
+msgid "In Stock"
+msgstr "متوفر في المخزون"
+
+msgid "Out of Stock"
+msgstr "غير متوفر في المخزون"
+
+msgid "Moderately dangerous in terms of toxicity"
+msgstr "متوسطة الخطورة من حيث السمّية"
+
+msgid "Safe combustion products"
+msgstr "منتجات احتراق آمنة"
+
+msgid "Moderate smoke-generating capacity"
+msgstr "سعة توليد دخان معتدلة"
+
+msgid "Controlled smoke emission"
+msgstr "انبعاثات دخان محكومة"
+
+msgid "Inflame-resistant and low flammable"
+msgstr "مقاومة للاشتعال وقابلة للاشتعال المنخفض"
+
+msgid "Advanced fire safety properties"
+msgstr "خصائص أمان حرائق متقدمة"
+
+msgid "Maximum slip resistance"
+msgstr "الحد الأقصى لمقاومة الانزلاق"
+
+msgid "Wire-mesh antislip surface for safety"
+msgstr "سطح مضاد للانزلاق من الشبكة السلكية للأمان"
+
+msgid "Resistance to environmental conditions"
+msgstr "مقاومة لظروف البيئة"
+
+msgid "Durability Testing"
+msgstr "اختبار المتانة"
+
+msgid "View All Products"
+msgstr "عرض كل المنتجات"
+
+msgid "View Taber Test Results"
+msgstr "عرض نتائج اختبار تابير"
+
+msgid "Technical Specifications"
+msgstr "المواصفات الفنية"
+
+msgid "Excellent bonding properties"
+msgstr "خصائص اتصال ممتازة"
+
+msgid "Superior adhesive compatibility"
+msgstr "توافق لاصق فائق"
+
+msgid "WBP grade waterproof performance"
+msgstr "أداء مقاوم للماء بدرجة WBP"
+
+msgid "Exceptional durability"
+msgstr "متانة استثنائية"
+
+msgid "Long-lasting performance in harsh conditions"
+msgstr "أداء طويل الأمد في ظروف قاسية"
+
+msgid "Easy to use and process"
+msgstr "سهل الاستخدام والمعالجة"
+
+msgid "Excellent machinability and finishing"
+msgstr "قابلية تشغيل وإنهاء ممتازة"
+
+msgid "Moderately dangerous in terms of toxicity of combustion products"
+msgstr "متوسطة الخطورة من حيث سمية منتجات الاحتراق"
+
+msgid "Exceptional Sound-insulation properties"
+msgstr "خصائص عزل صوتي استثنائية"
+
+msgid "Excellent capacity to hold fasteners"
+msgstr "قدرة ممتازة على تثبيت المشابك"
+
+msgid "Superior fastening and assembly capabilities"
+msgstr "قدرات تثبيت وتجميع فائقة"
+
+msgid "Possibility of deep imprints"
+msgstr "إمكانية عمل طبعات عميقة"
+
+msgid "Advanced surface texturing capabilities"
+msgstr "قدرات نسيج سطحي متقدمة"
+
+msgid "Decorative antislip surface"
+msgstr "سطح زخرفي مضاد للانزلاق"
+
+msgid "Hexagonal pattern combining beauty and function"
+msgstr "نمط سداسي يجمع بين الجمال والوظيفة"
+
+msgid "Mechanical damage resistance"
+msgstr "مقاومة الأضرار الميكانيكية"
+
+msgid "High load-bearing capacity"
+msgstr "قدرة تحمل أحمال عالية"
+
+msgid "Transport industry and construction applications"
+msgstr "تطبيقات صناعة النقل والبناء"
+
+msgid "Heavy-duty commercial transport applications"
+msgstr "تطبيقات النقل التجاري الثقيل"
+
+msgid "Resistant to the impact of roller wheels"
+msgstr "مقاوم لتأثير العجلات المدحرجة"
+
+msgid "Material handling equipment protection"
+msgstr "حماية معدات مناولة المواد"
+
+msgid "High strength and durability"
+msgstr "قوة ومتانة عالية"
+
+msgid "Enhanced strength properties with solid veneer option"
+msgstr "خصائص قوة محسنة مع خيار القشرة الصلبة"
+
+msgid "Resistance to moisture impact"
+msgstr "مقاومة تأثير الرطوبة"
+
+msgid "Improved moisture resistance for flooring applications"
+msgstr "مقاومة رطوبة محسنة لتطبيقات الأرضيات"
+
+msgid "Special thickness tolerances"
+msgstr "تحمل سمك خاص"
+
+msgid "Strict thickness control for parquet manufacturing"
+msgstr "تحكم صارم في السمك لتصنيع الباركيه"
+
+msgid "Complete absence of healthy color changes"
+msgstr "غياب تام لتغيرات الألوان الصحية"
+
+msgid "Consistent color quality in B and BB grades"
+msgstr "جودة لون ثابتة في درجات B و BB"
+
+msgid "Safe for human health"
+msgstr "آمن لصحة الإنسان"
+
+msgid "Low formaldehyde emission levels"
+msgstr "مستويات انبعاث فورمالديهايد منخفضة"
+
+msgid "Environmentally friendly"
+msgstr "صديق للبيئة"
+
+msgid "Sustainable forestry practices"
+msgstr "ممارسات غابات مستدامة"
+
+msgid "Light weight"
+msgstr "وزن خفيف"
+
+msgid "Easy handling and installation"
+msgstr "سهولة التعامل والتركيب"
+
+msgid "Beautiful birch texture"
+msgstr "نسيج بتولا جميل"
+
+msgid "Natural wood grain appearance"
+msgstr "مظهر حبيبات الخشب الطبيعي"
+
+msgid "Resistance to moisture impact and UV-radiation"
+msgstr "مقاومة تأثير الرطوبة والأشعة فوق البنفسجية"
+
+msgid "Enhanced protection against environmental factors"
+msgstr "حماية محسنة ضد العوامل البيئية"
+
+msgid "Wear-resistant decorative surface of birch veneer"
+msgstr "سطح زخرفي مقاوم للتآكل من قشرة البتولا"
+
+msgid "Durable surface layer for decorative applications"
+msgstr "طبقة سطحية متينة للتطبيقات الزخرفية"
+
+msgid "Natural wood aesthetics"
+msgstr "جماليات الخشب الطبيعي"
+
+msgid "Beautiful natural birch appearance"
+msgstr "مظهر بتولا طبيعي جميل"
+
+msgid "Easy to maintain"
+msgstr "سهل الصيانة"
+
+msgid "Simple cleaning and maintenance requirements"
+msgstr "متطلبات تنظيف وصيانة بسيطة"
+
+msgid "Strength and durability"
+msgstr "القوة والمتانة"
+
+msgid "Ultra-durable birch plywood for construction"
+msgstr "خشب رقائقي بتولا فائق المتانة للبناء"
+
+msgid "High resistance to surface abrasion"
+msgstr "مقاومة عالية لتآكل السطح"
+
+msgid "Taber Test proven durability"
+msgstr "متانة مثبتة باختبار تابير"
+
+msgid "Increased water-resistance"
+msgstr "مقاومة متزايدة للماء"
+
+msgid "Wide range of film colors and densities"
+msgstr "مجموعة واسعة من ألوان وكثافات الأفلام"
+
+msgid "We are proud of our plywood durability. Our plywood regularly undergoes durability and abrasion tests in lab and on site. Click on the button below to view durability test results and learn more about our plywood"
+msgstr "نحن فخورون بمتانة الخشب الرقائقي لدينا. يخضع خشبنا الرقائقي بانتظام لاختبارات المتانة والتآكل في المختبر وفي الموقع. انقر على الزر أدناه لعرض نتائج اختبار المتانة ومعرفة المزيد عن خشبنا الرقائقي"
+
+msgid "Applications"
+msgstr "التطبيقات"
+
+msgid "No products found"
+msgstr "لم يتم العثور على منتجات"
+
+msgid "Try adjusting your filters or search terms."
+msgstr "جرب تعديل المرشحات أو شروط البحث."
+
+msgid "About Black Rock And Yellow Sands International"
+msgstr "حول شركة الصخرة السوداء والرمال الصفراء الدولية"
+
+msgid "Who We Are"
+msgstr "من نحن"
+
+msgid "Black Rock And Yellow Sands International is a wholesale supplier of construction plywood of extreme quality, meeting all emission standards, especially for formaldehyde."
+msgstr "شركة الصخرة السوداء والرمال الصفراء الدولية هي مورد بالجملة للخشب الرقائقي للبناء بجودة فائقة، تلبي جميع معايير الانبعاثات، وخاصة للفورمالديهايد."
+
+msgid "Our clients are contractors, construction professionals, and manufacturers who demand top-quality plywood for their projects. We understand that in professional construction and manufacturing, material quality is non-negotiable."
+msgstr "عملاؤنا هم مقاولون ومحترفو بناء ومصنعون يطالبون بخشب رقائقي عالي الجودة لمشاريعهم. نحن نفهم أنه في البناء والتصنيع المهني، جودة المواد غير قابلة للتفاوض."
+
+msgid "To be the preferred wholesale supplier of premium construction plywood for professionals who demand uncompromising quality and reliable supply chains."
+msgstr "أن نكون المورد المفضل بالجملة للخشب الرقائقي الممتاز للمحترفين الذين يطالبون بجودة لا تقبل المساومة وسلاسل توريد موثوقة."
+
+msgid "To deliver consistent, high-quality construction plywood that meets professional standards, with reliable supply chains and competitive wholesale pricing."
+msgstr "تقديم خشب رقائقي للبناء عالي الجودة ومتسق يلبي المعايير المهنية، مع سلاسل توريد موثوقة وأسعار جملة تنافسية."
+
+msgid "What Sets Us Apart"
+msgstr "ما يميزنا"
+
+msgid "All emission standards met"
+msgstr "جميع معايير الانبعاثات مستوفاة"
+
+msgid "Wholesale Focus"
+msgstr "تركيز على الجملة"
+
+msgid "Volume pricing for professionals"
+msgstr "أسعار الكميات للمحترفين"
+
+msgid "Quality Control"
+msgstr "مراقبة الجودة"
+
+msgid "Extreme quality standards"
+msgstr "معايير جودة فائقة"
+
+msgid "Professional Grade"
+msgstr "درجة مهنية"
+
+msgid "For contractors \u0026 manufacturers"
+msgstr "للمقاولين والمصنعين"
+
+msgid "1 (B) grade"
+msgstr "الدرجة 1 (B)"
+
+msgid "1 (B) grade is almost without defects, only a few sound knots with a diameter of up to 15 mm are allowed"
+msgstr "الدرجة 1 (B) تكاد تكون خالية من العيوب، يُسمح فقط ببعض العقد الصوتية بقطر يصل إلى 15 مم"
+
+msgid "2 (BB) grade"
+msgstr "الدرجة 2 (BB)"
+
+msgid "2 (BB) grade allows patches on the surface of the sheet. Knots and open defects are repaired with veneer inserts"
+msgstr "الدرجة 2 (BB) تسمح بالرقع على سطح الصفيحة. تُصلح العقد والعيوب المفتوحة بإدخالات قشرة"
+
+msgid "3 (CP) grade"
+msgstr "الدرجة 3 (CP)"
+
+msgid "3 (CP) grade allows partly accrete, single and loose knots with a diameter of no more than 6 mm in the amount of 10 pcs. per 1 m² of the sheet surface"
+msgstr "الدرجة 3 (CP) تسمح بالعقد الملتصقة جزئيًا والعقد الفردية والحرة بقطر لا يزيد عن 6 مم بكمية 10 قطع لكل متر مربع من سطح الصفيحة"
+
+msgid "4 (C) grade"
+msgstr "الدرجة 4 (C)"
+
+msgid "4 (C) grade allows many manufacturing defects, a strong gluing is guaranteed"
+msgstr "الدرجة 4 (C) تسمح بالعديد من العيوب التصنيعية، يضمن اللصق القوي"
+
+msgid "Max 1000 characters, no links allowed"
+msgstr "أقصى 1000 حرف، الروابط غير مسموح بها"
+
+msgid "0/1000 characters"
+msgstr "0/1000 حرف"
+
+msgid "Please check this box to verify that you are human"
+msgstr "يرجى تحديد هذا الصندوق للتحقق من أنك إنسان"
+
+msgid "Sunday - Friday: 8:00 - 18:00"
+msgstr "الأحد - الجمعة: 8:00 - 18:00"
+
+msgid "Saturday: Closed"
+msgstr "السبت: مغلق"
+
+msgid "I am a human and not a robot"
+msgstr "أنا إنسان ولست روبوت"
