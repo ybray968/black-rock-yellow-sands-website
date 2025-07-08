@@ -42,23 +42,26 @@ if not created:
 if created:
     print('Plywood Birch Interior product added successfully!')
     
-    # Add detailed specifications
+    # Add detailed specifications (thickness first)
     specifications = [
-        ('Sizes, mm', '1525x1525, cut-to-size'),
-        ('Grades', '1/2 (B/BB), 2/2 (BB/BB), 2/3 (BB/CP), 2/4 (BB/C), 3/3 (CP/CP), 3/4 (CP/C), 4/4 (C/C)'),
-        ('Type of surface', 'not-sanded (NS) and both sides sanded (S2)'),
-        ('Formaldehyde emission (limit value 3.5 mg/h x m²)', '0.1-0.3 mg/h x m²'),
-        ('Moisture resistance', 'MR (Moisture Resistant) - urea-formaldehyde resin'),
-        ('Application', 'Indoor applications - furniture, interior decoration, packaging'),
-        ('Environmental status', 'Environmentally friendly material'),
-        ('Advantages', 'High strength and durability, Safe for human health and the environment, Light weight, Wide range of thicknesses and sizes, Beautiful texture of birch wood')
+        ('Thicknesses', 'السماكات', '4, 6, 8, 9, 10, 11, 12, 14, 15, 17, 18, 20, 21, 24, 25, 30 mm', ''),
+        ('Sizes, mm', 'الأحجام، مم', '1525x1525, cut-to-size', ''),
+        ('Grades', 'الدرجات', '1/2 (B/BB), 2/2 (BB/BB), 2/3 (BB/CP), 2/4 (BB/C), 3/3 (CP/CP), 3/4 (CP/C), 4/4 (C/C)', ''),
+        ('Type of surface', 'نوع السطح', 'not-sanded (NS) and both sides sanded (S2)', ''),
+        ('Formaldehyde emission (limit value 3.5 mg/h x m²)', 'انبعاث الفورمالديهايد (القيمة الحدية 3.5 مغ/س × م²)', '0.1-0.3 mg/h x m²', ''),
+        ('Moisture resistance', 'مقاومة الرطوبة', 'MR (Moisture Resistant) - urea-formaldehyde resin', ''),
+        ('Application', 'التطبيق', 'Indoor applications - furniture, interior decoration, packaging', ''),
+        ('Environmental status', 'الحالة البيئية', 'Environmentally friendly material', ''),
+        ('Advantages', 'المزايا', 'High strength and durability, Safe for human health and the environment, Light weight, Wide range of thicknesses and sizes, Beautiful texture of birch wood', '')
     ]
     
-    for spec_name, spec_value in specifications:
+    for spec_name, spec_name_ar, spec_value, spec_value_ar in specifications:
         ProductSpecification.objects.create(
             product=product,
             name=spec_name,
-            value=spec_value
+            name_ar=spec_name_ar,
+            value=spec_value,
+            value_ar=spec_value_ar
         )
     
     print('Product specifications added successfully!')

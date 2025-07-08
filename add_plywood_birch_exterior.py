@@ -42,22 +42,25 @@ if not created:
 if created:
     print('Plywood Birch Exterior product added successfully!')
     
-    # Add detailed specifications
+    # Add detailed specifications (thickness first)
     specifications = [
-        ('Sizes, mm', '2440x1220 or 1220x2440; 1250x2500 or 2500x1250; 1525x1525; 1500x3000; 1525x3050, cut-to-size'),
-        ('Grades', '1/2 (B/BB), 2/2 (BB/BB), 2/3 (BB/CP), 2/4 (BB/C), 3/3 (CP/CP), 3/4 (CP/C)'),
-        ('Type of surface', 'not-sanded (NS) and both sides sanded (S2), overlaid with HPL, fiberglass'),
-        ('Formaldehyde emission (limit value 3.5 mg/h x m²)', '0.1-0.3 mg/h x m²'),
-        ('Water resistance', 'WBP (Weather and Boil Proof) - phenol-formaldehyde resin'),
-        ('CARB status', 'ULEF (Ultra Low Emitting Formaldehyde)'),
-        ('Advantages', 'Excellent bonding properties, Resistance to moisture impact, Wide range of thicknesses and sizes, Exceptional durability, Easy to use and process')
+        ('Thicknesses', 'السماكات', '4, 6, 6.5, 8, 9, 10, 12, 15, 16, 18, 19, 21, 24, 27, 30, 35, 40 mm', ''),
+        ('Sizes, mm', 'الأحجام، مم', '2440x1220 or 1220x2440; 1250x2500 or 2500x1250; 1525x1525; 1500x3000; 1525x3050, cut-to-size', ''),
+        ('Grades', 'الدرجات', '1/2 (B/BB), 2/2 (BB/BB), 2/3 (BB/CP), 2/4 (BB/C), 3/3 (CP/CP), 3/4 (CP/C)', ''),
+        ('Type of surface', 'نوع السطح', 'not-sanded (NS) and both sides sanded (S2), overlaid with HPL, fiberglass', ''),
+        ('Formaldehyde emission (limit value 3.5 mg/h x m²)', 'انبعاث الفورمالديهايد (القيمة الحدية 3.5 مغ/س × م²)', '0.1-0.3 mg/h x m²', ''),
+        ('Water resistance', 'مقاومة الماء', 'WBP (Weather and Boil Proof) - phenol-formaldehyde resin', ''),
+        ('CARB status', 'حالة CARB', 'ULEF (Ultra Low Emitting Formaldehyde)', ''),
+        ('Advantages', 'المزايا', 'Excellent bonding properties, Resistance to moisture impact, Wide range of thicknesses and sizes, Exceptional durability, Easy to use and process', '')
     ]
     
-    for spec_name, spec_value in specifications:
+    for spec_name, spec_name_ar, spec_value, spec_value_ar in specifications:
         ProductSpecification.objects.create(
             product=product,
             name=spec_name,
-            value=spec_value
+            name_ar=spec_name_ar,
+            value=spec_value,
+            value_ar=spec_value_ar
         )
     
     print('Product specifications added successfully!')

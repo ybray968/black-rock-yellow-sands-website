@@ -42,20 +42,23 @@ if not created:
 if created:
     print('Plywood Deck product added successfully!')
     
-    # Add detailed specifications
+    # Add detailed specifications (thickness first)
     specifications = [
-        ('Sizes, mm', '2440x1220 or 1220x2440; 1250x2500 or 2500x1250; 1525x1525; 1525x3050, cut-to-size'),
-        ('Grades', '1/1 (B/B)'),
-        ('Type of surface', 'smooth/smooth (F/F)'),
-        ('Film density, g/m²', '120/120, 120/220, 220/220'),
-        ('Formaldehyde emission (limit value 3.5 mg/h x m²)', '0.1-0.3 mg/h x m²')
+        ('Thicknesses', 'السماكات', '6.5, 9, 12, 15, 16, 18, 19, 21, 24, 27, 30, 35, 40 mm', ''),
+        ('Sizes, mm', 'الأحجام، مم', '2440x1220 or 1220x2440; 1250x2500 or 2500x1250; 1525x1525; 1525x3050, cut-to-size', ''),
+        ('Grades', 'الدرجات', '1/1 (B/B)', ''),
+        ('Type of surface', 'نوع السطح', 'smooth/smooth (F/F)', ''),
+        ('Film density, g/m²', 'كثافة الفيلم، غ/م²', '120/120, 120/220, 220/220', ''),
+        ('Formaldehyde emission (limit value 3.5 mg/h x m²)', 'انبعاث الفورمالديهايد (القيمة الحدية 3.5 مغ/س × م²)', '0.1-0.3 mg/h x m²', '')
     ]
     
-    for spec_name, spec_value in specifications:
+    for spec_name, spec_name_ar, spec_value, spec_value_ar in specifications:
         ProductSpecification.objects.create(
             product=product,
             name=spec_name,
-            value=spec_value
+            name_ar=spec_name_ar,
+            value=spec_value,
+            value_ar=spec_value_ar
         )
     
     print('Product specifications added successfully!')
