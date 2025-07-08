@@ -2,7 +2,7 @@ import os
 from .settings import *
 
 # Production settings
-DEBUG = False
+DEBUG = True  # Temporarily enable for debugging
 
 # Railway provides this
 ALLOWED_HOSTS = ['*']

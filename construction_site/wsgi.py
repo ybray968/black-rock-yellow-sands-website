@@ -11,6 +11,11 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'construction_site.settings')
+# Use production settings if DJANGO_SETTINGS_MODULE is not set and we're on Railway
+if not os.environ.get('DJANGO_SETTINGS_MODULE'):
+    if os.environ.get('RAILWAY_ENVIRONMENT'):
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'construction_site.settings_production')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'construction_site.settings')
 
 application = get_wsgi_application()
