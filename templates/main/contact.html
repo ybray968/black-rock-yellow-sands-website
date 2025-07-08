@@ -366,9 +366,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const messageField = document.getElementById('message');
     const charCountDisplay = document.getElementById('charCount');
     
+    // Function to convert digits to Arabic if language is Arabic
+    function convertToArabicDigits(number) {
+        const language = document.documentElement.lang || 'en';
+        if (language === 'ar') {
+            const arabicDigits = {
+                '0': '٠', '1': '١', '2': '٢', '3': '٣', '4': '٤',
+                '5': '٥', '6': '٦', '7': '٧', '8': '٨', '9': '٩'
+            };
+            return String(number).replace(/[0-9]/g, digit => arabicDigits[digit] || digit);
+        }
+        return String(number);
+    }
+    
     function updateCharCount() {
         const currentLength = messageField.value.length;
-        charCountDisplay.textContent = currentLength;
+        charCountDisplay.textContent = convertToArabicDigits(currentLength);
         
         // Change color based on character count
         if (currentLength > 900) {

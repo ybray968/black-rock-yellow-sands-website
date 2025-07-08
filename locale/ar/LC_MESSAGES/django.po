@@ -1,710 +1,1063 @@
-# Arabic translations for Braysint Construction Materials Website
-# Copyright (C) 2025 Black Rock And Yellow Sands International
-# This file is distributed under the same license as the PACKAGE package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Braysint Website\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-26 16:42+0000\n"
-"PO-Revision-Date: 2025-06-26 16:42+0000\n"
-"Last-Translator: Admin\n"
-"Language-Team: Arabic\n"
 "Language: ar\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-msgid "Premium Wood & Construction Materials"
-msgstr "خشب فاخر ومواد بناء"
-
-msgid "Home"
-msgstr "الرئيسية"
-
-msgid "Products"
-msgstr "المنتجات"
-
-msgid "About"
-msgstr "نبذة عنا"
-
-msgid "Contact"
-msgstr "اتصل بنا"
-
-msgid "Search products..."
-msgstr "ابحث عن المنتجات..."
-
-msgid "Discover our extensive collection of high-quality hardwood, parquet, and plywood. Perfect for construction professionals, contractors, and DIY enthusiasts."
-msgstr "اكتشف مجموعتنا الواسعة من الخشب الصلب والباركيه والخشب الرقائقي عالي الجودة. مثالية لمحترفي البناء والمقاولين وعشاق الأعمال اليدوية."
-
-msgid "Browse Products"
-msgstr "تصفح المنتجات"
-
-msgid "Get Quote"
-msgstr "احصل على عرض سعر"
-
-msgid "Product Categories"
-msgstr "فئات المنتجات"
-
-msgid "Hardwood"
-msgstr "الخشب الصلب"
-
-msgid "Premium oak, maple, walnut and more"
-msgstr "بلوط وقيقب وجوز فاخر والمزيد"
-
-msgid "Parquet"
-msgstr "الباركيه"
-
-msgid "Beautiful flooring solutions"
-msgstr "حلول أرضيات جميلة"
-
-msgid "Plywood"
-msgstr "الخشب الرقائقي"
-
-msgid "Versatile building materials"
-msgstr "مواد بناء متعددة الاستخدامات"
-
-msgid "Engineered Wood"
-msgstr "الخشب المُصنع"
-
-msgid "Modern composite solutions"
-msgstr "حلول مركبة حديثة"
-
-msgid "Featured Products"
-msgstr "المنتجات المميزة"
-
-msgid "View Details"
-msgstr "عرض التفاصيل"
-
-msgid "View All Products"
-msgstr "عرض جميع المنتجات"
-
-msgid "Why Choose Braysint?"
-msgstr "لماذا تختار برايسنت؟"
-
-msgid "About Braysint"
-msgstr "حول برايسنت"
-
-msgid "Contact Braysint"
-msgstr "تواصل مع برايسنت"
-
-msgid "Premium Quality"
-msgstr "جودة فائقة"
-
-msgid "Carefully selected materials that meet the highest industry standards."
-msgstr "مواد مختارة بعناية تلبي أعلى معايير الصناعة."
-
-msgid "Sustainable"
-msgstr "مستدام"
-
-msgid "Environmentally responsible sourcing from certified forests."
-msgstr "مصادر مسؤولة بيئياً من غابات معتمدة."
-
-msgid "Fast Delivery"
-msgstr "توصيل سريع"
-
-msgid "Quick and reliable delivery to keep your projects on schedule."
-msgstr "توصيل سريع وموثوق للحفاظ على مواعيد مشاريعك."
-
-msgid "Expert Support"
-msgstr "دعم خبراء"
-
-msgid "Professional guidance from our experienced team."
-msgstr "إرشاد مهني من فريقنا ذو الخبرة."
-
-msgid "Ready to Start Your Project?"
-msgstr "جاهز لبدء مشروعك؟"
-
-msgid "Get in touch with our experts for personalized recommendations and competitive pricing."
-msgstr "تواصل مع خبرائنا للحصول على توصيات شخصية وأسعار تنافسية."
-
-msgid "Contact Us"
-msgstr "اتصل بنا"
-
-msgid "Browse Catalog"
-msgstr "تصفح الكتالوج"
-
-msgid "Premium quality wood, parquet, and plywood for all your construction needs. We provide sustainable and durable materials for professionals and DIY enthusiasts."
-msgstr "خشب وباركيه وخشب رقائقي عالي الجودة لجميع احتياجات البناء الخاصة بك. نوفر مواد مستدامة ومتينة للمحترفين وعشاق الأعمال اليدوية."
-
-msgid "Black Rock And Yellow Sands International"
-msgstr "شركة الصخرة السوداء والرمال الصفراء الدولية"
-
-msgid "Company"
-msgstr "الشركة"
-
-msgid "About Us"
-msgstr "نبذة عنا"
-
-msgid "Careers"
-msgstr "الوظائف"
-
-msgid "Blog"
-msgstr "المدونة"
-
-msgid "Contact Info"
-msgstr "معلومات الاتصال"
-
-msgid "123 Construction Ave, Builder City, BC 12345"
-msgstr "شارع البناء 123، مدينة البناء، BC 12345"
-
-msgid "All rights reserved."
-msgstr "جميع الحقوق محفوظة."
-
-msgid "Privacy Policy"
-msgstr "سياسة الخصوصية"
-
-msgid "Terms of Service"
-msgstr "شروط الخدمة"
-
-msgid "Our Story"
-msgstr "قصتنا"
-
-msgid "Founded with a passion for quality craftsmanship and sustainable forestry, Braysint has been serving the construction industry for over two decades."
-msgstr "تأسست برايسنت بشغف للعمل اليدوي عالي الجودة وحفاظًا على الموارد الحرجية المستدامة، وتقدم الخدمة لصناعة البناء لأكثر من عقدين."
-
-msgid "We specialize in providing premium wood materials including hardwood, parquet, and plywood to contractors, builders, and DIY enthusiasts across the region."
-msgstr "نحن متخصصون في توفير مواد خشبية عالية الجودة بما في ذلك الخشب الصلب، الباركيه، والخشب الرقائقي للمقاولين والبنائين ومحبي الأعمال اليدوية في جميع أنحاء المنطقة."
-
-msgid "Our Vision"
-msgstr "رؤيتنا"
-
-msgid "To be the leading supplier of sustainable wood materials while maintaining the highest standards of quality and customer service."
-msgstr "أن نكون المورد الرائد للمواد الخشبية المستدامة مع الحفاظ على أعلى معايير الجودة وخدمة العملاء."
-
-msgid "Our Mission"
-msgstr "مهمتنا"
-
-msgid "To provide construction professionals with reliable, high-quality wood products while promoting sustainable forestry practices."
-msgstr "لتزويد المحترفين في البناء بمنتجات خشبية موثوقة وعالية الجودة مع الترويج للممارسات الحرجية المستدامة."
-
-msgid "Why Choose Us?"
-msgstr "لماذا تختارنا؟"
-
-msgid "25+ Years Experience"
-msgstr "خبرة لأكثر من 25 عامًا"
-
-msgid "Sustainable Sourcing"
-msgstr "توفير مستدام"
-
-msgid "Get in touch with our team for quotes, product information, or any questions about our wood materials."
-msgstr "تواصل مع فريقنا للحصول على أسعار، معلومات عن المنتجات، أو أية أسئلة حول مواد الخشب لدينا."
-
-msgid "Visit Our Showroom"
-msgstr "زر معرضنا"
-
-msgid "123 Construction Ave"
-msgstr "شارع البناء 123"
-
-msgid "Builder City, BC 12345"
-msgstr "مدينة البناء، BC 12345"
-
-msgid "Call Us"
-msgstr "اتصل بنا"
-
-msgid "Email Us"
-msgstr "أرسل لنا بريدًا إلكترونيًا"
-
-msgid "Business Hours"
-msgstr "ساعات العمل"
-
-msgid "Mon-Fri: 7:00 AM - 6:00 PM"
-msgstr "من الإثنين إلى الجمعة: من 7:00 صباحًا حتى 6:00 مساءً"
-
-msgid "Sat: 8:00 AM - 4:00 PM"
-msgstr "يوم السبت: من 8:00 صباحًا حتى 4:00 مساءً"
-
-msgid "Sun: Closed"
-msgstr "يوم الأحد: مغلق"
-
-msgid "Send Us a Message"
-msgstr "أرسل لنا رسالة"
-
-msgid "Full Name"
-msgstr "الاسم الكامل"
-
-msgid "Email Address"
-msgstr "البريد الإلكتروني"
-
-msgid "Phone Number"
-msgstr "رقم الهاتف"
-
-msgid "Subject"
-msgstr "موضوع الرسالة"
-
-msgid "Select a subject"
-msgstr "اختر موضوعًا"
-
-msgid "Request a Quote"
-msgstr "طلب تسعير"
-
-msgid "Product Information"
-msgstr "معلومات المنتج"
-
-msgid "Delivery Inquiry"
-msgstr "استفسار عن التوصيل"
-
-msgid "Customer Support"
-msgstr "دعم العملاء"
-
-msgid "Other"
-msgstr "غير ذلك"
-
-msgid "Message"
-msgstr "الرسالة"
-
-msgid "Please provide details about your inquiry..."
-msgstr "يرجى تقديم تفاصيل حول استفسارك..."
-
-msgid "Send Message"
-msgstr "إرسال الرسالة"
-
-msgid "Need Immediate Assistance?"
-msgstr "تحتاج مساعدة فورية؟"
-
-msgid "Our sales team is ready to help you find the perfect wood materials for your project."
-msgstr "فريق المبيعات لدينا جاهز لمساعدتك في العثور على المواد الخشبية المثالية لمشروعك."
-
-msgid "Call Now"
-msgstr "اتصل الآن"
-
-msgid "Email Sales"
-msgstr "أرسل بريدًا إلى المبيعات"
-
-msgid "Filter Products"
-msgstr "تصفية المنتجات"
-
-msgid "Search"
-msgstr "بحث"
-
-msgid "Category"
-msgstr "الفئة"
-
-msgid "All Categories"
-msgstr "جميع الفئات"
-
-msgid "Wood Type"
-msgstr "نوع الخشب"
-
-msgid "All Types"
-msgstr "جميع الأنواع"
-
-msgid "Wood Species"
-msgstr "أنواع الخشب"
-
-msgid "All Species"
-msgstr "جميع الأنواع"
-
-msgid "Sort By"
-msgstr "ترتيب حسب"
-
-msgid "Name A-Z"
-msgstr "الاسم من أ إلى ي"
-
-msgid "Price: Low to High"
-msgstr "السعر: من الأقل إلى الأعلى"
-
-msgid "Price: High to Low"
-msgstr "السعر: من الأعلى إلى الأقل"
-
-msgid "Newest First"
-msgstr "الأحدث أولاً"
-
-msgid "Apply Filters"
-msgstr "تطبيق المرشحات"
-
-msgid "Clear All"
-msgstr "مسح الكل"
-
-msgid "Our Products"
-msgstr "منتجاتنا"
-
-msgid "product"
-msgstr "منتج"
-
-msgid "found"
-msgstr "تم العثور عليها"
-
-msgid "Out of Stock"
-msgstr "غير متوفر"
-
-msgid "No products found"
-msgstr "لم يتم العثور على منتجات"
-
-msgid "Try adjusting your search criteria or browse all products."
-msgstr "حاول تعديل معايير البحث أو تصفح جميع المنتجات."
-
-msgid "Sidab, Muscat, Sultanate of Oman"
-msgstr "سيداب، مسقط، سلطنة عمان"
-
-msgid "Sidab, Muscat"
-msgstr "سيداب، مسقط"
-
-msgid "Sultanate of Oman"
-msgstr "سلطنة عمان"
-
-msgid "Sultanate of Oman, Muscat"
-msgstr "سلطنة عمان، مسقط"
-
-msgid "Sidab, b.n. 1/286/1"
-msgstr "سيداب، ع.ب. 1/286/1"
-
-msgid "Sultanate of Oman, Muscat, Sidab, b.n. 1/286/1"
-msgstr "سلطنة عمان، مسقط، سيداب، ع.ب. 1/286/1"
-
-msgid "CR:"
-msgstr "رقم التسجيل:"
-
-msgid "VATIN:"
-msgstr "الرقم الضريبي:"
-
-msgid "Email Business"
-msgstr "أرسل بريدًا للأعمال"
-
+#: templates/base.html:1 templates/main/home.html:1
 msgid "Premium Plywood Construction Materials"
 msgstr "مواد البناء من الخشب الرقائقي الفاخر"
 
+#: templates/base.html:1
+msgid "Home"
+msgstr "الرئيسية"
+
+#: templates/base.html:1 templates/base.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Products"
+msgstr "المنتجات"
+
+#: templates/base.html:1
+msgid "About"
+msgstr "نبذة عنا"
+
+#: templates/base.html:1 templates/base.html:1
+msgid "Contact"
+msgstr "اتصل بنا"
+
+#: templates/base.html:1 templates/products/product_list_backup.html:1
+msgid "Search products..."
+msgstr "ابحث عن المنتجات..."
+
+#: templates/base.html:1
+msgid "Back to top"
+msgstr ""
+
+#: templates/base.html:1 templates/main/home.html:1
 msgid "Premium Birch Plywood & Construction Materials Wholesale"
 msgstr "الخشب الرقائقي البتولا الفاخر ومواد البناء بالجملة"
 
-msgid "Discover our extensive collection of high-quality plywood construction materials. Perfect for construction professionals, contractors and manufacturers."
-msgstr "اكتشف مجموعتنا الواسعة من مواد البناء من الخشب الرقائقي عالية الجودة. مثالية لمحترفي البناء والمقاولين والمصنعين."
-
-msgid "Discover Products"
-msgstr "اكتشف المنتجات"
-
-msgid "Versatile building materials for construction"
-msgstr "مواد بناء متعددة الاستخدامات للبناء"
-
-msgid "Why Choose Black Rock And Yellow Sands International?"
-msgstr "لماذا تختار شركة الصخرة السوداء والرمال الصفراء الدولية؟"
-
-msgid "CARB Compliant"
-msgstr "متوافق مع معايير CARB"
-
-msgid "Formaldehyde emission level is absolutely safe for human health and the environment."
-msgstr "مستوى انبعاث الفورمالديهايد آمن تماماً لصحة الإنسان والبيئة."
-
-msgid "Quick manufacturing and reliable delivery to keep your projects on schedule."
-msgstr "تصنيع سريع وتوصيل موثوق للحفاظ على مواعيد مشاريعك."
-
-msgid "Browse Catalog"
-msgstr "تصفح الكتالوج"
-
-msgid "Our Products"
-msgstr "منتجاتنا"
-
-msgid "product found"
-msgid_plural "products found"
-msgstr[0] "منتج واحد وجد"
-msgstr[1] "منتجين وجدوا"
-msgstr[2] "منتجات وجدت"
-
-msgid "Get Quote"
-msgstr "احصل على عرض سعر"
-
-msgid "In Stock"
-msgstr "متوفر في المخزون"
-
-msgid "Out of Stock"
-msgstr "غير متوفر في المخزون"
-
-msgid "Moderately dangerous in terms of toxicity"
-msgstr "متوسطة الخطورة من حيث السمّية"
-
-msgid "Safe combustion products"
-msgstr "منتجات احتراق آمنة"
-
-msgid "Moderate smoke-generating capacity"
-msgstr "سعة توليد دخان معتدلة"
-
-msgid "Controlled smoke emission"
-msgstr "انبعاثات دخان محكومة"
-
-msgid "Inflame-resistant and low flammable"
-msgstr "مقاومة للاشتعال وقابلة للاشتعال المنخفض"
-
-msgid "Advanced fire safety properties"
-msgstr "خصائص أمان حرائق متقدمة"
-
-msgid "Maximum slip resistance"
-msgstr "الحد الأقصى لمقاومة الانزلاق"
-
-msgid "Wire-mesh antislip surface for safety"
-msgstr "سطح مضاد للانزلاق من الشبكة السلكية للأمان"
-
-msgid "Resistance to environmental conditions"
-msgstr "مقاومة لظروف البيئة"
-
-msgid "Durability Testing"
-msgstr "اختبار المتانة"
-
-msgid "View All Products"
-msgstr "عرض كل المنتجات"
-
-msgid "View Taber Test Results"
-msgstr "عرض نتائج اختبار تابير"
-
-msgid "Technical Specifications"
-msgstr "المواصفات الفنية"
-
-msgid "Excellent bonding properties"
-msgstr "خصائص اتصال ممتازة"
-
-msgid "Superior adhesive compatibility"
-msgstr "توافق لاصق فائق"
-
-msgid "WBP grade waterproof performance"
-msgstr "أداء مقاوم للماء بدرجة WBP"
-
-msgid "Exceptional durability"
-msgstr "متانة استثنائية"
-
-msgid "Long-lasting performance in harsh conditions"
-msgstr "أداء طويل الأمد في ظروف قاسية"
-
-msgid "Easy to use and process"
-msgstr "سهل الاستخدام والمعالجة"
-
-msgid "Excellent machinability and finishing"
-msgstr "قابلية تشغيل وإنهاء ممتازة"
-
-msgid "Moderately dangerous in terms of toxicity of combustion products"
-msgstr "متوسطة الخطورة من حيث سمية منتجات الاحتراق"
-
-msgid "Exceptional Sound-insulation properties"
-msgstr "خصائص عزل صوتي استثنائية"
-
-msgid "Excellent capacity to hold fasteners"
-msgstr "قدرة ممتازة على تثبيت المشابك"
-
-msgid "Superior fastening and assembly capabilities"
-msgstr "قدرات تثبيت وتجميع فائقة"
-
-msgid "Possibility of deep imprints"
-msgstr "إمكانية عمل طبعات عميقة"
-
-msgid "Advanced surface texturing capabilities"
-msgstr "قدرات نسيج سطحي متقدمة"
-
-msgid "Decorative antislip surface"
-msgstr "سطح زخرفي مضاد للانزلاق"
-
-msgid "Hexagonal pattern combining beauty and function"
-msgstr "نمط سداسي يجمع بين الجمال والوظيفة"
-
-msgid "Mechanical damage resistance"
-msgstr "مقاومة الأضرار الميكانيكية"
-
-msgid "High load-bearing capacity"
-msgstr "قدرة تحمل أحمال عالية"
-
-msgid "Transport industry and construction applications"
-msgstr "تطبيقات صناعة النقل والبناء"
-
-msgid "Heavy-duty commercial transport applications"
-msgstr "تطبيقات النقل التجاري الثقيل"
-
-msgid "Resistant to the impact of roller wheels"
-msgstr "مقاوم لتأثير العجلات المدحرجة"
-
-msgid "Material handling equipment protection"
-msgstr "حماية معدات مناولة المواد"
-
-msgid "High strength and durability"
-msgstr "قوة ومتانة عالية"
-
-msgid "Enhanced strength properties with solid veneer option"
-msgstr "خصائص قوة محسنة مع خيار القشرة الصلبة"
-
-msgid "Resistance to moisture impact"
-msgstr "مقاومة تأثير الرطوبة"
-
-msgid "Improved moisture resistance for flooring applications"
-msgstr "مقاومة رطوبة محسنة لتطبيقات الأرضيات"
-
-msgid "Special thickness tolerances"
-msgstr "تحمل سمك خاص"
-
-msgid "Strict thickness control for parquet manufacturing"
-msgstr "تحكم صارم في السمك لتصنيع الباركيه"
-
-msgid "Complete absence of healthy color changes"
-msgstr "غياب تام لتغيرات الألوان الصحية"
-
-msgid "Consistent color quality in B and BB grades"
-msgstr "جودة لون ثابتة في درجات B و BB"
-
-msgid "Safe for human health"
-msgstr "آمن لصحة الإنسان"
-
-msgid "Low formaldehyde emission levels"
-msgstr "مستويات انبعاث فورمالديهايد منخفضة"
-
-msgid "Environmentally friendly"
-msgstr "صديق للبيئة"
-
-msgid "Sustainable forestry practices"
-msgstr "ممارسات غابات مستدامة"
-
-msgid "Light weight"
-msgstr "وزن خفيف"
-
-msgid "Easy handling and installation"
-msgstr "سهولة التعامل والتركيب"
-
-msgid "Beautiful birch texture"
-msgstr "نسيج بتولا جميل"
-
-msgid "Natural wood grain appearance"
-msgstr "مظهر حبيبات الخشب الطبيعي"
-
-msgid "Resistance to moisture impact and UV-radiation"
-msgstr "مقاومة تأثير الرطوبة والأشعة فوق البنفسجية"
-
-msgid "Enhanced protection against environmental factors"
-msgstr "حماية محسنة ضد العوامل البيئية"
-
-msgid "Wear-resistant decorative surface of birch veneer"
-msgstr "سطح زخرفي مقاوم للتآكل من قشرة البتولا"
-
-msgid "Durable surface layer for decorative applications"
-msgstr "طبقة سطحية متينة للتطبيقات الزخرفية"
-
-msgid "Natural wood aesthetics"
-msgstr "جماليات الخشب الطبيعي"
-
-msgid "Beautiful natural birch appearance"
-msgstr "مظهر بتولا طبيعي جميل"
-
-msgid "Easy to maintain"
-msgstr "سهل الصيانة"
-
-msgid "Simple cleaning and maintenance requirements"
-msgstr "متطلبات تنظيف وصيانة بسيطة"
-
-msgid "Strength and durability"
-msgstr "القوة والمتانة"
-
-msgid "Ultra-durable birch plywood for construction"
-msgstr "خشب رقائقي بتولا فائق المتانة للبناء"
-
-msgid "High resistance to surface abrasion"
-msgstr "مقاومة عالية لتآكل السطح"
-
-msgid "Taber Test proven durability"
-msgstr "متانة مثبتة باختبار تابير"
-
-msgid "Increased water-resistance"
-msgstr "مقاومة متزايدة للماء"
-
-msgid "Wide range of film colors and densities"
-msgstr "مجموعة واسعة من ألوان وكثافات الأفلام"
-
-msgid "We are proud of our plywood durability. Our plywood regularly undergoes durability and abrasion tests in lab and on site. Click on the button below to view durability test results and learn more about our plywood"
-msgstr "نحن فخورون بمتانة الخشب الرقائقي لدينا. يخضع خشبنا الرقائقي بانتظام لاختبارات المتانة والتآكل في المختبر وفي الموقع. انقر على الزر أدناه لعرض نتائج اختبار المتانة ومعرفة المزيد عن خشبنا الرقائقي"
-
-msgid "Applications"
-msgstr "التطبيقات"
-
-msgid "No products found"
-msgstr "لم يتم العثور على منتجات"
-
-msgid "Try adjusting your filters or search terms."
-msgstr "جرب تعديل المرشحات أو شروط البحث."
-
+#: templates/base.html:1
+msgid "Sultanate of Oman"
+msgstr "سلطنة عمان"
+
+#: templates/base.html:1 templates/main/home.html:1
+msgid "Plywood"
+msgstr "الخشب الرقائقي"
+
+#: templates/base.html:1 templates/main/contact.html:1
+msgid "Company"
+msgstr "الشركة"
+
+#: templates/base.html:1 templates/main/about.html:1
+msgid "About Us"
+msgstr "نبذة عنا"
+
+#: templates/base.html:1
+msgid "Careers"
+msgstr "الوظائف"
+
+#: templates/base.html:1
+msgid "Blog"
+msgstr "المدونة"
+
+#: templates/base.html:1
+msgid "Contact Info"
+msgstr "معلومات الاتصال"
+
+#: templates/base.html:1
+msgid "Sultanate of Oman, Muscat, Sidab, b.n. 1/286/1"
+msgstr "سلطنة عمان، مسقط، سيداب، ع.ب. 1/286/1"
+
+#: templates/base.html:1
+msgid "CR:"
+msgstr "رقم التسجيل:"
+
+#: templates/base.html:1
+msgid "VATIN:"
+msgstr "الرقم الضريبي:"
+
+#: templates/base.html:1
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+#: templates/base.html:1
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+#: templates/base.html:1
+msgid "Terms of Service"
+msgstr "شروط الخدمة"
+
+#: templates/main/about.html:1
 msgid "About Black Rock And Yellow Sands International"
 msgstr "حول شركة الصخرة السوداء والرمال الصفراء الدولية"
 
+#: templates/main/about.html:1
 msgid "Who We Are"
 msgstr "من نحن"
 
-msgid "Black Rock And Yellow Sands International is a wholesale supplier of construction plywood of extreme quality, meeting all emission standards, especially for formaldehyde."
-msgstr "شركة الصخرة السوداء والرمال الصفراء الدولية هي مورد بالجملة للخشب الرقائقي للبناء بجودة فائقة، تلبي جميع معايير الانبعاثات، وخاصة للفورمالديهايد."
+#: templates/main/about.html:1
+msgid ""
+"Black Rock And Yellow Sands International is a wholesale supplier of "
+"construction plywood of extreme quality, meeting all emission standards, "
+"especially for formaldehyde."
+msgstr ""
+"شركة الصخرة السوداء والرمال الصفراء الدولية هي مورد بالجملة للخشب الرقائقي "
+"للبناء بجودة فائقة، تلبي جميع معايير الانبعاثات، وخاصة للفورمالديهايد."
 
-msgid "Our clients are contractors, construction professionals, and manufacturers who demand top-quality plywood for their projects. We understand that in professional construction and manufacturing, material quality is non-negotiable."
-msgstr "عملاؤنا هم مقاولون ومحترفو بناء ومصنعون يطالبون بخشب رقائقي عالي الجودة لمشاريعهم. نحن نفهم أنه في البناء والتصنيع المهني، جودة المواد غير قابلة للتفاوض."
+#: templates/main/about.html:1
+msgid ""
+"Our clients are contractors, construction professionals, and manufacturers "
+"who demand top-quality plywood for their projects. We understand that in "
+"professional construction and manufacturing, material quality is non-"
+"negotiable."
+msgstr ""
+"عملاؤنا هم مقاولون ومحترفو بناء ومصنعون يطالبون بخشب رقائقي عالي الجودة "
+"لمشاريعهم. نحن نفهم أنه في البناء والتصنيع المهني، جودة المواد غير قابلة "
+"للتفاوض."
 
-msgid "To be the preferred wholesale supplier of premium construction plywood for professionals who demand uncompromising quality and reliable supply chains."
-msgstr "أن نكون المورد المفضل بالجملة للخشب الرقائقي الممتاز للمحترفين الذين يطالبون بجودة لا تقبل المساومة وسلاسل توريد موثوقة."
+#: templates/main/about.html:1
+msgid "Our Vision"
+msgstr "رؤيتنا"
 
-msgid "To deliver consistent, high-quality construction plywood that meets professional standards, with reliable supply chains and competitive wholesale pricing."
-msgstr "تقديم خشب رقائقي للبناء عالي الجودة ومتسق يلبي المعايير المهنية، مع سلاسل توريد موثوقة وأسعار جملة تنافسية."
+#: templates/main/about.html:1
+msgid ""
+"To be the preferred wholesale supplier of premium construction plywood for "
+"professionals who demand uncompromising quality and reliable supply chains."
+msgstr ""
+"أن نكون المورد المفضل بالجملة للخشب الرقائقي الممتاز للمحترفين الذين يطالبون"
+" بجودة لا تقبل المساومة وسلاسل توريد موثوقة."
 
+#: templates/main/about.html:1
+msgid "Our Mission"
+msgstr "مهمتنا"
+
+#: templates/main/about.html:1
+msgid ""
+"To deliver consistent, high-quality construction plywood that meets "
+"professional standards, with reliable supply chains and competitive "
+"wholesale pricing."
+msgstr ""
+"تقديم خشب رقائقي للبناء عالي الجودة ومتسق يلبي المعايير المهنية، مع سلاسل "
+"توريد موثوقة وأسعار جملة تنافسية."
+
+#: templates/main/about.html:1
 msgid "What Sets Us Apart"
 msgstr "ما يميزنا"
 
+#: templates/main/about.html:1 templates/main/home.html:1
+msgid "CARB Compliant"
+msgstr "متوافق مع معايير CARB"
+
+#: templates/main/about.html:1
 msgid "All emission standards met"
 msgstr "جميع معايير الانبعاثات مستوفاة"
 
+#: templates/main/about.html:1
 msgid "Wholesale Focus"
 msgstr "تركيز على الجملة"
 
+#: templates/main/about.html:1
 msgid "Volume pricing for professionals"
 msgstr "أسعار الكميات للمحترفين"
 
+#: templates/main/about.html:1
 msgid "Quality Control"
 msgstr "مراقبة الجودة"
 
+#: templates/main/about.html:1
 msgid "Extreme quality standards"
 msgstr "معايير جودة فائقة"
 
+#: templates/main/about.html:1
 msgid "Professional Grade"
 msgstr "درجة مهنية"
 
-msgid "For contractors \u0026 manufacturers"
-msgstr "للمقاولين والمصنعين"
+#: templates/main/about.html:1
+msgid "For contractors & manufacturers"
+msgstr ""
 
-msgid "1 (B) grade"
-msgstr "الدرجة 1 (B)"
+#: templates/main/contact.html:1 templates/main/home.html:1
+msgid "Contact Us"
+msgstr "اتصل بنا"
 
-msgid "1 (B) grade is almost without defects, only a few sound knots with a diameter of up to 15 mm are allowed"
-msgstr "الدرجة 1 (B) تكاد تكون خالية من العيوب، يُسمح فقط ببعض العقد الصوتية بقطر يصل إلى 15 مم"
-
-msgid "2 (BB) grade"
-msgstr "الدرجة 2 (BB)"
-
-msgid "2 (BB) grade allows patches on the surface of the sheet. Knots and open defects are repaired with veneer inserts"
-msgstr "الدرجة 2 (BB) تسمح بالرقع على سطح الصفيحة. تُصلح العقد والعيوب المفتوحة بإدخالات قشرة"
-
-msgid "3 (CP) grade"
-msgstr "الدرجة 3 (CP)"
-
-msgid "3 (CP) grade allows partly accrete, single and loose knots with a diameter of no more than 6 mm in the amount of 10 pcs. per 1 m² of the sheet surface"
-msgstr "الدرجة 3 (CP) تسمح بالعقد الملتصقة جزئيًا والعقد الفردية والحرة بقطر لا يزيد عن 6 مم بكمية 10 قطع لكل متر مربع من سطح الصفيحة"
-
-msgid "4 (C) grade"
-msgstr "الدرجة 4 (C)"
-
-msgid "4 (C) grade allows many manufacturing defects, a strong gluing is guaranteed"
-msgstr "الدرجة 4 (C) تسمح بالعديد من العيوب التصنيعية، يضمن اللصق القوي"
-
-msgid "Max 1000 characters, no links allowed"
-msgstr "أقصى 1000 حرف، الروابط غير مسموح بها"
-
-msgid "0/1000 characters"
-msgstr "0/1000 حرف"
-
-msgid "Please check this box to verify that you are human"
-msgstr "يرجى تحديد هذا الصندوق للتحقق من أنك إنسان"
-
-msgid "Sunday - Friday: 8:00 - 18:00"
-msgstr "الأحد - الجمعة: 8:00 - 18:00"
-
-msgid "Saturday: Closed"
-msgstr "السبت: مغلق"
-
-msgid "I am a human and not a robot"
-msgstr "أنا إنسان ولست روبوت"
-
+#: templates/main/contact.html:1
 msgid "Contact Black Rock And Yellow Sands International"
 msgstr "تواصل مع شركة الصخرة السوداء والرمال الصفراء الدولية"
 
-msgid "Please provide details about your inquiry. Note: Links and URLs are not allowed in messages."
-msgstr "يرجى تقديم تفاصيل حول استفسارك. ملاحظة: الروابط وعناوين URL غير مسموح بها في الرسائل."
+#: templates/main/contact.html:1
+msgid ""
+"Get in touch with our team for quotes, product information, or any questions"
+" about our wood materials."
+msgstr ""
+"تواصل مع فريقنا للحصول على أسعار، معلومات عن المنتجات، أو أية أسئلة حول مواد"
+" الخشب لدينا."
 
+#: templates/main/contact.html:1
+msgid "Visit Our Showroom"
+msgstr "زر معرضنا"
+
+#: templates/main/contact.html:1
+msgid "Sultanate of Oman, Muscat"
+msgstr "سلطنة عمان، مسقط"
+
+#: templates/main/contact.html:1
+msgid "Sidab, b.n. 1/286/1"
+msgstr "سيداب، ع.ب. 1/286/1"
+
+#: templates/main/contact.html:1
+msgid "Business Hours"
+msgstr "ساعات العمل"
+
+#: templates/main/contact.html:1
+msgid "Sunday - Friday: 8:00 - 18:00"
+msgstr "الأحد - الجمعة: 8:00 - 18:00"
+
+#: templates/main/contact.html:1
+msgid "Saturday: Closed"
+msgstr "السبت: مغلق"
+
+#: templates/main/contact.html:1
+msgid "Call Us"
+msgstr "اتصل بنا"
+
+#: templates/main/contact.html:1
+msgid "Send Us a Message"
+msgstr "أرسل لنا رسالة"
+
+#: templates/main/contact.html:1
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#: templates/main/contact.html:1
+msgid "Email Address"
+msgstr "البريد الإلكتروني"
+
+#: templates/main/contact.html:1
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#: templates/main/contact.html:1
+msgid "Subject"
+msgstr "موضوع الرسالة"
+
+#: templates/main/contact.html:1
+msgid "Select a subject"
+msgstr "اختر موضوعًا"
+
+#: templates/main/contact.html:1
+msgid "Request a Quote"
+msgstr "طلب تسعير"
+
+#: templates/main/contact.html:1
+msgid "Product Information"
+msgstr "معلومات المنتج"
+
+#: templates/main/contact.html:1
+msgid "Delivery Inquiry"
+msgstr "استفسار عن التوصيل"
+
+#: templates/main/contact.html:1
+msgid "Customer Support"
+msgstr "دعم العملاء"
+
+#: templates/main/contact.html:1
+msgid "Other"
+msgstr "غير ذلك"
+
+#: templates/main/contact.html:1
+msgid "Message"
+msgstr "الرسالة"
+
+#: templates/main/contact.html:1
+msgid "Max 1000 characters, no links allowed"
+msgstr "أقصى 1000 حرف، الروابط غير مسموح بها"
+
+#: templates/main/contact.html:1
+msgid ""
+"Please provide details about your inquiry. Note: Links and URLs are not "
+"allowed in messages."
+msgstr ""
+"يرجى تقديم تفاصيل حول استفسارك. ملاحظة: الروابط وعناوين URL غير مسموح بها في"
+" الرسائل."
+
+#: templates/main/contact.html:1
 msgid "characters"
 msgstr "حرف"
 
+#: templates/main/contact.html:1
 msgid "Links not allowed"
 msgstr "الروابط غير مسموحة"
+
+#: templates/main/contact.html:1
+msgid "I am a human and not a robot"
+msgstr "أنا إنسان ولست روبوت"
+
+#: templates/main/contact.html:1
+msgid "Please check this box to verify that you are human"
+msgstr "يرجى تحديد هذا الصندوق للتحقق من أنك إنسان"
+
+#: templates/main/contact.html:1
+msgid "Send Message"
+msgstr "إرسال الرسالة"
+
+#: templates/main/contact.html:1
+msgid "Need Immediate Assistance?"
+msgstr "تحتاج مساعدة فورية؟"
+
+#: templates/main/contact.html:1
+msgid ""
+"Our sales team is ready to help you find the perfect wood materials for your"
+" project."
+msgstr ""
+"فريق المبيعات لدينا جاهز لمساعدتك في العثور على المواد الخشبية المثالية "
+"لمشروعك."
+
+#: templates/main/contact.html:1
+msgid "Call Now"
+msgstr "اتصل الآن"
+
+#: templates/main/contact.html:1
+msgid "Email Business"
+msgstr "أرسل بريدًا للأعمال"
+
+#: templates/main/home.html:1
+msgid ""
+"Discover our extensive collection of high-quality plywood construction "
+"materials. Perfect for construction professionals, contractors and "
+"manufacturers."
+msgstr ""
+"اكتشف مجموعتنا الواسعة من مواد البناء من الخشب الرقائقي عالية الجودة. مثالية"
+" لمحترفي البناء والمقاولين والمصنعين."
+
+#: templates/main/home.html:1
+msgid "Browse Products"
+msgstr "تصفح المنتجات"
+
+#: templates/main/home.html:1 templates/main/home.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Get Quote"
+msgstr "احصل على عرض سعر"
+
+#: templates/main/home.html:1
+msgid "Discover Products"
+msgstr "اكتشف المنتجات"
+
+#: templates/main/home.html:1
+msgid "Versatile building materials for construction"
+msgstr "مواد بناء متعددة الاستخدامات للبناء"
+
+#: templates/main/home.html:1
+msgid "Featured Products"
+msgstr "المنتجات المميزة"
+
+#: templates/main/home.html:1
+msgid "View Details"
+msgstr "عرض التفاصيل"
+
+#: templates/main/home.html:1 templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "View All Products"
+msgstr "عرض كل المنتجات"
+
+#: templates/main/home.html:1
+msgid "Why Choose Black Rock And Yellow Sands International?"
+msgstr "لماذا تختار شركة الصخرة السوداء والرمال الصفراء الدولية؟"
+
+#: templates/main/home.html:1
+msgid "Premium Quality"
+msgstr "جودة فائقة"
+
+#: templates/main/home.html:1
+msgid "Carefully selected materials that meet the highest industry standards."
+msgstr "مواد مختارة بعناية تلبي أعلى معايير الصناعة."
+
+#: templates/main/home.html:1
+msgid ""
+"Formaldehyde emission level is absolutely safe for human health and the "
+"environment."
+msgstr "مستوى انبعاث الفورمالديهايد آمن تماماً لصحة الإنسان والبيئة."
+
+#: templates/main/home.html:1
+msgid "Fast Delivery"
+msgstr "توصيل سريع"
+
+#: templates/main/home.html:1
+msgid ""
+"Quick manufacturing and reliable delivery to keep your projects on schedule."
+msgstr "تصنيع سريع وتوصيل موثوق للحفاظ على مواعيد مشاريعك."
+
+#: templates/main/home.html:1
+msgid "Expert Support"
+msgstr "دعم خبراء"
+
+#: templates/main/home.html:1
+msgid "Professional guidance from our experienced team."
+msgstr "إرشاد مهني من فريقنا ذو الخبرة."
+
+#: templates/main/home.html:1
+msgid "Ready to Start Your Project?"
+msgstr "جاهز لبدء مشروعك؟"
+
+#: templates/main/home.html:1
+msgid ""
+"Get in touch with our experts for personalized recommendations and "
+"competitive pricing."
+msgstr "تواصل مع خبرائنا للحصول على توصيات شخصية وأسعار تنافسية."
+
+#: templates/main/home.html:1
+msgid "Browse Catalog"
+msgstr "تصفح الكتالوج"
+
+#: templates/products/durability_testing.html:1
+#: templates/products/durability_testing.html:1
+#: templates/products/product_list.html:1
+msgid "Durability Testing"
+msgstr "اختبار المتانة"
+
+#: templates/products/durability_testing.html:1
+msgid "Back to Products"
+msgstr ""
+
+#: templates/products/durability_testing.html:1
+msgid "Plywood grades"
+msgstr "درجات الخشب الرقائقي"
+
+#: templates/products/durability_testing.html:1
+msgid "Grade 1 (B)"
+msgstr ""
+
+#: templates/products/durability_testing.html:1
+msgid "1 (B) grade"
+msgstr "الدرجة 1 (B)"
+
+#: templates/products/durability_testing.html:1
+msgid ""
+"1 (B) grade is almost without defects, only a few sound knots with a "
+"diameter of up to 15 mm are allowed"
+msgstr ""
+"الدرجة 1 (B) تكاد تكون خالية من العيوب، يُسمح فقط ببعض العقد الصوتية بقطر "
+"يصل إلى 15 مم"
+
+#: templates/products/durability_testing.html:1
+msgid "Grade 2 (BB)"
+msgstr ""
+
+#: templates/products/durability_testing.html:1
+msgid "2 (BB) grade"
+msgstr "الدرجة 2 (BB)"
+
+#: templates/products/durability_testing.html:1
+msgid ""
+"2 (BB) grade allows patches on the surface of the sheet. Knots and open "
+"defects are repaired with veneer inserts"
+msgstr ""
+"الدرجة 2 (BB) تسمح بالرقع على سطح الصفيحة. تُصلح العقد والعيوب المفتوحة "
+"بإدخالات قشرة"
+
+#: templates/products/durability_testing.html:1
+msgid "Grade 3 (CP)"
+msgstr ""
+
+#: templates/products/durability_testing.html:1
+msgid "3 (CP) grade"
+msgstr "الدرجة 3 (CP)"
+
+#: templates/products/durability_testing.html:1
+msgid ""
+"3 (CP) grade allows partly accrete, single and loose knots with a diameter "
+"of no more than 6 mm in the amount of 10 pcs. per 1 m² of the sheet surface"
+msgstr ""
+"الدرجة 3 (CP) تسمح بالعقد الملتصقة جزئيًا والعقد الفردية والحرة بقطر لا يزيد"
+" عن 6 مم بكمية 10 قطع لكل متر مربع من سطح الصفيحة"
+
+#: templates/products/durability_testing.html:1
+msgid "Grade 4 (C)"
+msgstr ""
+
+#: templates/products/durability_testing.html:1
+msgid "4 (C) grade"
+msgstr "الدرجة 4 (C)"
+
+#: templates/products/durability_testing.html:1
+msgid ""
+"4 (C) grade allows many manufacturing defects, a strong gluing is guaranteed"
+msgstr "الدرجة 4 (C) تسمح بالعديد من العيوب التصنيعية، يضمن اللصق القوي"
+
+#: templates/products/durability_testing.html:1
+msgid "Plywood Deck – Taber Test results (Durability)"
+msgstr "خشب رقائقي Deck – نتائج اختبار Taber (المتانة)"
+
+#: templates/products/durability_testing.html:1
+msgid "Machine:"
+msgstr "الآلة:"
+
+#: templates/products/durability_testing.html:1
+msgid "Taber Model 503"
+msgstr "طراز Taber 503"
+
+#: templates/products/durability_testing.html:1
+msgid "Method:"
+msgstr "الطريقة:"
+
+#: templates/products/durability_testing.html:1
+msgid "determination of coating abrasion resistance"
+msgstr "تحديد مقاومة الطلاء للتآكل"
+
+#: templates/products/durability_testing.html:1
+msgid "Samples received:"
+msgstr "العينات المستلمة:"
+
+#: templates/products/durability_testing.html:1
+msgid "25th July 2024"
+msgstr "٢٥ يوليو ٢٠٢٤"
+
+#: templates/products/durability_testing.html:1
+msgid "Date of testing:"
+msgstr "تاريخ الاختبار:"
+
+#: templates/products/durability_testing.html:1
+msgid "7th August 2024"
+msgstr "٧ أغسطس ٢٠٢٤"
+
+#: templates/products/durability_testing.html:1
+msgid "Product:"
+msgstr "المنتج:"
+
+#: templates/products/durability_testing.html:1
+msgid ""
+"Birch Plywood covered with thermal reactive filming, thickness 18mm, coating"
+" density 120g/m2"
+msgstr "خشب بتولا مغطى بطبقة تصوير حراري، سمك ١٨مم، كثافة الطلاء ١٢٠غ/م٢"
+
+#: templates/products/durability_testing.html:1
+msgid "Taber Test Machine"
+msgstr "آلة اختبار Taber"
+
+#: templates/products/durability_testing.html:1
+msgid "Series, sample #"
+msgstr "السلسلة، العينة #"
+
+#: templates/products/durability_testing.html:1
+msgid "Number of turns"
+msgstr "عدد الدوران"
+
+#: templates/products/durability_testing.html:1
+msgid "Coating abrasive resistance"
+msgstr "مقاومة الطلاء للتآكل"
+
+#: templates/products/durability_testing.html:1
+msgid "(IP), coating begins to wear off"
+msgstr "(IP)، يبدأ الطلاء في التآكل"
+
+#: templates/products/durability_testing.html:1
+msgid "(FP), coating completely wears off"
+msgstr "(FP)، يزول الطلاء تماماً"
+
+#: templates/products/durability_testing.html:1
+msgid "Z = (IP + FP)/2 * f, number of table turns"
+msgstr "Z = (IP + FP)/2 * f، عدد دورانات الطاولة"
+
+#: templates/products/durability_testing.html:1
+msgid "The overall look after abrasion test"
+msgstr "المظهر العام بعد اختبار التآكل"
+
+#: templates/products/durability_testing.html:1
+msgid "Correction factor f = 0.87"
+msgstr "عامل التصحيح f = 0.87"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Our Products"
+msgstr "منتجاتنا"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "product"
+msgstr "منتج"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "found"
+msgstr "تم العثور عليها"
+
+#: templates/products/product_list.html:1
+msgid "Applications"
+msgstr "التطبيقات"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "In Stock"
+msgstr "متوفر في المخزون"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Out of Stock"
+msgstr "غير متوفر في المخزون"
+
+#: templates/products/product_list.html:1
+msgid "Moderately dangerous in terms of toxicity of combustion products"
+msgstr "متوسطة الخطورة من حيث سمية منتجات الاحتراق"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Moderate smoke-generating capacity"
+msgstr "سعة توليد دخان معتدلة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Inflame-resistant and low flammable"
+msgstr "مقاومة للاشتعال وقابلة للاشتعال المنخفض"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Advanced fire safety properties"
+msgstr "خصائص أمان حرائق متقدمة"
+
+#: templates/products/product_list.html:1
+msgid "Exceptional Sound-insulation properties"
+msgstr "خصائص عزل صوتي استثنائية"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Moderately dangerous in terms of toxicity"
+msgstr "متوسطة الخطورة من حيث السمّية"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Safe combustion products"
+msgstr "منتجات احتراق آمنة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Controlled smoke emission"
+msgstr "انبعاثات دخان محكومة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Excellent capacity to hold fasteners"
+msgstr "قدرة ممتازة على تثبيت المشابك"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Superior fastening and assembly capabilities"
+msgstr "قدرات تثبيت وتجميع فائقة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Possibility of deep imprints"
+msgstr "إمكانية عمل طبعات عميقة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Advanced surface texturing capabilities"
+msgstr "قدرات نسيج سطحي متقدمة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Decorative antislip surface"
+msgstr "سطح زخرفي مضاد للانزلاق"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Hexagonal pattern combining beauty and function"
+msgstr "نمط سداسي يجمع بين الجمال والوظيفة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Resistance to environmental conditions"
+msgstr "مقاومة لظروف البيئة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Mechanical damage resistance"
+msgstr "مقاومة الأضرار الميكانيكية"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "High load-bearing capacity"
+msgstr "قدرة تحمل أحمال عالية"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Transport industry and construction applications"
+msgstr "تطبيقات صناعة النقل والبناء"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Resistant to the impact of roller wheels"
+msgstr "مقاوم لتأثير العجلات المدحرجة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Material handling equipment protection"
+msgstr "حماية معدات مناولة المواد"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Maximum slip resistance"
+msgstr "الحد الأقصى لمقاومة الانزلاق"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Wire-mesh antislip surface for safety"
+msgstr "سطح مضاد للانزلاق من الشبكة السلكية للأمان"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Heavy-duty commercial transport applications"
+msgstr "تطبيقات النقل التجاري الثقيل"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "High strength and durability"
+msgstr "قوة ومتانة عالية"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Enhanced strength properties with solid veneer option"
+msgstr "خصائص قوة محسنة مع خيار القشرة الصلبة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Resistance to moisture impact"
+msgstr "مقاومة تأثير الرطوبة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Improved moisture resistance for flooring applications"
+msgstr "مقاومة رطوبة محسنة لتطبيقات الأرضيات"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Special thickness tolerances"
+msgstr "تحمل سمك خاص"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Strict thickness control for parquet manufacturing"
+msgstr "تحكم صارم في السمك لتصنيع الباركيه"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Complete absence of healthy color changes"
+msgstr "غياب تام لتغيرات الألوان الصحية"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Consistent color quality in B and BB grades"
+msgstr "جودة لون ثابتة في درجات B و BB"
+
+#: templates/products/product_list.html:1
+msgid "Safe for human health"
+msgstr "آمن لصحة الإنسان"
+
+#: templates/products/product_list.html:1
+msgid "Low formaldehyde emission levels"
+msgstr "مستويات انبعاث فورمالديهايد منخفضة"
+
+#: templates/products/product_list.html:1
+msgid "Environmentally friendly"
+msgstr "صديق للبيئة"
+
+#: templates/products/product_list.html:1
+msgid "Sustainable forestry practices"
+msgstr "ممارسات غابات مستدامة"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Light weight"
+msgstr "وزن خفيف"
+
+#: templates/products/product_list.html:1
+msgid "Easy handling and installation"
+msgstr "سهولة التعامل والتركيب"
+
+#: templates/products/product_list.html:1
+msgid "Beautiful birch texture"
+msgstr "نسيج بتولا جميل"
+
+#: templates/products/product_list.html:1
+msgid "Natural wood grain appearance"
+msgstr "مظهر حبيبات الخشب الطبيعي"
+
+#: templates/products/product_list.html:1
+msgid "Resistance to moisture impact and UV-radiation"
+msgstr "مقاومة تأثير الرطوبة والأشعة فوق البنفسجية"
+
+#: templates/products/product_list.html:1
+msgid "Enhanced protection against environmental factors"
+msgstr "حماية محسنة ضد العوامل البيئية"
+
+#: templates/products/product_list.html:1
+msgid "Wear-resistant decorative surface of birch veneer"
+msgstr "سطح زخرفي مقاوم للتآكل من قشرة البتولا"
+
+#: templates/products/product_list.html:1
+msgid "Durable surface layer for decorative applications"
+msgstr "طبقة سطحية متينة للتطبيقات الزخرفية"
+
+#: templates/products/product_list.html:1
+msgid "Natural wood aesthetics"
+msgstr "جماليات الخشب الطبيعي"
+
+#: templates/products/product_list.html:1
+msgid "Beautiful natural birch appearance"
+msgstr "مظهر بتولا طبيعي جميل"
+
+#: templates/products/product_list.html:1
+msgid "Easy to maintain"
+msgstr "سهل الصيانة"
+
+#: templates/products/product_list.html:1
+msgid "Simple cleaning and maintenance requirements"
+msgstr "متطلبات تنظيف وصيانة بسيطة"
+
+#: templates/products/product_list.html:1
+msgid "Strength and durability"
+msgstr "القوة والمتانة"
+
+#: templates/products/product_list.html:1
+msgid "Ultra-durable birch plywood for construction"
+msgstr "خشب رقائقي بتولا فائق المتانة للبناء"
+
+#: templates/products/product_list.html:1
+msgid "High resistance to surface abrasion"
+msgstr "مقاومة عالية لتآكل السطح"
+
+#: templates/products/product_list.html:1
+msgid "Taber Test proven durability"
+msgstr "متانة مثبتة باختبار تابير"
+
+#: templates/products/product_list.html:1
+msgid "Increased water-resistance"
+msgstr "مقاومة متزايدة للماء"
+
+#: templates/products/product_list.html:1
+msgid "Wide range of film colors and densities"
+msgstr "مجموعة واسعة من ألوان وكثافات الأفلام"
+
+#: templates/products/product_list.html:1
+msgid ""
+"We are proud of our plywood durability. Our plywood regularly undergoes "
+"durability and abrasion tests in lab and on site. Click on the button below "
+"to view durability test results and learn more about our plywood"
+msgstr ""
+"نحن فخورون بمتانة الخشب الرقائقي لدينا. يخضع خشبنا الرقائقي بانتظام "
+"لاختبارات المتانة والتآكل في المختبر وفي الموقع. انقر على الزر أدناه لعرض "
+"نتائج اختبار المتانة ومعرفة المزيد عن خشبنا الرقائقي"
+
+#: templates/products/product_list.html:1
+msgid "View Taber Test Results"
+msgstr "عرض نتائج اختبار تابير"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Excellent bonding properties"
+msgstr "خصائص اتصال ممتازة"
+
+#: templates/products/product_list.html:1
+msgid "Superior adhesive compatibility"
+msgstr "توافق لاصق فائق"
+
+#: templates/products/product_list.html:1
+msgid "WBP grade waterproof performance"
+msgstr "أداء مقاوم للماء بدرجة WBP"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Exceptional durability"
+msgstr "متانة استثنائية"
+
+#: templates/products/product_list.html:1
+msgid "Long-lasting performance in harsh conditions"
+msgstr "أداء طويل الأمد في ظروف قاسية"
+
+#: templates/products/product_list.html:1
+msgid "Easy to use and process"
+msgstr "سهل الاستخدام والمعالجة"
+
+#: templates/products/product_list.html:1
+msgid "Excellent machinability and finishing"
+msgstr "قابلية تشغيل وإنهاء ممتازة"
+
+#: templates/products/product_list.html:1
+msgid "Technical Specifications"
+msgstr "المواصفات الفنية"
+
+#: templates/products/product_list.html:1
+#: templates/products/product_list_backup.html:1
+msgid "No products found"
+msgstr "لم يتم العثور على منتجات"
+
+#: templates/products/product_list.html:1
+msgid "Try adjusting your filters or search terms."
+msgstr "جرب تعديل المرشحات أو شروط البحث."
+
+#: templates/products/product_list_backup.html:1
+msgid "Filter Products"
+msgstr "تصفية المنتجات"
+
+#: templates/products/product_list_backup.html:1
+msgid "Search"
+msgstr "بحث"
+
+#: templates/products/product_list_backup.html:1
+msgid "Category"
+msgstr "الفئة"
+
+#: templates/products/product_list_backup.html:1
+msgid "All Categories"
+msgstr "جميع الفئات"
+
+#: templates/products/product_list_backup.html:1
+msgid "Wood Type"
+msgstr "نوع الخشب"
+
+#: templates/products/product_list_backup.html:1
+msgid "All Types"
+msgstr "جميع الأنواع"
+
+#: templates/products/product_list_backup.html:1
+msgid "Wood Species"
+msgstr "أنواع الخشب"
+
+#: templates/products/product_list_backup.html:1
+msgid "All Species"
+msgstr "جميع الأنواع"
+
+#: templates/products/product_list_backup.html:1
+msgid "Sort By"
+msgstr "ترتيب حسب"
+
+#: templates/products/product_list_backup.html:1
+msgid "Name A-Z"
+msgstr "الاسم من أ إلى ي"
+
+#: templates/products/product_list_backup.html:1
+msgid "Price: Low to High"
+msgstr "السعر: من الأقل إلى الأعلى"
+
+#: templates/products/product_list_backup.html:1
+msgid "Price: High to Low"
+msgstr "السعر: من الأعلى إلى الأقل"
+
+#: templates/products/product_list_backup.html:1
+msgid "Newest First"
+msgstr "الأحدث أولاً"
+
+#: templates/products/product_list_backup.html:1
+msgid "Apply Filters"
+msgstr "تطبيق المرشحات"
+
+#: templates/products/product_list_backup.html:1
+msgid "Clear All"
+msgstr "مسح الكل"
+
+#: templates/products/product_list_backup.html:1
+msgid "Superior structural integrity for interior applications"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Wide range of thicknesses and sizes"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+#: templates/products/product_list_backup.html:1
+msgid "Multiple thickness options and custom sizes available"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Safe for human health and the environment"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Environmentally friendly urea-formaldehyde resin"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Easy to handle and install for interior projects"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Superior adhesion and structural integrity"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "WBP grade with excellent water resistance"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Long-lasting performance in demanding applications"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Specifications"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Thicknesses, mm"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Material"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Contact for Details"
+msgstr ""
+
+#: templates/products/product_list_backup.html:1
+msgid "Try adjusting your search criteria or browse all products."
+msgstr "حاول تعديل معايير البحث أو تصفح جميع المنتجات."
+
+#: templates/main/home.html:1
+msgid "Back to Home"
+msgstr "العودة إلى الرئيسية"
+
+#: templates/products/durability_testing.html:284
+msgid "95% of image erased"
+msgstr "تم مسح 95% من الصورة"
+
+#: templates/products/durability_testing.html:284
+msgid "95% of the image was erased"
+msgstr "تم مسح 95% من الصورة"
+
+#: templates/products/durability_testing.html:342
+msgid "Image mostly erased"
+msgstr "تم مسح معظم الصورة"
+
+#: templates/products/durability_testing.html:342
+msgid "95 percent of image erased"
+msgstr "تم مسح 95 في المئة من الصورة"
+
+#: templates/products/durability_testing.html:1
+msgid "95 percent of the image was erased"
+msgstr "تم مسح 95 في المئة من الصورة"
+
+#: templates/products/durability_testing.html:1
+msgid "On average, Plywood Deck can be used in 50 cycles of cement pouring"
+msgstr "في المتوسط، يمكن استخدام الخشب الرقائقي الدك في 50 دورة من صب الأسمنت"
