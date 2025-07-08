@@ -2,36 +2,16 @@ import os
 from .settings import *
 
 # Production settings
-DEBUG = True  # Temporarily enable for debugging
-
-# Railway provides this
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
-# Database - Railway PostgreSQL or fallback to SQLite
-if os.environ.get('DATABASE_URL'):
-    import dj_database_url
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# Use SQLite for Railway deployment (simpler and reliable)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-elif os.environ.get('PGDATABASE'):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ.get('PGDATABASE'),
-            'USER': os.environ.get('PGUSER'),
-            'PASSWORD': os.environ.get('PGPASSWORD'),
-            'HOST': os.environ.get('PGHOST'),
-            'PORT': os.environ.get('PGPORT', '5432'),
-        }
-    }
-else:
-    # Fallback to SQLite for development
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+}
 
 # Static files
 STATIC_URL = '/static/'
