@@ -84,7 +84,9 @@ class ProductImage(models.Model):
 class ProductSpecification(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='specifications')
     name = models.CharField(max_length=100)  # e.g., "Moisture Content", "Density"
+    name_ar = models.CharField(max_length=100, blank=True, verbose_name='Arabic Name')  # Arabic translation
     value = models.CharField(max_length=200)  # e.g., "8-12%", "650 kg/m³"
+    value_ar = models.CharField(max_length=200, blank=True, verbose_name='Arabic Value')  # Arabic translation
     
     def __str__(self):
         return f"{self.product.name} - {self.name}: {self.value}"

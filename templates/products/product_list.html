@@ -535,8 +535,20 @@
                                                         {% for spec in product.specifications.all %}
                                                         {% if 'Strength and durability' not in spec.name and 'Environmental resistance' not in spec.name and 'Water resistance' not in spec.name and 'Film variety' not in spec.name and 'High strength and durability' not in spec.name and 'Resistance to moisture impact' not in spec.name and 'Complete absence of healthy color changes' not in spec.name and 'Special thickness tolerances' not in spec.name and 'Extended list of putted defects' not in spec.name %}
                                                         <li class="mb-2" style="display: flex; flex-wrap: nowrap;">
-                                                            <strong style="color: var(--text-color); min-width: 200px; flex-shrink: 0;">{{ spec.name }}:</strong>
-                                                            <span style="color: var(--light-text); margin-left: 10px;">{{ spec.value }}</span>
+                                                            <strong style="color: var(--text-color); min-width: 200px; flex-shrink: 0;">
+                                                                {% if LANGUAGE_CODE == 'ar' and spec.name_ar %}
+                                                                    {{ spec.name_ar }}:
+                                                                {% else %}
+                                                                    {{ spec.name }}:
+                                                                {% endif %}
+                                                            </strong>
+                                                            <span style="color: var(--light-text); margin-left: 10px;">
+                                                                {% if LANGUAGE_CODE == 'ar' and spec.value_ar %}
+                                                                    {{ spec.value_ar }}
+                                                                {% else %}
+                                                                    {{ spec.value }}
+                                                                {% endif %}
+                                                            </span>
                                                         </li>
                                                         {% endif %}
                                                         {% endfor %}

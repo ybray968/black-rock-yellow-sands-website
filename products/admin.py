@@ -8,6 +8,7 @@ class ProductImageInline(admin.TabularInline):
 class ProductSpecificationInline(admin.TabularInline):
     model = ProductSpecification
     extra = 1
+    fields = ['name', 'name_ar', 'value', 'value_ar']
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -24,7 +25,7 @@ class ProductAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ('Basic Information', {
-            'fields': ('name', 'slug', 'category', 'description', 'price')
+            'fields': ('name', 'name_ar', 'slug', 'category', 'description', 'description_ar', 'price')
         }),
         ('Wood Specifications', {
             'fields': ('wood_type', 'wood_species', 'thickness', 'width', 'length', 'grade', 'finish')
@@ -44,5 +45,6 @@ class ProductImageAdmin(admin.ModelAdmin):
 
 @admin.register(ProductSpecification)
 class ProductSpecificationAdmin(admin.ModelAdmin):
-    list_display = ['product', 'name', 'value']
+    list_display = ['product', 'name', 'name_ar', 'value', 'value_ar']
     list_filter = ['name']
+    fields = ['product', 'name', 'name_ar', 'value', 'value_ar']
