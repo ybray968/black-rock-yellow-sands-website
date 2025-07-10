@@ -47,10 +47,17 @@ SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 
-# CSRF settings for Railway
+# CSRF settings for Railway and other hosting platforms
 CSRF_TRUSTED_ORIGINS = [
     'https://*.railway.app',
     'https://*.up.railway.app',
+    'https://*.render.com',
+    'https://*.vercel.app',
+    'https://*.herokuapp.com',
+    'https://*.pythonanywhere.com',
+    'https://*.netlify.app',
+    # Add your custom domain here when you have one
+    # 'https://yourdomain.com',
 ]
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True

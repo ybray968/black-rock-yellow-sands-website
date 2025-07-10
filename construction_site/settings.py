@@ -216,6 +216,9 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
+# Fallback for translation issues
+USE_I18N_FALLBACK = True
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

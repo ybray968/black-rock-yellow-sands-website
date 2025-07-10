@@ -35,6 +35,37 @@ def about(request):
 
 def contact(request):
     """Contact page view"""
+    if request.method == 'POST':
+        # Get form data
+        name = request.POST.get('name', '').strip()
+        email = request.POST.get('email', '').strip()
+        phone = request.POST.get('phone', '').strip()
+        company = request.POST.get('company', '').strip()
+        subject = request.POST.get('subject', '').strip()
+        message = request.POST.get('message', '').strip()
+        human_verification = request.POST.get('human_verification')
+        
+        # Basic validation
+        if not name or not email or not subject or not message:
+            context = {
+                'error': 'Please fill in all required fields.',
+                'form_data': request.POST
+            }
+            return render(request, 'main/contact.html', context)
+        
+        if not human_verification:
+            context = {
+                'error': 'Please verify that you are human.',
+                'form_data': request.POST
+            }
+            return render(request, 'main/contact.html', context)
+        
+        # Success - in a real application, you'd send an email here
+        context = {
+            'success': 'Thank you for your message! We will get back to you soon.',
+        }
+        return render(request, 'main/contact.html', context)
+    
     return render(request, 'main/contact.html')
 
 def health_check(request):
