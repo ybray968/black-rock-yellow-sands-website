@@ -74,9 +74,9 @@ SESSION_COOKIE_AGE = 3600  # 1 hour
 
 # CSRF Protection
 CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
-CSRF_COOKIE_HTTPONLY = True
-CSRF_COOKIE_SAMESITE = 'Strict'
-CSRF_USE_SESSIONS = True
+CSRF_COOKIE_HTTPONLY = False  # Allow JS access for compatibility
+CSRF_COOKIE_SAMESITE = 'Lax'  # Lax for better compatibility
+CSRF_USE_SESSIONS = False  # Use cookies for better hosting compatibility
 
 # Force HTTPS in production (set these to True when deploying)
 SECURE_HSTS_SECONDS = 0  # Set to 31536000 (1 year) in production

@@ -56,13 +56,31 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.herokuapp.com',
     'https://*.pythonanywhere.com',
     'https://*.netlify.app',
-    # Add your custom domain here when you have one
-    # 'https://yourdomain.com',
+    'https://*.onrender.com',
+    'https://*.fly.dev',
+    'https://*.digitalocean.app',
+    'https://www.braysint.com',
+    'https://braysint.com',
+    'http://www.braysint.com',  # In case HTTP is used
+    'http://braysint.com',
 ]
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
+
+# CSRF Protection - Production settings for HTTPS
+CSRF_COOKIE_SECURE = True  # Your site uses HTTPS
+CSRF_COOKIE_HTTPONLY = False  # Allow JS access for compatibility
 CSRF_COOKIE_SAMESITE = 'Lax'  # Changed from Strict for language switching
-CSRF_USE_SESSIONS = False  # Use cookies instead for better compatibility
+CSRF_USE_SESSIONS = False  # Use cookies for better compatibility with hosting
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+CSRF_COOKIE_AGE = 3600  # 1 hour (shorter for security)
+
+# Additional CSRF settings for compatibility
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+
+# Session settings for production
+SESSION_COOKIE_SECURE = True  # Your site uses HTTPS
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
 
 # Static files storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
