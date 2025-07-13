@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.conf import settings
+from django.utils.translation import gettext as _
 from products.models import Product, Category
+import logging
 
 def home(request):
     """Homepage view"""
@@ -60,10 +64,25 @@ def contact(request):
             }
             return render(request, 'main/contact.html', context)
         
-        # Success - in a real application, you'd send an email here
-        context = {
-            'success': 'Thank you for your message! We will get back to you soon.',
-        }
+        # Send email
+        try:
+            send_mail(
+                subject=f"Contact Form - {subject}",
+                message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\nCompany: {company}\nMessage: {message}",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.CONTACT_EMAIL],
+                fail_silently=False,
+            )
+            context = {
+                'success': _('Thank you for your message! We will get back to you soon.'),
+            }
+        except Exception as e:
+            logging.error(f"Error sending email: {e}")
+            context = {
+                'error': _('There was an issue sending your message. Please try again later.'),
+                'form_data': request.POST
+            }
+        
         return render(request, 'main/contact.html', context)
     
     return render(request, 'main/contact.html')

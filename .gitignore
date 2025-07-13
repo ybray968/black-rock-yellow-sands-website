@@ -59,6 +59,8 @@ gettext-tools/
 # Environment variables
 .env
 .env.local
+.env.*.local
+.env.local
 .env.production
 
 # Static files collected for production
