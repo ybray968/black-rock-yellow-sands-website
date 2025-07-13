@@ -259,6 +259,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'finance@braysint.com')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'finance@braysint.com')
+SERVER_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'finance@braysint.com')
+EMAIL_USE_SSL = False
+EMAIL_TIMEOUT = 30
 
 # Contact form settings
 CONTACT_EMAIL = 'business@braysint.com'  # Email address to receive contact form submissions

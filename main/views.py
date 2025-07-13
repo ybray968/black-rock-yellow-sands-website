@@ -71,10 +71,11 @@ def contact(request):
             logging.info(f"Email from: {settings.DEFAULT_FROM_EMAIL}")
             logging.info(f"Email to: {settings.CONTACT_EMAIL}")
             
+            from_email = getattr(settings, 'EMAIL_HOST_USER', 'finance@braysint.com')
             send_mail(
                 subject=f"Contact Form - {subject}",
                 message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\nCompany: {company}\nMessage: {message}",
-                from_email=settings.DEFAULT_FROM_EMAIL,
+                from_email=from_email,
                 recipient_list=[settings.CONTACT_EMAIL],
                 fail_silently=False,
             )
