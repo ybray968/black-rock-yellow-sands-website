@@ -68,6 +68,8 @@ def contact(request):
         try:
             logging.info(f"Attempting to send email with backend: {settings.EMAIL_BACKEND}")
             logging.info(f"Email host: {getattr(settings, 'EMAIL_HOST', 'Not set')}")
+            logging.info(f"Email user: {getattr(settings, 'EMAIL_HOST_USER', 'Not set')}")
+            logging.info(f"Email password set: {'Yes' if getattr(settings, 'EMAIL_HOST_PASSWORD', None) else 'No'}")
             logging.info(f"Email from: {settings.DEFAULT_FROM_EMAIL}")
             logging.info(f"Email to: {settings.CONTACT_EMAIL}")
             

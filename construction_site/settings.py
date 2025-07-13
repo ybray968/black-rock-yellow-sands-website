@@ -263,5 +263,11 @@ SERVER_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'finance@braysint.com')
 EMAIL_USE_SSL = False
 EMAIL_TIMEOUT = 30
 
+# Debug environment variables
+print(f"EMAIL_HOST: {os.environ.get('EMAIL_HOST', 'NOT SET')}")
+print(f"EMAIL_HOST_USER: {os.environ.get('EMAIL_HOST_USER', 'NOT SET')}")
+print(f"EMAIL_HOST_PASSWORD: {'SET' if os.environ.get('EMAIL_HOST_PASSWORD') else 'NOT SET'}")
+print(f"DEFAULT_FROM_EMAIL: {os.environ.get('DEFAULT_FROM_EMAIL', 'NOT SET')}")
+
 # Contact form settings
 CONTACT_EMAIL = 'business@braysint.com'  # Email address to receive contact form submissions
