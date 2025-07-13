@@ -254,14 +254,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email configuration - Always use SMTP for production
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtpout.secureserver.net')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'finance@braysint.com')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'finance@braysint.com')
 SERVER_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'finance@braysint.com')
-EMAIL_USE_SSL = False
-EMAIL_TIMEOUT = 30
+EMAIL_TIMEOUT = 60
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
 
 # Debug environment variables
 print(f"EMAIL_HOST: {os.environ.get('EMAIL_HOST', 'NOT SET')}")
