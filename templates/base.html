@@ -389,26 +389,40 @@
                         {% for lang_code, lang_name in LANGUAGES %}
                             {% if lang_code != LANGUAGE_CODE %}
                                 <li>
-                                    <form action="{% url 'set_language' %}" method="post" style="display: inline;">
-                                        {% csrf_token %}
-                                        {% with request.get_full_path as current_path %}
-                                            {% if current_path|slice:":3" == "/ar" %}
-                                                <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
-                                            {% elif current_path|slice:":3" == "/en" %}
-                                                <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
-                                            {% else %}
-                                                <input name="next" type="hidden" value="{{ current_path }}" />
-                                            {% endif %}
-                                        {% endwith %}
-                                        <input name="language" type="hidden" value="{{ lang_code }}" />
-                                        <button type="submit" class="dropdown-item">
+                                    {% with request.get_full_path as current_path %}
+                                        {% if '/contact' in current_path %}
+                                            <!-- On contact page, link directly to contact in other language -->
                                             {% if lang_code == 'ar' %}
-                                                <i class="fas fa-flag me-2"></i>العربية
+                                                <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=ar&next=/ar/contact/'; return false;">
+                                                    <i class="fas fa-flag me-2"></i>العربية
+                                                </a>
                                             {% else %}
-                                                <i class="fas fa-flag me-2"></i>English
+                                                <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=en&next=/contact/'; return false;">
+                                                    <i class="fas fa-flag me-2"></i>English
+                                                </a>
                                             {% endif %}
-                                        </button>
-                                    </form>
+                                        {% else %}
+                                            <!-- Regular language switching for other pages -->
+                                            <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                                                {% csrf_token %}
+                                                {% if current_path|slice:":3" == "/ar" %}
+                                                    <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                {% elif current_path|slice:":3" == "/en" %}
+                                                    <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                {% else %}
+                                                    <input name="next" type="hidden" value="{{ current_path }}" />
+                                                {% endif %}
+                                                <input name="language" type="hidden" value="{{ lang_code }}" />
+                                                <button type="submit" class="dropdown-item">
+                                                    {% if lang_code == 'ar' %}
+                                                        <i class="fas fa-flag me-2"></i>العربية
+                                                    {% else %}
+                                                        <i class="fas fa-flag me-2"></i>English
+                                                    {% endif %}
+                                                </button>
+                                            </form>
+                                        {% endif %}
+                                    {% endwith %}
                                 </li>
                             {% endif %}
                         {% endfor %}
