@@ -251,25 +251,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email configuration - Always use SMTP for production
+# Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtpout.secureserver.net')
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = False
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'finance@braysint.com')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'finance@braysint.com')
-SERVER_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'finance@braysint.com')
-EMAIL_TIMEOUT = 60
-EMAIL_SSL_CERTFILE = None
-EMAIL_SSL_KEYFILE = None
-
-# Debug environment variables
-print(f"EMAIL_HOST: {os.environ.get('EMAIL_HOST', 'NOT SET')}")
-print(f"EMAIL_HOST_USER: {os.environ.get('EMAIL_HOST_USER', 'NOT SET')}")
-print(f"EMAIL_HOST_PASSWORD: {'SET' if os.environ.get('EMAIL_HOST_PASSWORD') else 'NOT SET'}")
-print(f"DEFAULT_FROM_EMAIL: {os.environ.get('DEFAULT_FROM_EMAIL', 'NOT SET')}")
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 # Contact form settings
 CONTACT_EMAIL = 'business@braysint.com'  # Email address to receive contact form submissions

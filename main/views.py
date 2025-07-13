@@ -66,22 +66,13 @@ def contact(request):
         
         # Send email
         try:
-            logging.info(f"Attempting to send email with backend: {settings.EMAIL_BACKEND}")
-            logging.info(f"Email host: {getattr(settings, 'EMAIL_HOST', 'Not set')}")
-            logging.info(f"Email user: {getattr(settings, 'EMAIL_HOST_USER', 'Not set')}")
-            logging.info(f"Email password set: {'Yes' if getattr(settings, 'EMAIL_HOST_PASSWORD', None) else 'No'}")
-            logging.info(f"Email from: {settings.DEFAULT_FROM_EMAIL}")
-            logging.info(f"Email to: {settings.CONTACT_EMAIL}")
-            
-            from_email = getattr(settings, 'EMAIL_HOST_USER', 'finance@braysint.com')
             send_mail(
                 subject=f"Contact Form - {subject}",
                 message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\nCompany: {company}\nMessage: {message}",
-                from_email=from_email,
+                from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[settings.CONTACT_EMAIL],
                 fail_silently=False,
             )
-            logging.info("Email sent successfully")
             context = {
                 'success': _('Thank you for your message! We will get back to you soon.'),
             }
