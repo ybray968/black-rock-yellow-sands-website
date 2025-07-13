@@ -66,6 +66,11 @@ def contact(request):
         
         # Send email
         try:
+            logging.info(f"Attempting to send email with backend: {settings.EMAIL_BACKEND}")
+            logging.info(f"Email host: {getattr(settings, 'EMAIL_HOST', 'Not set')}")
+            logging.info(f"Email from: {settings.DEFAULT_FROM_EMAIL}")
+            logging.info(f"Email to: {settings.CONTACT_EMAIL}")
+            
             send_mail(
                 subject=f"Contact Form - {subject}",
                 message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\nCompany: {company}\nMessage: {message}",
@@ -73,6 +78,7 @@ def contact(request):
                 recipient_list=[settings.CONTACT_EMAIL],
                 fail_silently=False,
             )
+            logging.info("Email sent successfully")
             context = {
                 'success': _('Thank you for your message! We will get back to you soon.'),
             }
