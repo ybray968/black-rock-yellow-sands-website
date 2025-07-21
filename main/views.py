@@ -33,6 +33,10 @@ def home(request):
     }
     return render(request, 'main/home.html', context)
 
+def pine_lumber(request):
+    """Pine Lumber product page view"""
+    return render(request, 'main/pine_lumber.html', {'product_name': 'Pine Lumber'})
+
 def about(request):
     """About page view"""
     return render(request, 'main/about.html')

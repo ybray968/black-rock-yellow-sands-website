@@ -1,0 +1,243 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Pine Lumber" %} - Black Rock And Yellow Sands International{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>{% trans "Pine Lumber" %}</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="{% url 'main:home' %}">{% trans "Home" %}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{% trans "Pine Lumber" %}</li>
+                    </ol>
+                </nav>
+            </div>
+            
+            <div class="card border-0 shadow-sm mb-4" style="background: var(--white);">
+                <div class="card-body p-4">
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <img src="{% static 'images/pine-lumber-main.jpg' %}" class="img-fluid rounded" alt="{% trans 'Pine Lumber' %}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                            
+                            <!-- Application Field Image Section -->
+                            <div class="mt-3">
+                                <img src="{% static 'images/pine-lumber-application.jpg' %}" class="img-fluid rounded" alt="{% trans 'Pine Lumber Applications' %}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="card-title mb-3" style="color: var(--text-color);">{% trans "Premium Pine Lumber" %}</h2>
+                            
+                            <div class="mb-3">
+                                <a href="{% url 'main:contact' %}" class="btn btn-primary">
+                                    <i class="fas fa-calculator me-2"></i>{% trans "Get Quote" %}
+                                </a>
+                                <span class="badge bg-success ms-2">{% trans "In Stock" %}</span>
+                            </div>
+                            
+                            <p class="card-text mb-4" style="color: var(--light-text); line-height: 1.6;">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% if LANGUAGE_CODE == 'ar' %}
+                                    خشب الصنوبر عالي الجودة المثالي لمشاريع البناء والتشييد. يوفر قوة ومتانة استثنائية مع سهولة في التشكيل والتصنيع. مناسب للاستخدامات الإنشائية والزخرفية على حد سواء.
+                                {% else %}
+                                    High-quality pine lumber perfect for construction and building projects. Offers exceptional strength and durability with easy workability and machining properties. Suitable for both structural and decorative applications.
+                                {% endif %}
+                            </p>
+                            
+                            <!-- Advantages Section -->
+                            <div class="advantages-section mb-4">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                            <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                <i class="fas fa-tree" style="color: #28a745; font-size: 1.8rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Natural Strength" %}</div>
+                                                <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Superior structural integrity" %}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                            <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                <i class="fas fa-tools" style="color: #28a745; font-size: 1.8rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Easy to Work With" %}</div>
+                                                <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Excellent machining properties" %}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                            <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                <i class="fas fa-leaf" style="color: #28a745; font-size: 1.8rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Sustainable Material" %}</div>
+                                                <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Environmentally responsible sourcing" %}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                            <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                <i class="fas fa-dollar-sign" style="color: #28a745; font-size: 1.8rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Cost Effective" %}</div>
+                                                <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Excellent value for construction projects" %}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technical Specifications Table -->
+                            <div class="specifications-section">
+                                <h5 class="mb-3" style="color: var(--text-color);">{% trans "Technical Specifications" %}</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-sm" style="font-size: 0.9rem;">
+                                        <thead style="background: var(--bg-light); color: var(--text-color);">
+                                            <tr>
+                                                <th style="border: 1px solid var(--border-color); padding: 8px; font-weight: 600;">{% trans "Specification" %}</th>
+                                                <th style="border: 1px solid var(--border-color); padding: 8px; font-weight: 600;">{% trans "Value" %}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="color: var(--light-text);">
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Material" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "Premium Pine Wood" %}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Grade" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "Construction Grade" %}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Moisture Content" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "12-15%" %}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Dimensions Available" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "2x4, 2x6, 2x8, 2x10, 4x4" %}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Length" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "8ft, 10ft, 12ft, 16ft" %}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Treatment" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "Kiln Dried" %}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Applications Section -->
+            <div class="card border-0 shadow-sm mb-4" style="background: var(--white);">
+                <div class="card-body p-4">
+                    <h4 class="mb-4" style="color: var(--text-color);">{% trans "Applications" %}</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-home fa-2x"></i>
+                                </div>
+                                <h6>{% trans "Residential Construction" %}</h6>
+                                <p class="text-muted small">{% trans "Framing, flooring, roofing" %}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-building fa-2x"></i>
+                                </div>
+                                <h6>{% trans "Commercial Projects" %}</h6>
+                                <p class="text-muted small">{% trans "Structural support, framework" %}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-hammer fa-2x"></i>
+                                </div>
+                                <h6>{% trans "Furniture Making" %}</h6>
+                                <p class="text-muted small">{% trans "Tables, chairs, cabinets" %}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-paint-brush fa-2x"></i>
+                                </div>
+                                <h6>{% trans "Decorative Work" %}</h6>
+                                <p class="text-muted small">{% trans "Trim, molding, finishing" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Why Choose Our Pine Lumber Section -->
+            <div class="card border-0 shadow-sm" style="background: var(--bg-light);">
+                <div class="card-body p-4">
+                    <h4 class="mb-4 text-center" style="color: var(--text-color);">{% trans "Why Choose Our Pine Lumber?" %}</h4>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-medal fa-2x"></i>
+                                </div>
+                                <h5>{% trans "Premium Quality" %}</h5>
+                                <p class="text-muted">{% trans "Carefully selected and graded lumber that meets the highest industry standards for strength and durability." %}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-shipping-fast fa-2x"></i>
+                                </div>
+                                <h5>{% trans "Fast Delivery" %}</h5>
+                                <p class="text-muted">{% trans "Quick processing and reliable delivery to keep your construction projects on schedule." %}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-users fa-2x"></i>
+                                </div>
+                                <h5>{% trans "Expert Support" %}</h5>
+                                <p class="text-muted">{% trans "Professional guidance from our experienced team to help you choose the right lumber for your project." %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-5">
+                <h4 class="mb-4" style="color: var(--text-color);">{% trans "Ready to Order Pine Lumber?" %}</h4>
+                <p class="lead mb-4" style="color: var(--light-text);">{% trans "Get in touch with our experts for personalized recommendations and competitive pricing." %}</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calculator me-2"></i>{% trans "Get Quote Now" %}
+                    </a>
+                    <a href="{% url 'main:home' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i>{% trans "Back to Home" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

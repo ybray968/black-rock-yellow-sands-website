@@ -1176,3 +1176,154 @@ msgstr "أداء متين في البيئات الصعبة"
 #: templates/products/product_list.html:1
 msgid "Low formaldehyde emissions"
 msgstr "انبعاثات فورمالديهايد منخفضة"
+
+msgid "Pine Lumber"
+msgstr "خشب الصنوبر"
+
+
+msgid "Premium quality pine lumber for construction projects"
+msgstr "خشب صنوبر عالي الجودة لمشاريع البناء"
+
+
+msgid "Premium Pine Lumber"
+msgstr "خشب الصنوبر الممتاز"
+
+
+msgid "Pine Lumber Applications"
+msgstr "تطبيقات خشب الصنوبر"
+
+
+msgid "Natural Strength"
+msgstr "القوة الطبيعية"
+
+
+msgid "Superior structural integrity"
+msgstr "سلامة هيكلية فائقة"
+
+
+msgid "Easy to Work With"
+msgstr "سهل التعامل معه"
+
+
+msgid "Excellent machining properties"
+msgstr "خصائص تشغيل ممتازة"
+
+
+msgid "Sustainable Material"
+msgstr "مادة مستدامة"
+
+
+msgid "Environmentally responsible sourcing"
+msgstr "مصادر مسؤولة بيئياً"
+
+
+msgid "Cost Effective"
+msgstr "فعال من حيث التكلفة"
+
+
+msgid "Excellent value for construction projects"
+msgstr "قيمة ممتازة لمشاريع البناء"
+
+
+msgid "Specification"
+msgstr "المواصفة"
+
+
+msgid "Value"
+msgstr "القيمة"
+
+
+msgid "Premium Pine Wood"
+msgstr "خشب الصنوبر الممتاز"
+
+
+msgid "Construction Grade"
+msgstr "درجة البناء"
+
+
+msgid "Moisture Content"
+msgstr "محتوى الرطوبة"
+
+
+msgid "12-15%"
+msgstr "12-15%"
+
+
+msgid "Dimensions Available"
+msgstr "الأبعاد المتاحة"
+
+
+msgid "2x4, 2x6, 2x8, 2x10, 4x4"
+msgstr "2x4, 2x6, 2x8, 2x10, 4x4"
+
+
+msgid "Length"
+msgstr "الطول"
+
+
+msgid "8ft, 10ft, 12ft, 16ft"
+msgstr "8 قدم, 10 قدم, 12 قدم, 16 قدم"
+
+
+msgid "Treatment"
+msgstr "المعالجة"
+
+
+msgid "Kiln Dried"
+msgstr "مجفف بالفرن"
+
+
+msgid "Residential Construction"
+msgstr "البناء السكني"
+
+
+msgid "Framing, flooring, roofing"
+msgstr "الإطارات، الأرضيات، الأسقف"
+
+
+msgid "Commercial Projects"
+msgstr "المشاريع التجارية"
+
+
+msgid "Structural support, framework"
+msgstr "الدعم الهيكلي، الإطار"
+
+
+msgid "Furniture Making"
+msgstr "صناعة الأثاث"
+
+
+msgid "Tables, chairs, cabinets"
+msgstr "الطاولات، الكراسي، الخزائن"
+
+
+msgid "Decorative Work"
+msgstr "العمل الزخرفي"
+
+
+msgid "Trim, molding, finishing"
+msgstr "التشطيب، التشكيل، الإنهاء"
+
+
+msgid "Why Choose Our Pine Lumber?"
+msgstr "لماذا تختار خشب الصنوبر الخاص بنا؟"
+
+
+msgid "Carefully selected and graded lumber that meets the highest industry standards for strength and durability."
+msgstr "خشب مختار ومتدرج بعناية يلبي أعلى معايير الصناعة للقوة والمتانة."
+
+
+msgid "Quick processing and reliable delivery to keep your construction projects on schedule."
+msgstr "معالجة سريعة وتسليم موثوق للحفاظ على مشاريع البناء الخاصة بك في الموعد المحدد."
+
+
+msgid "Professional guidance from our experienced team to help you choose the right lumber for your project."
+msgstr "إرشاد مهني من فريقنا ذي الخبرة لمساعدتك في اختيار الخشب المناسب لمشروعك."
+
+
+msgid "Ready to Order Pine Lumber?"
+msgstr "جاهز لطلب خشب الصنوبر؟"
+
+
+msgid "Get Quote Now"
+msgstr "احصل على عرض سعر الآن"
