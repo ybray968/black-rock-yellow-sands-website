@@ -39,7 +39,7 @@
                                             <img src="{% static 'images/plywood-deco.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
                                         {% elif 'Antislip HEX' in product.name %}
                                             <img src="{% static 'images/plywood-antislip-hex.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
-                                        {% elif 'Antislip MT' in product.name or 'Antislip Wire' in product.name %}
+                                        {% elif 'Antislip MT' in product.name %}
                                             <img src="{% static 'images/plywood-antislip-mt.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
                                         {% else %}
                                             <img src="{% static 'images/plywood_deck_product_image_for_web.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
@@ -219,7 +219,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {% elif 'Antislip MT' in product.name or 'Antislip Wire' in product.name %}
+                                        {% elif 'Antislip MT' in product.name %}
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
@@ -239,7 +239,7 @@
                                                     </div>
                                                     <div>
                                                         <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Maximum slip resistance" %}</div>
-                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Wire-mesh antislip surface for safety" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "MT-mesh antislip surface for safety" %}</div>
                                                     </div>
                                                 </div>
                                             </div>
