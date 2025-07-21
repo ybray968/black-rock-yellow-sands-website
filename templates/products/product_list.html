@@ -41,6 +41,8 @@
                                             <img src="{% static 'images/plywood-antislip-hex.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
                                         {% elif 'Antislip MT' in product.name %}
                                             <img src="{% static 'images/plywood-antislip-mt.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
+                                        {% elif 'Primed Plywood' in product.name %}
+                                            <img src="{% static 'images/plywood-primed.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
                                         {% else %}
                                             <img src="{% static 'images/plywood_deck_product_image_for_web.png' %}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 350px; object-fit: cover; width: 100%;">
                                         {% endif %}
@@ -466,6 +468,53 @@
                                             <a href="{% url 'products:durability_testing' %}" class="btn btn-outline-primary">
                                                 <i class="fas fa-chart-line me-2"></i>{% trans "View Taber Test Results" %}
                                             </a>
+                                        </div>
+                                        {% elif 'Primed Plywood' in product.name %}
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-paint-brush" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Perfect surface for neat and easy painting" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Smooth melamine film base ready for any color" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-clock" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Saving time and paint materials" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Pre-primed surface reduces preparation work" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-shield-alt" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Wear-resistant surface without cracks" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "Durable melamine film coating" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="advantage-item d-flex align-items-center p-3" style="background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color); height: 100%;">
+                                                    <div class="advantage-icon me-3" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;">
+                                                        <i class="fas fa-magic" style="color: #28a745; font-size: 1.8rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div style="font-weight: 600; color: var(--text-color); font-size: 0.9rem;">{% trans "Easy painting and lacquering without any treatment" %}</div>
+                                                        <div style="color: var(--light-text); font-size: 0.8rem;">{% trans "No primer or base coat required" %}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         {% elif 'Exterior Birch' in product.name or 'Birch Exterior' in product.name %}
                                         <div class="row g-3">
