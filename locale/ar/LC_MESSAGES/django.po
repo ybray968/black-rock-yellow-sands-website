@@ -1365,3 +1365,22 @@ msgstr "العرض، مم"
 
 msgid "From 3m to 6m (with 30cm step)"
 msgstr "من 3 م إلى 6 م (بخطوة 30 سم)"
+
+msgid "520 kg/m³"
+msgstr "٥٢٠ كجم/م³"
+
+
+msgid "16-18%"
+msgstr "١٦-١٨٪"
+
+
+msgid "10-12%"
+msgstr "١٠-١٢٪"
+
+
+msgid "19, 22, 25, 50"
+msgstr "١٩، ٢٢، ٢٥، ٥٠"
+
+
+msgid "75, 100, 125, 150, 175, 200"
+msgstr "٧٥، ١٠٠، ١٢٥، ١٥٠، ١٧٥، ٢٠٠"
