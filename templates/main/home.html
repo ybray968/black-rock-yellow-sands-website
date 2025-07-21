@@ -75,47 +75,6 @@ body {
     z-index: 1;
 }
 
-/* Animate sun rays */
-@keyframes sunRays {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.sun-rays {
-    position: absolute;
-    top: 20%;
-    right: 25%;
-    width: 100px;
-    height: 100px;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-}
-
-.sun-rays.visible {
-    opacity: 0.3;
-    animation: sunRays 20s linear infinite;
-}
-
-.sun-rays::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2px;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), transparent);
-    transform-origin: 1px 0;
-    box-shadow: 
-        0 0 0 2px rgba(255, 215, 0, 0.6),
-        40px 0 0 0 rgba(255, 215, 0, 0.4),
-        -40px 0 0 0 rgba(255, 215, 0, 0.4),
-        0 40px 0 0 rgba(255, 215, 0, 0.4),
-        0 -40px 0 0 rgba(255, 215, 0, 0.4),
-        28px 28px 0 0 rgba(255, 215, 0, 0.3),
-        -28px -28px 0 0 rgba(255, 215, 0, 0.3),
-        28px -28px 0 0 rgba(255, 215, 0, 0.3),
-        -28px 28px 0 0 rgba(255, 215, 0, 0.3);
-}
 </style>
 {% endblock %}
 
@@ -123,7 +82,6 @@ body {
 <!-- Desert Background Elements -->
 <div class="desert-background" id="desertBg"></div>
 <div class="glass-overlay" id="glassOverlay"></div>
-<div class="sun-rays" id="sunRays"></div>
 
 <!-- Hero Section -->
 <section class="hero-section">
@@ -313,7 +271,6 @@ body {
 document.addEventListener('DOMContentLoaded', function() {
     const desertBg = document.getElementById('desertBg');
     const glassOverlay = document.getElementById('glassOverlay');
-    const sunRays = document.getElementById('sunRays');
     
     let isRevealed = false;
     let animationId = null;
@@ -355,13 +312,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 isRevealed = true;
                 desertBg.classList.add('revealed');
                 glassOverlay.classList.add('fade');
-                sunRays.classList.add('visible');
             } else if (mousePercentage <= threshold && isRevealed) {
                 // Hide the desert background
                 isRevealed = false;
                 desertBg.classList.remove('revealed');
                 glassOverlay.classList.remove('fade');
-                sunRays.classList.remove('visible');
             }
             
             // Progressive reveal based on mouse position (for smooth transition)
@@ -386,9 +341,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     const glassOpacity = 0.85 - (revealProgress * 0.15);
                     glassOverlay.style.background = `rgba(255, 255, 255, ${glassOpacity})`;
                     
-                    // Adjust sun rays
-                    const raysOpacity = 0.2 + (revealProgress * 0.15);
-                    sunRays.style.opacity = raysOpacity;
                 }
             }
         });
@@ -407,13 +359,11 @@ document.addEventListener('DOMContentLoaded', function() {
         isRevealed = false;
         desertBg.classList.remove('revealed');
         glassOverlay.classList.remove('fade');
-        sunRays.classList.remove('visible');
         
         // Reset styles
         desertBg.style.opacity = '';
         desertBg.style.filter = '';
         glassOverlay.style.background = '';
-        sunRays.style.opacity = '';
     });
     
     // Touch events for mobile devices
@@ -430,7 +380,6 @@ document.addEventListener('DOMContentLoaded', function() {
             isRevealed = false;
             desertBg.classList.remove('revealed');
             glassOverlay.classList.remove('fade');
-            sunRays.classList.remove('visible');
         }, 1000);
     });
 });
