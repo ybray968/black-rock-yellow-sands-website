@@ -1051,7 +1051,7 @@ msgstr ""
 
 #: templates/products/product_list_backup.html:1
 msgid "Material"
-msgstr ""
+msgstr "المواد"
 
 #: templates/products/product_list_backup.html:1
 msgid "Contact for Details"
