@@ -1152,3 +1152,27 @@ msgstr "لا أبخرة ضارة أثناء عملية القطع"
 #: templates/products/product_list.html:1
 msgid "Clean and safe for operators"
 msgstr "نظيف وآمن للمشغلين"
+
+#: templates/products/product_list.html:1
+msgid "Available with wire-mesh and hexa-mesh patterns"
+msgstr "متوفر مع أنماط الشبكة السلكية والشبكة السداسية"
+
+#: templates/products/product_list.html:1
+msgid "Multiple surface texture options"
+msgstr "خيارات متعددة لنسيج السطح"
+
+#: templates/products/product_list.html:1
+msgid "Suitable for outdoor applications"
+msgstr "مناسب للتطبيقات الخارجية"
+
+#: templates/products/product_list.html:1
+msgid "Resistance to mechanical damages and chemicals"
+msgstr "مقاومة الأضرار الميكانيكية والكيماوية"
+
+#: templates/products/product_list.html:1
+msgid "Durable performance in demanding environments"
+msgstr "أداء متين في البيئات الصعبة"
+
+#: templates/products/product_list.html:1
+msgid "Low formaldehyde emissions"
+msgstr "انبعاثات فورمالديهايد منخفضة"

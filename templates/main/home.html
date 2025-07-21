@@ -200,6 +200,8 @@ body {
                             <img src="{% static 'images/plywood-primed.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
                         {% elif 'Laser Plywood' in product.name %}
                             <img src="{% static 'images/plywood-laser.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+                        {% elif 'Plywood Palette' in product.name %}
+                            <img src="{% static 'images/plywood-palette.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
                         {% else %}
                             <img src="{% static 'images/plywood_deck_product_image_for_web.png' %}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
                         {% endif %}
