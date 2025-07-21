@@ -1120,3 +1120,35 @@ msgstr "طلاء ولاكيه سهل بدون أي معالجة"
 #: templates/products/product_list.html:1
 msgid "No primer or base coat required"
 msgstr "لا حاجة لطبقة أساس أو تحضيرية"
+
+#: templates/products/product_list.html:1
+msgid "Strict thickness tolerances and dimensional stability"
+msgstr "تحمل سمك صارم واستقرار أبعاد"
+
+#: templates/products/product_list.html:1
+msgid "Precise dimensions for accurate laser cutting"
+msgstr "أبعاد دقيقة للقطع بالليزر المضبوط"
+
+#: templates/products/product_list.html:1
+msgid "Carefully selected solid core and face veneers"
+msgstr "قشرة اللب الصلب والوجه مختارة بعناية"
+
+#: templates/products/product_list.html:1
+msgid "Minimum defects for superior quality"
+msgstr "أقل العيوب لجودة فائقة"
+
+#: templates/products/product_list.html:1
+msgid "No combustion under laser beam influence"
+msgstr "لا احتراق تحت تأثير شعاع الليزر"
+
+#: templates/products/product_list.html:1
+msgid "Safe and clean laser cutting process"
+msgstr "عملية قطع ليزر آمنة ونظيفة"
+
+#: templates/products/product_list.html:1
+msgid "No harmful fumes during cutting process"
+msgstr "لا أبخرة ضارة أثناء عملية القطع"
+
+#: templates/products/product_list.html:1
+msgid "Clean and safe for operators"
+msgstr "نظيف وآمن للمشغلين"
