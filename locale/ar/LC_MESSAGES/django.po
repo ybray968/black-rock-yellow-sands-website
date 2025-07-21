@@ -1088,3 +1088,35 @@ msgstr "تم مسح 95 في المئة من الصورة"
 #: templates/products/durability_testing.html:1
 msgid "On average, Plywood Deck can be used in 50 cycles of cement pouring"
 msgstr "في المتوسط، يمكن استخدام الخشب الرقائقي الدك في 50 دورة من صب الأسمنت"
+
+#: templates/products/product_list.html:1
+msgid "Perfect surface for neat and easy painting"
+msgstr "سطح مثالي للطلاء الأنيق والسهل"
+
+#: templates/products/product_list.html:1
+msgid "Smooth melamine film base ready for any color"
+msgstr "قاعدة فيلم الميلامين الناعمة جاهزة لأي لون"
+
+#: templates/products/product_list.html:1
+msgid "Saving time and paint materials"
+msgstr "توفير الوقت ومواد الطلاء"
+
+#: templates/products/product_list.html:1
+msgid "Pre-primed surface reduces preparation work"
+msgstr "السطح المُعد مسبقاً يقلل من أعمال التحضير"
+
+#: templates/products/product_list.html:1
+msgid "Wear-resistant surface without cracks"
+msgstr "سطح مقاوم للتآكل بدون شقوق"
+
+#: templates/products/product_list.html:1
+msgid "Durable melamine film coating"
+msgstr "طلاء فيلم الميلامين المتين"
+
+#: templates/products/product_list.html:1
+msgid "Easy painting and lacquering without any treatment"
+msgstr "طلاء ولاكيه سهل بدون أي معالجة"
+
+#: templates/products/product_list.html:1
+msgid "No primer or base coat required"
+msgstr "لا حاجة لطبقة أساس أو تحضيرية"
