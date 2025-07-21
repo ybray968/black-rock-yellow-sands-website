@@ -39,12 +39,21 @@
                                 <span class="badge bg-success ms-2">{% trans "In Stock" %}</span>
                             </div>
                             
+                            <p class="card-text mb-3" style="color: var(--light-text); line-height: 1.6;">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% if LANGUAGE_CODE == 'ar' %}
+                                    {% trans "Highest quality pine lumber with useful properties. Pine wood is a low density (520kg/m3) and high strength type of wood which is water resistant. It has a high rate of sound insulation, breathability and low electrical conductivity. Pine lumber is easy to treat, with its unified structure and beautiful texture it has high resistance to fracture. Pine wood is totally friendly to the environment and is hypoallergenic." %}
+                                {% else %}
+                                    {% trans "Highest quality pine lumber with useful properties. Pine wood is a low density (520kg/m3) and high strength type of wood which is water resistant. It has a high rate of sound insulation, breathability and low electrical conductivity. Pine lumber is easy to treat, with its unified structure and beautiful texture it has high resistance to fracture. Pine wood is totally friendly to the environment and is hypoallergenic." %}
+                                {% endif %}
+                            </p>
+                            
                             <p class="card-text mb-4" style="color: var(--light-text); line-height: 1.6;">
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% if LANGUAGE_CODE == 'ar' %}
-                                    {% trans "Highest quality pine lumber with useful properties. Pine wood is a low density (520kg/m3) and high strength type of wood which is water resistant. It has a high rate of sound insulation, breathability and low electrical conductivity. Pine lumber is easy to treat, with its unified structure and beautiful texture it has high resistance to fracture. Pine wood is totally friendly to the environment and is hypoallergenic. Pine trees are efficient material for construction as they don't require to be dried for a long time and are easy to treat. Applications for pine lumber are: construction of supporting structures, frames, roof systems, piles, interior decoration, walls, doors, frame furniture production, paper industry." %}
+                                    {% trans "Pine trees are efficient material for construction as they don't require to be dried for a long time and are easy to treat. Applications for pine lumber are: construction of supporting structures, frames, roof systems, piles, interior decoration, walls, doors, frame furniture production, paper industry." %}
                                 {% else %}
-                                    {% trans "Highest quality pine lumber with useful properties. Pine wood is a low density (520kg/m3) and high strength type of wood which is water resistant. It has a high rate of sound insulation, breathability and low electrical conductivity. Pine lumber is easy to treat, with its unified structure and beautiful texture it has high resistance to fracture. Pine wood is totally friendly to the environment and is hypoallergenic. Pine trees are efficient material for construction as they don't require to be dried for a long time and are easy to treat. Applications for pine lumber are: construction of supporting structures, frames, roof systems, piles, interior decoration, walls, doors, frame furniture production, paper industry." %}
+                                    {% trans "Pine trees are efficient material for construction as they don't require to be dried for a long time and are easy to treat. Applications for pine lumber are: construction of supporting structures, frames, roof systems, piles, interior decoration, walls, doors, frame furniture production, paper industry." %}
                                 {% endif %}
                             </p>
                             
@@ -103,12 +112,6 @@
                                 <h5 class="mb-3" style="color: var(--text-color);">{% trans "Technical Specifications" %}</h5>
                                 <div class="table-responsive">
                                     <table class="table table-sm" style="font-size: 0.9rem;">
-                                        <thead style="background: var(--bg-light); color: var(--text-color);">
-                                            <tr>
-                                                <th style="border: 1px solid var(--border-color); padding: 8px; font-weight: 600;">{% trans "Specification" %}</th>
-                                                <th style="border: 1px solid var(--border-color); padding: 8px; font-weight: 600;">{% trans "Value" %}</th>
-                                            </tr>
-                                        </thead>
                                         <tbody style="color: var(--light-text);">
                                             <tr>
                                                 <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Material" %}</td>
@@ -192,41 +195,6 @@
                 </div>
             </div>
             
-            <!-- Why Choose Our Pine Lumber Section -->
-            <div class="card border-0 shadow-sm" style="background: var(--bg-light);">
-                <div class="card-body p-4">
-                    <h4 class="mb-4 text-center" style="color: var(--text-color);">{% trans "Why Choose Our Pine Lumber?" %}</h4>
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="text-center">
-                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                                    <i class="fas fa-medal fa-2x"></i>
-                                </div>
-                                <h5>{% trans "Premium Quality" %}</h5>
-                                <p class="text-muted">{% trans "Carefully selected and graded lumber that meets the highest industry standards for strength and durability." %}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="text-center">
-                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                                    <i class="fas fa-shipping-fast fa-2x"></i>
-                                </div>
-                                <h5>{% trans "Fast Delivery" %}</h5>
-                                <p class="text-muted">{% trans "Quick processing and reliable delivery to keep your construction projects on schedule." %}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="text-center">
-                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                                    <i class="fas fa-users fa-2x"></i>
-                                </div>
-                                <h5>{% trans "Expert Support" %}</h5>
-                                <p class="text-muted">{% trans "Professional guidance from our experienced team to help you choose the right lumber for your project." %}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <!-- Call to Action -->
             <div class="text-center mt-5">
