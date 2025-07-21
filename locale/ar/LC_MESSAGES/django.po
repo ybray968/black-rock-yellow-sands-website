@@ -1327,3 +1327,18 @@ msgstr "جاهز لطلب خشب الصنوبر؟"
 
 msgid "Get Quote Now"
 msgstr "احصل على عرض سعر الآن"
+
+msgid "Pine Wood Lumber"
+msgstr "خشب الصنوبر"
+
+
+msgid "Pine Wood"
+msgstr "خشب الصنوبر"
+
+
+msgid "Highest quality pine lumber with useful properties. Pine wood is a low density (520kg/m3) and high strength type of wood which is water resistant. It has a high rate of sound insulation, breathability and low electrical conductivity. Pine lumber is easy to treat, with its unified structure and beautiful texture it has high resistance to fracture. Pine wood is totally friendly to the environment and is hypoallergenic."
+msgstr "خشب صنوبر عالي الجودة بخصائص مفيدة. خشب الصنوبر هو نوع من الخشب منخفض الكثافة (520 كجم/م³) وقوي يقاوم الماء. له معدل عالي من العزل الصوتي والتهوية والموصلية الكهربائية المنخفضة. خشب الصنوبر سهل المعالجة، وبهيكله الموحد وملمسه الجميل له مقاومة عالية للكسر. خشب الصنوبر صديق للبيئة تماماً وغير مسبب للحساسية."
+
+
+msgid "Pine trees are efficient material for construction as they don't require to be dried for a long time and are easy to treat. Applications for pine lumber are: construction of supporting structures, frames, roof systems, piles, interior decoration, walls, doors, frame furniture production, paper industry."
+msgstr "أشجار الصنوبر مادة فعالة للبناء حيث لا تحتاج للتجفيف لفترة طويلة وسهلة المعالجة. تطبيقات خشب الصنوبر هي: بناء الهياكل الداعمة، الإطارات، أنظمة الأسقف، الركائز، الديكور الداخلي، الجدران، الأبواب، إنتاج أثاث الإطارات، صناعة الورق."
