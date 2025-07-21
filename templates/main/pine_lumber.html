@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h1>{% trans "Pine Lumber" %}</h1>
+                <h1>{% trans "Pine Wood Lumber" %}</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="{% url 'main:home' %}">{% trans "Home" %}</a></li>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="col-md-7">
-                            <h2 class="card-title mb-3" style="color: var(--text-color);">{% trans "Premium Pine Lumber" %}</h2>
+                            <h2 class="card-title mb-3" style="color: var(--text-color);">{% trans "Pine Lumber" %}</h2>
                             
                             <div class="mb-3">
                                 <a href="{% url 'main:contact' %}" class="btn btn-primary">
@@ -42,9 +42,9 @@
                             <p class="card-text mb-4" style="color: var(--light-text); line-height: 1.6;">
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% if LANGUAGE_CODE == 'ar' %}
-                                    خشب الصنوبر عالي الجودة المثالي لمشاريع البناء والتشييد. يوفر قوة ومتانة استثنائية مع سهولة في التشكيل والتصنيع. مناسب للاستخدامات الإنشائية والزخرفية على حد سواء.
+                                    {% trans "Highest quality pine lumber with useful properties. Pine wood is a low density (520kg/m3) and high strength type of wood which is water resistant. It has a high rate of sound insulation, breathability and low electrical conductivity. Pine lumber is easy to treat, with its unified structure and beautiful texture it has high resistance to fracture. Pine wood is totally friendly to the environment and is hypoallergenic. Pine trees are efficient material for construction as they don't require to be dried for a long time and are easy to treat. Applications for pine lumber are: construction of supporting structures, frames, roof systems, piles, interior decoration, walls, doors, frame furniture production, paper industry." %}
                                 {% else %}
-                                    High-quality pine lumber perfect for construction and building projects. Offers exceptional strength and durability with easy workability and machining properties. Suitable for both structural and decorative applications.
+                                    {% trans "Highest quality pine lumber with useful properties. Pine wood is a low density (520kg/m3) and high strength type of wood which is water resistant. It has a high rate of sound insulation, breathability and low electrical conductivity. Pine lumber is easy to treat, with its unified structure and beautiful texture it has high resistance to fracture. Pine wood is totally friendly to the environment and is hypoallergenic. Pine trees are efficient material for construction as they don't require to be dried for a long time and are easy to treat. Applications for pine lumber are: construction of supporting structures, frames, roof systems, piles, interior decoration, walls, doors, frame furniture production, paper industry." %}
                                 {% endif %}
                             </p>
                             
@@ -115,24 +115,28 @@
                                                 <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "Premium Pine Wood" %}</td>
                                             </tr>
                                             <tr>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Grade" %}</td>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "Construction Grade" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Density" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "520 kg/m³" %}</td>
                                             </tr>
                                             <tr>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Moisture Content" %}</td>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "12-15%" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Transport Moisture Content" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "16-18%" %}</td>
                                             </tr>
                                             <tr>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Dimensions Available" %}</td>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "2x4, 2x6, 2x8, 2x10, 4x4" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Carpentry Moisture Content" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "10-12%" %}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Thickness, mm" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "19, 22, 25, 50" %}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Width, mm" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "75, 100, 125, 150, 175, 200" %}</td>
                                             </tr>
                                             <tr>
                                                 <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Length" %}</td>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "8ft, 10ft, 12ft, 16ft" %}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px; font-weight: 500;">{% trans "Treatment" %}</td>
-                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "Kiln Dried" %}</td>
+                                                <td style="border: 1px solid var(--border-color); padding: 8px;">{% trans "From 3m to 6m (with 30cm step)" %}</td>
                                             </tr>
                                         </tbody>
                                     </table>
