@@ -679,31 +679,32 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <ul class="list-unstyled">
-                                                        <!-- DEBUG: Product: {{ product.name }} -->
-                                                        <!-- DEBUG: Total specs: {{ product.specifications.all|length }} -->
+                                                    <div class="technical-specs-grid">
                                                         {% for spec in product.specifications.all %}
-                                                        <!-- DEBUG: Spec {{ forloop.counter }}: {{ spec.name }} = {{ spec.value|slice:":50" }} -->
-{% if 'Strength and durability' not in spec.name and 'Environmental resistance' not in spec.name and 'Film variety' not in spec.name and 'High strength and durability' not in spec.name and 'Complete absence of healthy color changes' not in spec.name and 'Extended list of putted defects' not in spec.name %}
-                                                        <li class="mb-2" style="display: flex; flex-wrap: nowrap;">
-                                                            <strong style="color: var(--text-color); min-width: 200px; flex-shrink: 0;">
-{% if LANGUAGE_CODE == 'ar' and spec.name_ar %}
-                                                                    {{ spec.name_ar | to_arabic_digits_if_arabic:LANGUAGE_CODE }}:
-                                                                {% else %}
-                                                                    {{ spec.name | to_arabic_digits_if_arabic:LANGUAGE_CODE }}:
-                                                                {% endif %}
-                                                            </strong>
-                                                            <span style="color: var(--light-text); margin-left: 10px;">
-                                                                {% if LANGUAGE_CODE == 'ar' and spec.value_ar %}
-                                                                    {{ spec.value_ar | to_arabic_digits_if_arabic:LANGUAGE_CODE }}
-                                                                {% else %}
-                                                                    {{ spec.value | to_arabic_digits_if_arabic:LANGUAGE_CODE }}
-                                                                {% endif %}
-                                                            </span>
-                                                        </li>
-                                                        {% endif %}
+                                                            {% if 'Strength and durability' not in spec.name and 'Environmental resistance' not in spec.name and 'Film variety' not in spec.name and 'High strength and durability' not in spec.name and 'Complete absence of healthy color changes' not in spec.name and 'Extended list of putted defects' not in spec.name %}
+                                                                <div class="row spec-row border-bottom py-2">
+                                                                    <div class="col-12 col-md-4">
+                                                                        <strong style="color: var(--text-color);">
+                                                                            {% if LANGUAGE_CODE == 'ar' and spec.name_ar %}
+                                                                                {{ spec.name_ar | to_arabic_digits_if_arabic:LANGUAGE_CODE }}:
+                                                                            {% else %}
+                                                                                {{ spec.name | to_arabic_digits_if_arabic:LANGUAGE_CODE }}:
+                                                                            {% endif %}
+                                                                        </strong>
+                                                                    </div>
+                                                                    <div class="col-12 col-md-8">
+                                                                        <span style="color: var(--light-text);">
+                                                                            {% if LANGUAGE_CODE == 'ar' and spec.value_ar %}
+                                                                                {{ spec.value_ar | to_arabic_digits_if_arabic:LANGUAGE_CODE }}
+                                                                            {% else %}
+                                                                                {{ spec.value | to_arabic_digits_if_arabic:LANGUAGE_CODE }}
+                                                                            {% endif %}
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            {% endif %}
                                                         {% endfor %}
-                                                    </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

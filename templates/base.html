@@ -339,6 +339,56 @@
         .scroll-to-top:hover i {
             transform: translateY(-2px);
         }
+        
+        /* Technical Specifications Grid Styles */
+        .technical-specs-grid {
+            border-radius: 8px;
+        }
+        
+        .spec-row {
+            border-color: var(--border-color) !important;
+            margin-bottom: 0;
+            padding: 0.75rem 0;
+            transition: background-color 0.2s ease;
+        }
+        
+        .spec-row:hover {
+            background-color: rgba(247, 250, 252, 0.5);
+        }
+        
+        .spec-row:last-child {
+            border-bottom: none !important;
+        }
+        
+        /* Mobile-specific styles */
+        @media (max-width: 767.98px) {
+            .spec-row {
+                padding: 1rem 0;
+            }
+            
+            .spec-row .col-12:first-child {
+                margin-bottom: 0.5rem;
+            }
+            
+            .spec-row strong {
+                font-size: 0.95rem;
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+            
+            .spec-row span {
+                font-size: 0.9rem;
+                display: block;
+            }
+        }
+        
+        /* Desktop styles - maintain existing behavior */
+        @media (min-width: 768px) {
+            .spec-row .col-md-4,
+            .spec-row .col-md-8 {
+                padding: 0.5rem 1rem;
+            }
+        }
     </style>
     
     {% block extra_css %}{% endblock %}

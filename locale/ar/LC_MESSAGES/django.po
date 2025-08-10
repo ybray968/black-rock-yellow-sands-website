@@ -66,10 +66,6 @@ msgstr "المدونة"
 msgid "Contact Info"
 msgstr "معلومات الاتصال"
 
-#: templates/base.html:1
-msgid "Sultanate of Oman"
-msgstr "سلطنة عمان"
-
 #: templates/base.html:1 templates/main/contact.html:1
 msgid "Muscat"
 msgstr "مسقط"
