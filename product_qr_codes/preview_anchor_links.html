@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brays International - Anchor Link QR Codes Preview</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #1e40af;
+        }
+        .header h1 {
+            color: #1e40af;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .header p {
+            color: #666;
+            margin: 10px 0 0 0;
+            font-size: 1.2rem;
+        }
+        .improvements {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .improvements h2 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        .improvements ul {
+            margin: 0;
+        }
+        .improvements li {
+            margin: 8px 0;
+        }
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .qr-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .qr-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-color: #1e40af;
+        }
+        .qr-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .qr-card h3 {
+            color: #1e40af;
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+        .qr-card .url {
+            color: #666;
+            font-size: 0.9rem;
+            word-break: break-all;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .qr-card .anchor {
+            color: #28a745;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: #e8f5e8;
+            padding: 5px 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .qr-card .filename {
+            color: #888;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+        }
+        .special-note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .special-note h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .special-note p {
+            margin: 8px 0 0 0;
+            color: #856404;
+        }
+        .anchor-demo {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .anchor-demo h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        .anchor-demo code {
+            background: #fff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Brays International Product QR Codes</h1>
+            <p>Updated with Anchor Links for Precise Product Scrolling</p>
+        </div>
+
+        <div class="improvements">
+            <h2>🎯 New Anchor Link Functionality:</h2>
+            <ul>
+                <li><strong>Smart Scrolling:</strong> Each QR code now links to the products page and automatically scrolls to the specific product</li>
+                <li><strong>Anchor Links:</strong> Using URL fragments (#product-ID) for precise positioning</li>
+                <li><strong>Single Page Experience:</strong> All products are on one page, making navigation faster</li>
+                <li><strong>High-Quality Logo:</strong> Using your 419KB high-resolution logo for crisp printing</li>
+                <li><strong>Laser Plywood Fixed:</strong> Now correctly scrolls to Laser Plywood product section</li>
+            </ul>
+        </div>
+
+        <div class="anchor-demo">
+            <h3>⚓ How Anchor Links Work:</h3>
+            <p>When someone scans a QR code, their browser will:</p>
+            <ol>
+                <li>Open <code>https://www.braysint.com/products/</code></li>
+                <li>Automatically scroll to the specific product using the anchor <code>#product-ID</code></li>
+                <li>Focus directly on the product they're interested in</li>
+            </ol>
+            <p><strong>Example:</strong> Laser Plywood QR code links to <code>https://www.braysint.com/products/#product-11</code></p>
+        </div>
+
+        <div class="qr-grid">
+            <div class="qr-card">
+                <img src="Laser_Plywood_QR.png" alt="Laser Plywood QR Code">
+                <h3>Laser Plywood</h3>
+                <div class="url">https://www.braysint.com/products/#product-11</div>
+                <div class="anchor">⚓ #product-11 (scrolls to product 11)</div>
+                <div class="filename">Laser_Plywood_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Antislip_HEX_QR.png" alt="Plywood Antislip HEX QR Code">
+                <h3>Plywood Antislip HEX</h3>
+                <div class="url">https://www.braysint.com/products/#product-7</div>
+                <div class="anchor">⚓ #product-7 (scrolls to product 7)</div>
+                <div class="filename">Plywood_Antislip_HEX_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Antislip_MT_QR.png" alt="Plywood Antislip MT QR Code">
+                <h3>Plywood Antislip MT</h3>
+                <div class="url">https://www.braysint.com/products/#product-8</div>
+                <div class="anchor">⚓ #product-8 (scrolls to product 8)</div>
+                <div class="filename">Plywood_Antislip_MT_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Deck_Construction_Use_QR.png" alt="Plywood Deck Construction Use QR Code">
+                <h3>Plywood Deck (Construction Use)</h3>
+                <div class="url">https://www.braysint.com/products/#product-3</div>
+                <div class="anchor">⚓ #product-3 (scrolls to product 3)</div>
+                <div class="filename">Plywood_Deck_Construction_Use_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Deco_QR.png" alt="Plywood Deco QR Code">
+                <h3>Plywood Deco</h3>
+                <div class="url">https://www.braysint.com/products/#product-9</div>
+                <div class="anchor">⚓ #product-9 (scrolls to product 9)</div>
+                <div class="filename">Plywood_Deco_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Exterior_Birch_WBP_QR.png" alt="Plywood Exterior Birch WBP QR Code">
+                <h3>Plywood Exterior Birch (WBP)</h3>
+                <div class="url">https://www.braysint.com/products/#product-1</div>
+                <div class="anchor">⚓ #product-1 (scrolls to product 1)</div>
+                <div class="filename">Plywood_Exterior_Birch_WBP_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Interior_Birch_QR.png" alt="Plywood Interior Birch QR Code">
+                <h3>Plywood Interior Birch</h3>
+                <div class="url">https://www.braysint.com/products/#product-2</div>
+                <div class="anchor">⚓ #product-2 (scrolls to product 2)</div>
+                <div class="filename">Plywood_Interior_Birch_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Palette_QR.png" alt="Plywood Palette QR Code">
+                <h3>Plywood Palette</h3>
+                <div class="url">https://www.braysint.com/products/#product-12</div>
+                <div class="anchor">⚓ #product-12 (scrolls to product 12)</div>
+                <div class="filename">Plywood_Palette_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Parquet_QR.png" alt="Plywood Parquet QR Code">
+                <h3>Plywood Parquet</h3>
+                <div class="url">https://www.braysint.com/products/#product-4</div>
+                <div class="anchor">⚓ #product-4 (scrolls to product 4)</div>
+                <div class="filename">Plywood_Parquet_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Shield_QR.png" alt="Plywood Shield QR Code">
+                <h3>Plywood Shield</h3>
+                <div class="url">https://www.braysint.com/products/#product-5</div>
+                <div class="anchor">⚓ #product-5 (scrolls to product 5)</div>
+                <div class="filename">Plywood_Shield_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Plywood_Shield_Acu_QR.png" alt="Plywood Shield Acu QR Code">
+                <h3>Plywood Shield Acu</h3>
+                <div class="url">https://www.braysint.com/products/#product-6</div>
+                <div class="anchor">⚓ #product-6 (scrolls to product 6)</div>
+                <div class="filename">Plywood_Shield_Acu_QR.png</div>
+            </div>
+
+            <div class="qr-card">
+                <img src="Primed_Plywood_QR.png" alt="Primed Plywood QR Code">
+                <h3>Primed Plywood</h3>
+                <div class="url">https://www.braysint.com/products/#product-10</div>
+                <div class="anchor">⚓ #product-10 (scrolls to product 10)</div>
+                <div class="filename">Primed_Plywood_QR.png</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>🎯 Perfect Solution: One Page + Smart Scrolling!</strong></p>
+            <p>📱 Test any QR code with your phone's camera - it will open the products page and automatically scroll to the specific product</p>
+            <p>🖨️ All QR codes are print-ready with high-quality embedded logo</p>
+            <p>🏢 Generated for Brays International - Black Rock & Yellow Sands</p>
+            <p><em>Updated with Anchor Links: August 2025</em></p>
+        </div>
+    </div>
+</body>
+</html>
