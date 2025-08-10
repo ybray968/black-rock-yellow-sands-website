@@ -19,6 +19,11 @@
                 <div class="col-12" id="product-{{ product.id }}">
                     <div class="card border-0 shadow-sm mb-4" style="background: var(--white);">
                         <div class="card-body p-4">
+                            <!-- Mobile Product Name (shows above images on mobile only) -->
+                            <div class="d-block d-md-none mb-3">
+                                <h2 class="card-title mb-0" style="color: var(--text-color);">{{ product.name }}</h2>
+                            </div>
+                            
                             <div class="row mb-4">
                                 <div class="col-md-5">
                                     {% if product.images.first %}
@@ -61,9 +66,10 @@
                                     {% endif %}
                                 </div>
                                 <div class="col-md-7">
-                                    <h2 class="card-title mb-3" style="color: var(--text-color);">{{ product.name }}</h2>
+                                    <!-- Desktop Product Name (hidden on mobile to avoid duplication) -->
+                                    <h2 class="card-title mb-3 d-none d-md-block" style="color: var(--text-color);">{{ product.name }}</h2>
                                     
-                                    <div class="mb-3">
+                                    <div class="mb-3 mt-md-0 mt-4">
                                         <a href="{% url 'main:contact' %}" class="btn btn-primary">
                                             <i class="fas fa-calculator me-2"></i>{% trans "Get Quote" %}
                                         </a>

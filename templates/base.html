@@ -291,6 +291,22 @@
             }
         }
         
+        /* Mobile-specific logo animation */
+        @media (max-width: 767.98px) {
+            .logo-large {
+                animation: floatMobile 6s ease-in-out infinite;
+            }
+            
+            @keyframes floatMobile {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+        
         /* Scroll to Top Button */
         .scroll-to-top {
             position: fixed;
@@ -406,7 +422,100 @@
                 </div>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <!-- Mobile: Language-specific button positioning -->
+            {% get_current_language as LANGUAGE_CODE %}
+            {% if LANGUAGE_CODE == 'ar' %}
+                <!-- Arabic: Menu button first, Language button second -->
+                <div class="d-flex align-items-center d-lg-none" style="gap: 1rem;">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="dropdown">
+                        <button class="nav-link btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" style="border: none; background: none;">
+                            <i class="fas fa-globe me-1"></i>ع
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% get_available_languages as LANGUAGES %}
+                            {% for lang_code, lang_name in LANGUAGES %}
+                                {% if lang_code != LANGUAGE_CODE %}
+                                    <li>
+                                        {% with request.get_full_path as current_path %}
+                                            {% if '/contact' in current_path %}
+                                                <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=en&next=/contact/'; return false;">
+                                                    <i class="fas fa-flag me-2"></i>English
+                                                </a>
+                                            {% else %}
+                                                <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                                                    {% csrf_token %}
+                                                    {% if current_path|slice:":3" == "/ar" %}
+                                                        <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                    {% elif current_path|slice:":3" == "/en" %}
+                                                        <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                    {% else %}
+                                                        <input name="next" type="hidden" value="{{ current_path }}" />
+                                                    {% endif %}
+                                                    <input name="language" type="hidden" value="{{ lang_code }}" />
+                                                    <button type="submit" class="dropdown-item">
+                                                        <i class="fas fa-flag me-2"></i>English
+                                                    </button>
+                                                </form>
+                                            {% endif %}
+                                        {% endwith %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% else %}
+                <!-- English: Menu button first, Language button second -->
+                <div class="d-flex align-items-center d-lg-none" style="gap: 1rem;">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="dropdown">
+                        <button class="nav-link btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" style="border: none; background: none;">
+                            <i class="fas fa-globe me-1"></i>EN
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% get_available_languages as LANGUAGES %}
+                            {% for lang_code, lang_name in LANGUAGES %}
+                                {% if lang_code != LANGUAGE_CODE %}
+                                    <li>
+                                        {% with request.get_full_path as current_path %}
+                                            {% if '/contact' in current_path %}
+                                                <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=ar&next=/ar/contact/'; return false;">
+                                                    <i class="fas fa-flag me-2"></i>العربية
+                                                </a>
+                                            {% else %}
+                                                <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                                                    {% csrf_token %}
+                                                    {% if current_path|slice:":3" == "/ar" %}
+                                                        <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                    {% elif current_path|slice:":3" == "/en" %}
+                                                        <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                    {% else %}
+                                                        <input name="next" type="hidden" value="{{ current_path }}" />
+                                                    {% endif %}
+                                                    <input name="language" type="hidden" value="{{ lang_code }}" />
+                                                    <button type="submit" class="dropdown-item">
+                                                        <i class="fas fa-flag me-2"></i>العربية
+                                                    </button>
+                                                </form>
+                                            {% endif %}
+                                        {% endwith %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+            
+            <!-- Desktop: Menu button (hidden on desktop but needed for structure) -->
+            <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -426,61 +535,63 @@
                     </li>
                 </ul>
                 
-                <!-- Language Switcher -->
-                <div class="dropdown me-3">
-                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <i class="fas fa-globe me-1"></i>
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% if LANGUAGE_CODE == 'ar' %}العربية{% else %}English{% endif %}
-                    </button>
-                    <ul class="dropdown-menu">
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% for lang_code, lang_name in LANGUAGES %}
-                            {% if lang_code != LANGUAGE_CODE %}
-                                <li>
-                                    {% with request.get_full_path as current_path %}
-                                        {% if '/contact' in current_path %}
-                                            <!-- On contact page, link directly to contact in other language -->
-                                            {% if lang_code == 'ar' %}
-                                                <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=ar&next=/ar/contact/'; return false;">
-                                                    <i class="fas fa-flag me-2"></i>العربية
-                                                </a>
-                                            {% else %}
-                                                <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=en&next=/contact/'; return false;">
-                                                    <i class="fas fa-flag me-2"></i>English
-                                                </a>
-                                            {% endif %}
-                                        {% else %}
-                                            <!-- Regular language switching for other pages -->
-                                            <form action="{% url 'set_language' %}" method="post" style="display: inline;">
-                                                {% csrf_token %}
-                                                {% if current_path|slice:":3" == "/ar" %}
-                                                    <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
-                                                {% elif current_path|slice:":3" == "/en" %}
-                                                    <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
-                                                {% else %}
-                                                    <input name="next" type="hidden" value="{{ current_path }}" />
-                                                {% endif %}
-                                                <input name="language" type="hidden" value="{{ lang_code }}" />
-                                                <button type="submit" class="dropdown-item">
-                                                    {% if lang_code == 'ar' %}
+                <!-- Language Switcher positioned on the right - desktop only -->
+                <ul class="navbar-nav d-none d-lg-flex">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" style="border: none; background: none;">
+                            <i class="fas fa-globe me-1"></i>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% if LANGUAGE_CODE == 'ar' %}ع{% else %}EN{% endif %}
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% for lang_code, lang_name in LANGUAGES %}
+                                {% if lang_code != LANGUAGE_CODE %}
+                                    <li>
+                                        {% with request.get_full_path as current_path %}
+                                            {% if '/contact' in current_path %}
+                                                <!-- On contact page, link directly to contact in other language -->
+                                                {% if lang_code == 'ar' %}
+                                                    <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=ar&next=/ar/contact/'; return false;">
                                                         <i class="fas fa-flag me-2"></i>العربية
-                                                    {% else %}
+                                                    </a>
+                                                {% else %}
+                                                    <a href="{% url 'main:contact' %}" class="dropdown-item" onclick="window.location.href='{% url 'set_language' %}?language=en&next=/contact/'; return false;">
                                                         <i class="fas fa-flag me-2"></i>English
+                                                    </a>
+                                                {% endif %}
+                                            {% else %}
+                                                <!-- Regular language switching for other pages -->
+                                                <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                                                    {% csrf_token %}
+                                                    {% if current_path|slice:":3" == "/ar" %}
+                                                        <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                    {% elif current_path|slice:":3" == "/en" %}
+                                                        <input name="next" type="hidden" value="{{ current_path|slice:'3:' }}" />
+                                                    {% else %}
+                                                        <input name="next" type="hidden" value="{{ current_path }}" />
                                                     {% endif %}
-                                                </button>
-                                            </form>
-                                        {% endif %}
-                                    {% endwith %}
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
+                                                    <input name="language" type="hidden" value="{{ lang_code }}" />
+                                                    <button type="submit" class="dropdown-item">
+                                                        {% if lang_code == 'ar' %}
+                                                            <i class="fas fa-flag me-2"></i>العربية
+                                                        {% else %}
+                                                            <i class="fas fa-flag me-2"></i>English
+                                                        {% endif %}
+                                                    </button>
+                                                </form>
+                                            {% endif %}
+                                        {% endwith %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
                 
-                <!-- Search Form -->
-                <form class="d-flex search-form" method="GET" action="{% url 'products:list' %}">
+                <!-- Search Form with spacing - desktop only -->
+                <form class="d-none d-lg-flex search-form ms-3" method="GET" action="{% url 'products:list' %}">
                     <input class="form-control" type="search" name="search" placeholder="{% trans 'Search products...' %}" aria-label="Search">
                     <button class="btn btn-primary" type="submit">
                         <i class="fas fa-search"></i>

@@ -89,7 +89,7 @@ body {
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <h1 class="display-4 fw-normal mb-4" style="color: var(--text-color); line-height: 1.2;">{% trans "Premium Birch Plywood & Construction Materials Wholesale" %}</h1>
-                <p class="lead mb-5" style="color: var(--light-text); font-weight: 400;">{% trans "Discover our extensive collection of high-quality plywood construction materials. Perfect for construction professionals, contractors and manufacturers." %}</p>
+                <p class="lead mb-5" style="color: var(--text-color); font-weight: 400; opacity: 0.75;">{% trans "Discover our extensive collection of high-quality plywood construction materials. Perfect for construction professionals, contractors and manufacturers." %}</p>
                 <div class="d-flex gap-3">
                     <a href="{% url 'products:list' %}" class="btn btn-primary">
                         <i class="fas fa-search me-2"></i>{% trans "Browse Products" %}
@@ -99,7 +99,7 @@ body {
                     </a>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-5 mt-lg-0">
                 <div class="text-center">
                     {% load static %}
                     <img src="{% static 'images/brays-logo.png' %}" alt="Black Rock And Yellow Sands International Logo" class="logo-large img-fluid" style="max-height: 320px; opacity: 0.9;">
@@ -180,7 +180,7 @@ body {
                                 {{ product.description|truncatewords:15 }}
                             {% endif %}
                         </p>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center gap-2">
                             <a href="{% url 'main:contact' %}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-calculator me-1"></i>{% trans "Get Quote" %}
                             </a>
