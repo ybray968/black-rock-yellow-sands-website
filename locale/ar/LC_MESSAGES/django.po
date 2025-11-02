@@ -167,6 +167,16 @@ msgstr ""
 
 #: templates/main/about.html:1
 msgid ""
+"Black Rock And Yellow Sands International is a wholesale supplier of "
+"agricultural commodities and construction materials of exceptional quality, "
+"meeting all purity and ISO emission standards, especially for formaldehyde."
+msgstr ""
+"شركة الصخرة السوداء والرمال الصفراء الدولية هي مورد بالجملة للسلع الزراعية "
+"ومواد البناء ذات الجودة الاستثنائية، تلبي جميع معايير النقاء ومعايير الانبعاثات ISO، "
+"وخاصة للفورمالديهايد."
+
+#: templates/main/about.html:1
+msgid ""
 "Our clients are contractors, construction professionals, and manufacturers "
 "who demand top-quality plywood for their projects. We understand that in "
 "professional construction and manufacturing, material quality is non-"
@@ -175,6 +185,17 @@ msgstr ""
 "عملاؤنا هم مقاولون ومحترفو بناء ومصنعون يطالبون بخشب رقائقي عالي الجودة "
 "لمشاريعهم. نحن نفهم أنه في البناء والتصنيع المهني، جودة المواد غير قابلة "
 "للتفاوض."
+
+#: templates/main/about.html:1
+msgid ""
+"Our clients are flour mill factories, manufacturers, contractors, and "
+"construction professionals who demand top-quality products for their "
+"production lines and projects. We understand that in professional "
+"construction and manufacturing, material quality is non-negotiable."
+msgstr ""
+"عملاؤنا هم مصانع طحن الدقيق والمصنعون والمقاولون ومحترفو البناء الذين يطالبون "
+"بمنتجات عالية الجودة لخطوط إنتاجهم ومشاريعهم. نحن نفهم أنه في البناء والتصنيع المهني، "
+"جودة المواد غير قابلة للتفاوض."
 
 #: templates/main/about.html:1
 msgid "Our Vision"
@@ -189,6 +210,15 @@ msgstr ""
 " بجودة لا تقبل المساومة وسلاسل توريد موثوقة."
 
 #: templates/main/about.html:1
+msgid ""
+"To be the preferred wholesale supplier of agricultural commodities, "
+"fertilizers, and premium construction materials for professionals who demand "
+"uncompromising quality and reliable supply chains."
+msgstr ""
+"أن نكون المورد المفضل بالجملة للسلع الزراعية والأسمدة ومواد البناء الممتازة "
+"للمحترفين الذين يطالبون بجودة لا تقبل المساومة وسلاسل توريد موثوقة."
+
+#: templates/main/about.html:1
 msgid "Our Mission"
 msgstr "مهمتنا"
 
@@ -200,6 +230,15 @@ msgid ""
 msgstr ""
 "تقديم خشب رقائقي للبناء عالي الجودة ومتسق يلبي المعايير المهنية، مع سلاسل "
 "توريد موثوقة وأسعار جملة تنافسية."
+
+#: templates/main/about.html:1
+msgid ""
+"To deliver consistent, high-quality wheat grain, barley, soybean, sulfur, "
+"and construction plywood that meets highest international standards, with "
+"reliable supply chains and competitive wholesale pricing."
+msgstr ""
+"تقديم حبوب القمح والشعير وفول الصويا والكبريت والخشب الرقائقي للبناء عالي الجودة "
+"ومتسق يلبي أعلى المعايير الدولية، مع سلاسل توريد موثوقة وأسعار جملة تنافسية."
 
 #: templates/main/about.html:1
 msgid "What Sets Us Apart"
