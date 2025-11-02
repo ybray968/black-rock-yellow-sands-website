@@ -88,8 +88,8 @@ body {
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="display-4 fw-normal mb-4" style="color: var(--text-color); line-height: 1.2;">{% trans "Premium Birch Plywood & Construction Materials Wholesale" %}</h1>
-                <p class="lead mb-5" style="color: var(--text-color); font-weight: 400; opacity: 0.75;">{% trans "Discover our extensive collection of high-quality plywood construction materials. Perfect for construction professionals, contractors and manufacturers." %}</p>
+                <h1 class="display-4 fw-normal mb-4" style="color: var(--text-color); line-height: 1.2;">{% trans "Construction Materials & Agricultural Commodities Wholesale" %}</h1>
+                <p class="lead mb-5" style="color: var(--text-color); font-weight: 400; opacity: 0.75;">{% trans "Discover our extensive collection of high-quality construction materials and premium agricultural commodities including wheat grain, barley, soybean, and sulfur." %}</p>
                 <div class="d-flex gap-3">
                     <a href="{% url 'products:list' %}" class="btn btn-primary">
                         <i class="fas fa-search me-2"></i>{% trans "Browse Products" %}
@@ -119,6 +119,13 @@ body {
                     <i class="fas fa-layer-group fa-3x mb-3"></i>
                     <h4>{% trans "Plywood" %}</h4>
                     <p class="mb-0">{% trans "Versatile building materials for construction" %}</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-5">
+                <a href="{% url 'main:contact' %}" class="category-card d-block h-100">
+                    <i class="fas fa-wheat-awn fa-3x mb-3"></i>
+                    <h4>{% trans "Agricultural Commodities" %}</h4>
+                    <p class="mb-0">{% trans "Premium wheat grain, barley, soybean, and sulfur" %}</p>
                 </a>
             </div>
         </div>

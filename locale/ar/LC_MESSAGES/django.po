@@ -38,6 +38,38 @@ msgstr ""
 msgid "Premium Birch Plywood & Construction Materials Wholesale"
 msgstr "الخشب الرقائقي البتولا الفاخر ومواد البناء بالجملة"
 
+#: templates/main/home.html:1
+msgid "Construction Materials & Agricultural Commodities Wholesale"
+msgstr "مواد البناء والسلع الزراعية بالجملة"
+
+#: templates/main/home.html:1
+msgid "Discover our extensive collection of high-quality construction materials and premium agricultural commodities including wheat grain, barley, soybean, and sulfur."
+msgstr "اكتشف مجموعتنا الواسعة من مواد البناء عالية الجودة والسلع الزراعية الممتازة بما في ذلك حبوب القمح والشعير وفول الصويا والكبريت."
+
+#: templates/main/home.html:1
+msgid "Agricultural Commodities"
+msgstr "السلع الزراعية"
+
+#: templates/main/home.html:1
+msgid "Premium wheat grain, barley, soybean, and sulfur"
+msgstr "حبوب القمح والشعير وفول الصويا والكبريت الممتازة"
+
+#: templates/base.html:1
+msgid "Wheat"
+msgstr "القمح"
+
+#: templates/base.html:1
+msgid "Barley"
+msgstr "الشعير"
+
+#: templates/base.html:1
+msgid "Soybean Meal"
+msgstr "وجبة فول الصويا"
+
+#: templates/base.html:1
+msgid "Sulfur"
+msgstr "الكبريت"
+
 #: templates/base.html:1
 msgid "Sultanate of Oman"
 msgstr "سلطنة عمان"
