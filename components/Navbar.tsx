@@ -15,6 +15,7 @@ const DIVISIONS = [
   { name: "Construction", href: "/construction" },
   { name: "Sulfur", href: "/sulfur" },
   { name: "About", href: "/about" },
+  { name: "Careers", href: "/careers" },
 ];
 
 export default function Navbar() {
@@ -33,6 +34,7 @@ export default function Navbar() {
   const getActiveDivision = () => {
     if (pathname === "/about") return "About";
     if (pathname === "/contact") return "Contact";
+    if (pathname === "/careers") return "Careers";
     if (pathname === "/construction") return "Construction";
     if (pathname === "/sulfur") return "Sulfur";
     if (pathname === "/agriculture") return "Agriculture";

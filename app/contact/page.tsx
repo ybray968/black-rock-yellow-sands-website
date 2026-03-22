@@ -25,11 +25,29 @@ export default function ContactPage() {
     
     setIsSubmitting(true);
     
-    // Simulate API submission
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: (document.getElementById("name") as HTMLInputElement).value,
+          email: (document.getElementById("email") as HTMLInputElement).value,
+          division: (document.getElementById("division") as HTMLSelectElement).value,
+          message: (document.getElementById("message") as HTMLTextAreaElement).value,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-    }, 1500);
+    }
   };
 
   return (
@@ -191,10 +209,9 @@ export default function ContactPage() {
                     ></textarea>
                   </div>
 
-                  {/* Cloudflare Turnstile */}
                   <div className="pt-2">
                     <Turnstile
-                      siteKey="1x00000000000000000000AA" // Cloudflare testing dummy key
+                      siteKey="0x4AAAAAACul__dWFbvMuQKG"
                       onSuccess={(token) => setToken(token)}
                       options={{ size: "normal", theme: "light" }}
                     />
