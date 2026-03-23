@@ -12,12 +12,14 @@ interface AnimatedSectionProps {
   once?: boolean;
 }
 
-const heavySpring = {
+const luxuryTransition = {
   type: "spring",
-  mass: 2,
-  stiffness: 80,
-  damping: 25,
+  mass: 1.2,
+  stiffness: 70,
+  damping: 24,
 } as const;
+
+const luxuryEase = [0.22, 1, 0.36, 1]; // cubic-bezier(0.22, 1, 0.36, 1)
 
 export function AnimatedSection({
   children,
@@ -51,7 +53,7 @@ export function AnimatedSection({
       ref={ref}
       initial={initial}
       animate={isInView ? { x: 0, y: 0, opacity: 1 } : initial}
-      transition={{ ...heavySpring, delay }}
+      transition={{ ...luxuryTransition, delay }}
       className={clsx(className)}
     >
       {children}
@@ -126,7 +128,7 @@ export const StaggerItem = ({
       x: 0,
       y: 0,
       opacity: 1,
-      transition: heavySpring,
+      transition: luxuryTransition,
     },
   };
 

@@ -74,11 +74,11 @@ export default function CareersPage() {
       <section className="relative w-full h-[50vh] min-h-[400px] flex items-center overflow-hidden bg-forest">
         <div className="absolute inset-0 z-0 hidden md:block">
           <Image
-            src="/images/home_hero.png"
+            src="/images/careers_hero.png"
             alt="Careers Hero"
             fill
             priority
-            className="object-cover object-[65%_center] md:object-center opacity-40 hover:opacity-60 transition-opacity duration-1000 grayscale"
+            className="object-cover object-[65%_center] md:object-center opacity-40 hover:opacity-60 transition-opacity duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-transparent" />
         </div>
