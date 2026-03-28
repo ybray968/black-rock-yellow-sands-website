@@ -206,7 +206,6 @@ export default function ContactPage() {
                       <option value="agriculture">{t.nav.agriculture}</option>
                       <option value="construction">{t.nav.construction}</option>
                       <option value="sulfur">{t.nav.sulfur}</option>
-                      <option value="other">{t.common.explore}</option>
                     </select>
                   </div>
 
@@ -222,9 +221,9 @@ export default function ContactPage() {
                     ></textarea>
                   </div>
 
-                  <div className={clsx("pt-2 flex", isRTL && "justify-end")}>
+                  <div className={clsx("pt-4 flex", isRTL && "justify-end")}>
                     <Turnstile
-                      siteKey="1x00000000000000000000AA"
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
                       onSuccess={(token) => setToken(token)}
                       options={{ size: "normal", theme: "light" }}
                     />
