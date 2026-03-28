@@ -25,6 +25,7 @@ export default function Home() {
   const { lang, isRTL } = useLanguage();
   const t = translations[lang];
 
+  const [activeMobileCard, setActiveMobileCard] = useState<'agri' | 'construction' | null>(null);
   const steelY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
   const plywoodY = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
 
@@ -52,9 +53,17 @@ export default function Home() {
         {/* Content Layers */}
         <div className="relative z-10 w-full h-full flex flex-col md:flex-row">
           {/* Agri Left */}
-          <div className="flex-1 flex flex-col justify-end p-10 md:p-20 border-b md:border-b-0 md:border-r border-white/5 group relative overflow-hidden">
+          <div 
+            onClick={() => setActiveMobileCard(prev => prev === 'agri' ? null : 'agri')}
+            className="flex-1 flex flex-col justify-end p-10 md:p-20 border-b md:border-b-0 md:border-r border-white/5 group relative overflow-hidden cursor-pointer"
+          >
             {/* Hover Background Reveal */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0">
+            <div 
+              className={clsx(
+                "absolute inset-0 transition-opacity duration-1000 z-0",
+                activeMobileCard === 'agri' ? "opacity-100" : "opacity-0 md:group-hover:opacity-100"
+              )}
+            >
               <Image
                 src="/images/wheat_brays_hero.png"
                 alt="Medium-Hard Wheat Field"
@@ -88,8 +97,16 @@ export default function Home() {
             </AnimatedSection>
           </div>
 
-          <div className="flex-1 flex flex-col justify-end p-10 md:p-20 group relative overflow-hidden border-t md:border-t-0 border-white/5">
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0">
+          <div 
+            onClick={() => setActiveMobileCard(prev => prev === 'construction' ? null : 'construction')}
+            className="flex-1 flex flex-col justify-end p-10 md:p-20 group relative overflow-hidden border-t md:border-t-0 border-white/5 cursor-pointer"
+          >
+            <div 
+              className={clsx(
+                "absolute inset-0 transition-opacity duration-1000 z-0",
+                activeMobileCard === 'construction' ? "opacity-100" : "opacity-0 md:group-hover:opacity-100"
+              )}
+            >
               <Image
                 src="/images/steel_brays_hero_product.png"
                 alt="Structural Steel"

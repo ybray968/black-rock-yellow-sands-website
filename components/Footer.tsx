@@ -38,7 +38,7 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-white/40 max-w-md font-normal text-sm md:text-base leading-relaxed text-balance italic">
+            <p className="text-white/70 max-w-md font-normal text-sm md:text-base leading-relaxed text-balance italic">
               {t.footer.tagline}
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4 text-sm font-normal">
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-1">
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/70 font-serif italic mb-1">
                   {t.footer.primaryEmail}
                 </span>
                 <a
@@ -62,7 +62,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-1">
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/70 font-serif italic mb-1">
                   {t.footer.directLine}
                 </span>
                 <a
@@ -74,7 +74,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-1">
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/70 font-serif italic mb-1">
                   {t.footer.globalHq}
                 </span>
                 <address className={clsx("not-italic text-white font-semibold text-xs leading-relaxed max-w-[240px]", isRTL ? "text-right" : "text-left")}>
@@ -82,7 +82,7 @@ export default function Footer() {
                 </address>
               </li>
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-3">
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/70 font-serif italic mb-3">
                   {t.footer.credentials}
                 </span>
                 <div className={clsx("flex flex-col gap-1 text-white font-semibold text-xs uppercase w-full", isRTL ? "items-start text-right" : "items-start text-left")}>
@@ -103,7 +103,7 @@ export default function Footer() {
                 <li key={div.name}>
                   <Link
                     href={div.href}
-                    className="text-white/40 hover:text-gold transition-all hover:translate-x-1 inline-block uppercase text-xs font-bold tracking-widest"
+                    className="text-white/70 hover:text-gold transition-all hover:translate-x-1 inline-block uppercase text-xs font-bold tracking-widest"
                   >
                     {lang === 'ar' 
                       ? (div.name === "Agriculture" ? "الزراعة" : div.name === "Industrial Construction" ? "الإنشاءات الصناعية" : "تجارة الكبريت")
@@ -123,7 +123,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium premium-tracking text-white/30 uppercase">
+        <div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium premium-tracking text-white/70 uppercase">
           <p>
             {t.common.copyright}
           </p>

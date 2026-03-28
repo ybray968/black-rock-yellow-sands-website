@@ -25,6 +25,7 @@ export default function Navbar() {
     { name: t.nav.sulfur, href: "/sulfur", key: "Sulfur" },
     { name: t.nav.about, href: "/about", key: "About" },
     { name: t.nav.careers, href: "/careers", key: "Careers" },
+    { name: t.common.contact, href: "/contact", key: "Contact" },
   ];
 
   useEffect(() => {

@@ -246,7 +246,7 @@ export default function CareersPage() {
 
                     <div className={clsx("pt-2 flex", isRTL && "justify-end")}>
                       <Turnstile
-                        siteKey="0x4AAAAAACul__dWFbvMuQKG"
+                        siteKey="1x00000000000000000000AA"
                         onSuccess={(token) => setToken(token)}
                         options={{ size: "normal", theme: "light" }}
                       />
