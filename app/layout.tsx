@@ -27,6 +27,9 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "Black Rock And Yellow Sands International",
   description: "Enterprise operating in Agricultural Wholesale and Industrial Construction.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
