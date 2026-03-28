@@ -1,10 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { COMPANY } from "@/lib/siteData";
+import { useLanguage } from "./LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function Footer() {
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
+
   return (
-    <footer id="contact" className="bg-forest text-offwhite border-t border-white/5 mt-auto py-24 relative overflow-hidden">
+    <footer id="contact" className={clsx("bg-forest text-offwhite border-t border-white/5 mt-auto py-16 relative overflow-hidden", isRTL && "font-arabic")}>
       {/* Decorative Top Border Gradient */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
       
@@ -12,108 +20,119 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center group gap-4 mb-10 -ml-2">
-              <div className="relative h-14 w-14">
+            <Link href="/" className="flex items-center group gap-4 mb-8 -ml-2">
+              <div className="relative h-12 w-12 transition-all duration-500">
                 <Image
                   src="/images/braysint-logo-large.png"
                   alt="BRAY International Logo"
                   fill
-                  className="object-contain object-left transition-opacity group-hover:opacity-80"
+                  className="object-contain object-left"
                 />
               </div>
-              <div className="flex flex-col pl-0">
-                <span className="font-serif font-bold text-base tracking-[0.05em] leading-tight text-white/95 uppercase">
-                  Black Rock And Yellow Sands
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-lg tracking-tight leading-none text-white/95 uppercase">
+                  {lang === 'ar' ? "بلاك روك آند يلو ساندز" : "Black Rock And Yellow Sands"}
                 </span>
-                <span className="text-[11px] premium-tracking text-gold uppercase mt-1.5 opacity-80">
-                  International
+                <span className="text-[10px] md:text-xs premium-tracking text-gold uppercase mt-1">
+                  {lang === 'ar' ? "إنترناشيونال" : "International"}
                 </span>
               </div>
             </Link>
-            <p className="text-offwhite/50 max-w-md font-normal text-base leading-relaxed text-balance">
-              Black Rock And Yellow Sands International LLC. Setting the global standard in high-purity agricultural commodities and structural industrial materials.
+            <p className="text-white/40 max-w-md font-normal text-sm md:text-base leading-relaxed text-balance italic">
+              {t.footer.tagline}
             </p>
           </div>
 
           {/* Contact Information */}
-          <div>
-            <h3 className="font-serif text-xl font-bold mb-10 text-gold/90 premium-tracking uppercase text-sm">
-              Contact
+          <div className="space-y-8">
+            <h3 className="font-serif font-bold text-[10px] premium-tracking uppercase text-gold border-b border-gold/20 pb-4 inline-block">
+              {t.footer.communication}
             </h3>
-            <ul className="space-y-6 text-base font-normal text-offwhite/60">
+            <ul className="space-y-4 text-sm font-normal">
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">
-                  Primary Email
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-1">
+                  {t.footer.primaryEmail}
                 </span>
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="hover:text-gold transition-colors block text-offwhite/80"
+                  className={clsx("hover:text-gold transition-colors block text-white font-semibold text-xs lowercase dir-ltr", isRTL ? "text-right" : "text-left")}
+                  style={{ direction: 'ltr' }}
                 >
                   {COMPANY.email}
                 </a>
               </li>
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">
-                  Contact Number
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-1">
+                  {t.footer.directLine}
                 </span>
                 <a
                   href={`tel:${COMPANY.phone}`}
-                  className="hover:text-gold transition-colors block text-offwhite/80"
+                  className={clsx("hover:text-gold transition-colors block text-white font-semibold text-xs tracking-wide dir-ltr", isRTL ? "text-right" : "text-left")}
+                  style={{ direction: 'ltr' }}
                 >
                   {COMPANY.phone}
                 </a>
               </li>
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">
-                  Headquarters
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-1">
+                  {t.footer.globalHq}
                 </span>
-                <address className="not-italic text-offwhite/80 leading-relaxed uppercase text-xs tracking-wider">
+                <address className={clsx("not-italic text-white font-semibold text-xs leading-relaxed max-w-[240px]", isRTL ? "text-right" : "text-left")}>
                   {COMPANY.address}
                 </address>
               </li>
               <li>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-4">
-                  Credentials
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/40 font-serif italic mb-3">
+                  {t.footer.credentials}
                 </span>
-                <div className="flex flex-col gap-2 text-offwhite/80">
-                  <span className="text-xs uppercase tracking-wider">CR: {COMPANY.cr}</span>
-                  <span className="text-xs uppercase tracking-wider">VATIN: {COMPANY.vat}</span>
+                <div className={clsx("flex flex-col gap-1 text-white font-semibold text-xs uppercase w-full", isRTL ? "items-start text-right" : "items-start text-left")}>
+                  <span className={clsx("dir-ltr block w-full", isRTL ? "text-right" : "text-left")} style={{ direction: 'ltr' }}>CR: {COMPANY.cr}</span>
+                  <span className={clsx("dir-ltr block w-full", isRTL ? "text-right" : "text-left")} style={{ direction: 'ltr' }}>VATIN: {COMPANY.vat}</span>
                 </div>
               </li>
             </ul>
           </div>
 
-          {/* Divisions */}
-          <div>
-            <h3 className="font-serif text-xl font-bold mb-10 text-gold/90 premium-tracking uppercase text-sm">
-              Sectors
+          {/* Sectors */}
+          <div className="space-y-8">
+            <h3 className="font-serif font-bold text-[10px] premium-tracking uppercase text-gold border-b border-gold/20 pb-4 inline-block">
+              {t.footer.sectors}
             </h3>
-            <ul className="space-y-4 text-base font-normal">
+            <ul className="space-y-4 text-sm font-normal">
               {COMPANY.divisions.map((div) => (
                 <li key={div.name}>
                   <Link
                     href={div.href}
-                    className="text-offwhite/60 hover:text-gold transition-all hover:translate-x-1 inline-block"
+                    className="text-white/40 hover:text-gold transition-all hover:translate-x-1 inline-block uppercase text-xs font-bold tracking-widest"
                   >
-                    {div.name}
+                    {lang === 'ar' 
+                      ? (div.name === "Agriculture" ? "الزراعة" : div.name === "Industrial Construction" ? "الإنشاءات الصناعية" : "تجارة الكبريت")
+                      : div.name}
                   </Link>
                 </li>
               ))}
+              <li className="pt-4">
+                <Link
+                  href="/contact"
+                  className="text-gold hover:text-white transition-colors uppercase text-xs font-black tracking-[0.2em] border border-gold/30 px-4 py-2 rounded-sm inline-block"
+                >
+                  {t.common.requestAQuote}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium premium-tracking text-white/20 uppercase">
+        <div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium premium-tracking text-white/30 uppercase">
           <p>
-            &copy; {new Date().getFullYear()} {COMPANY.name}. All rights
-            reserved.
+            {t.common.copyright}
           </p>
           <div className="flex space-x-10">
             <Link href="/privacy" className="hover:text-gold transition-colors">
-              Privacy
+              {t.common.privacy}
             </Link>
             <Link href="/terms" className="hover:text-gold transition-colors">
-              Terms
+              {t.common.terms}
             </Link>
           </div>
         </div>

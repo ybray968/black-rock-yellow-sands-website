@@ -8,25 +8,31 @@ import {
   StaggerItem,
 } from "@/components/AnimatedSection";
 import { Wheat, Droplets, Ship } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function AgriculturePage() {
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
+
   const lifecycleSteps = [
     {
       num: "01",
-      title: "Harvest & Sourcing",
-      desc: "Mass scale harvesting of high-yield medium-hard wheat. We partner directly with premium agricultural producers to ensure maximum quality.",
+      title: t.home.agri.grainExports.title,
+      desc: t.home.agri.grainExports.desc,
       icon: Wheat,
     },
     {
       num: "02",
-      title: "Surveyor Testing",
-      desc: "Rigorous international quality control standards applied to every batch. Absolute purity and moisture control guaranteed.",
+      title: lang === 'ar' ? "اختبارات الجودة" : "Surveyor Testing",
+      desc: t.home.agri.surveyorTesting.desc,
       icon: Droplets,
     },
     {
       num: "03",
-      title: "Global Export",
-      desc: "Coordinated shipping and distribution using advanced logistics networks and bulk carrier vessels for global reach.",
+      title: t.home.agri.logistics.title,
+      desc: t.home.agri.logistics.desc,
       icon: Ship,
     },
   ];
@@ -51,25 +57,23 @@ export default function AgriculturePage() {
             <StaggerItem direction="up" className="mb-6 flex items-center gap-3">
               <Wheat className="w-6 h-6 text-gold" />
               <span className="text-gold font-serif italic tracking-wide">
-                Division I
+                {t.agriculture.hero.titleGold}
               </span>
             </StaggerItem>
             <StaggerItem direction="up" className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.9]">
-                Global <br /> Agriculture
+              <h1 className={clsx("text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.85]", isRTL && "font-arabic")}>
+                {lang === 'ar' ? <>الزراعة <br /> العالمية</> : <>Global <br /> Agriculture</>}
               </h1>
             </StaggerItem>
             <StaggerItem direction="up">
-              <p className="text-offwhite/80 text-lg md:text-xl font-normal leading-relaxed max-w-xl text-balance">
-                Sourcing, surveying, and exporting the finest agricultural
-                commodities worldwide. From field to final destination with
-                uncompromising quality and international surveyor testing.
+              <p className="text-offwhite/80 text-base md:text-lg font-normal leading-relaxed max-w-xl text-balance">
+                {t.agriculture.hero.desc}
               </p>
               <Link
                 href="/contact"
-                className="inline-flex mt-8 px-8 py-3 bg-gold text-forest font-bold tracking-widest text-sm rounded-sm hover:bg-offwhite transition-colors uppercase"
+                className="inline-flex mt-8 px-8 py-3 bg-gold text-forest font-bold tracking-widest text-xs rounded-sm hover:bg-offwhite transition-colors uppercase"
               >
-                Request Quotation
+                {t.common.requestAQuote}
               </Link>
             </StaggerItem>
           </StaggerContainer>
@@ -80,8 +84,8 @@ export default function AgriculturePage() {
       <section className="py-24 md:py-32 relative z-10 bg-offwhite">
         <div className="container mx-auto px-4 md:px-8">
           <AnimatedSection direction="up" className="mb-16 md:mb-24 text-center">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-forest uppercase tracking-tighter">
-              Supply <span className="text-gold italic font-normal">Chain.</span>
+            <h2 className={clsx("text-4xl md:text-6xl font-serif font-bold text-forest uppercase tracking-tighter", isRTL && "font-arabic")}>
+              {lang === 'ar' ? <>سلسلة <span className="text-gold italic font-normal font-sans">التوريد.</span></> : <>Supply <span className="text-gold italic font-normal">Chain.</span></>}
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mt-8" />
           </AnimatedSection>
@@ -102,13 +106,13 @@ export default function AgriculturePage() {
                     <div className="w-16 h-16 bg-forest text-gold rounded-full flex items-center justify-center mb-8 md:-translate-y-16 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-500 shadow-lg border-4 border-offwhite">
                       <Icon className="w-8 h-8" />
                     </div>
-                    <div className="text-gold font-mono text-sm tracking-widest font-bold mb-2 text-center md:text-left">
+                    <div className="text-gold font-mono text-sm tracking-widest font-bold mb-2 text-center md:text-left dir-ltr" style={{ direction: 'ltr' }}>
                       {step.num}
                     </div>
-                    <h3 className="text-2xl font-serif font-bold text-forest mb-4 text-center md:text-left">
+                    <h3 className={clsx("text-2xl font-serif font-bold text-forest mb-4 text-center md:text-left", isRTL && "text-start font-arabic")}>
                       {step.title}
                     </h3>
-                    <p className="text-forest/70 font-normal leading-relaxed text-sm text-center md:text-left text-balance">
+                    <p className={clsx("text-forest/70 font-normal leading-relaxed text-sm text-center md:text-left text-balance", isRTL && "text-start")}>
                       {step.desc}
                     </p>
                   </StaggerItem>
@@ -123,12 +127,11 @@ export default function AgriculturePage() {
       <section className="py-24 bg-forest relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <AnimatedSection direction="up" className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-offwhite uppercase tracking-tighter">
-              Global <span className="text-gold italic font-normal">Operations.</span>
+            <h2 className={clsx("text-3xl md:text-5xl font-serif font-bold text-offwhite uppercase tracking-tighter", isRTL && "font-arabic")}>
+              {lang === 'ar' ? <>العمليات <span className="text-gold italic font-normal font-sans">العالمية.</span></> : <>Global <span className="text-gold italic font-normal">Operations.</span></>}
             </h2>
-            <p className="text-offwhite/50 font-normal max-w-md text-balance text-sm md:text-base">
-              Operating at unprecedented scale to manage grain exports and surveyor-certified
-              logistics worldwide.
+            <p className={clsx("text-offwhite/50 font-normal max-w-md text-balance text-sm md:text-base", isRTL && "text-start")}>
+              {lang === 'ar' ? "نعمل بحجم غير مسبوق لإدارة صادرات الحبوب والخدمات اللوجستية المعتمدة من الفاحصين في جميع أنحاء العالم." : "Operating at unprecedented scale to manage grain exports and surveyor-certified logistics worldwide."}
             </p>
           </AnimatedSection>
 
@@ -143,12 +146,12 @@ export default function AgriculturePage() {
                 className="object-cover object-center opacity-90 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <div className="absolute bottom-0 left-0 p-8 w-full transition-all duration-500">
                 <span className="text-gold text-xs tracking-widest uppercase font-bold mb-2 block">
-                  Logistics Integration
+                  {lang === 'ar' ? "تكامل الخدمات اللوجستية" : "Logistics Integration"}
                 </span>
                 <h3 className="text-xl md:text-2xl font-serif font-bold text-offwhite">
-                  Bulk Carrier Distribution
+                  {lang === 'ar' ? "توزيع سفن الصب" : "Bulk Carrier Distribution"}
                 </h3>
               </div>
             </StaggerItem>
@@ -164,7 +167,7 @@ export default function AgriculturePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 w-full">
                 <h3 className="text-lg font-serif font-bold text-offwhite">
-                  Mass Scale Harvesting
+                  {lang === 'ar' ? "حصاد واسع النطاق" : "Mass Scale Harvesting"}
                 </h3>
               </div>
             </StaggerItem>
@@ -175,10 +178,10 @@ export default function AgriculturePage() {
                 <Wheat className="w-48 h-48 -translate-y-4" />
               </div>
               <h3 className="text-2xl font-serif font-bold mb-4 z-10 relative">
-                Surveyor Certified
+                {lang === 'ar' ? "معتمد من الفاحصين" : "Surveyor Certified"}
               </h3>
-              <p className="font-medium text-sm text-forest/80 z-10 relative max-w-[200px]">
-                Industry-leading purity thresholds for international trade.
+              <p className={clsx("font-medium text-sm text-forest/80 z-10 relative max-w-[200px]", isRTL && "text-start")}>
+                {lang === 'ar' ? "عتبات نقاء رائدة في الصناعة للتجارة الدولية." : "Industry-leading purity thresholds for international trade."}
               </p>
             </StaggerItem>
           </StaggerContainer>

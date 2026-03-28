@@ -8,23 +8,29 @@ import {
   StaggerItem,
 } from "@/components/AnimatedSection";
 import { HardHat } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function ConstructionPage() {
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
+
   const lifecycleSteps = [
     {
       num: "01",
-      title: "Material Sourcing",
-      desc: "Procuring elite grade construction steel and structural plywood from verified international producers.",
+      title: lang === 'ar' ? "تأمين المواد" : "Material Sourcing",
+      desc: lang === 'ar' ? "تأمين فولاذ البناء من فئة النخبة والخشب الرقائقي الهيكلي من المنتجين الدوليين المعتمدين." : "Procuring elite grade construction steel and structural plywood from verified international producers.",
     },
     {
       num: "02",
-      title: "Quality Control",
-      desc: "Every batch is tested to ensure compliance with strict load-bearing and chemical emission profiles.",
+      title: lang === 'ar' ? "مراقبة الجودة" : "Quality Control",
+      desc: lang === 'ar' ? "يتم اختبار كل دفعة لضمان الامتثال لملفات تعريف تحمل الأحمال القصوى والانبعاثات الكيميائية الصارمة." : "Every batch is tested to ensure compliance with strict load-bearing and chemical emission profiles.",
     },
     {
       num: "03",
-      title: "Site Distribution",
-      desc: "Coordinated, timed freight delivery to your worksites. We ensure materials arrive precisely when your contractors need them.",
+      title: lang === 'ar' ? "توزيع الموقع" : "Site Distribution",
+      desc: lang === 'ar' ? "تسليم شحن منسق وموقوت إلى مواقع عملكم. نحن نضمن وصول المواد بالضبط عندما يحتاج إليها مقاولوكم." : "Coordinated, timed freight delivery to your worksites. We ensure materials arrive precisely when your contractors need them.",
     },
   ];
 
@@ -48,23 +54,23 @@ export default function ConstructionPage() {
             <StaggerItem direction="up" className="mb-6 flex items-center gap-3">
               <HardHat className="w-6 h-6 text-gold" />
               <span className="text-gold font-serif italic tracking-wide">
-                Division II
+                {t.construction.hero.titleGray}
               </span>
             </StaggerItem>
             <StaggerItem direction="up" className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.9]">
-                Industrial <br /> Construction
+              <h1 className={clsx("text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.85]", isRTL && "font-arabic")}>
+                {lang === 'ar' ? <>الإنشاءات <br /> الصناعية</> : <>Industrial <br /> Construction</>}
               </h1>
             </StaggerItem>
             <StaggerItem direction="up">
-              <p className="text-offwhite/80 text-lg md:text-xl font-normal leading-relaxed max-w-xl text-balance">
-                Specializing in large-scale projects, commercial building, and private sector. We provide construction materials with customers' requirements in mind.
+              <p className={clsx("text-offwhite/80 text-base md:text-lg font-normal leading-relaxed max-w-xl text-balance", isRTL && "text-start")}>
+                {t.construction.hero.desc}
               </p>
               <Link
                 href="/contact"
-                className="inline-flex mt-8 px-8 py-3 bg-gold text-forest font-bold tracking-widest text-sm rounded-sm hover:bg-offwhite transition-colors uppercase"
+                className="inline-flex mt-8 px-8 py-3 bg-gold text-forest font-bold tracking-widest text-xs rounded-sm hover:bg-offwhite transition-colors uppercase"
               >
-                Request Quotation
+                {t.common.requestAQuote}
               </Link>
             </StaggerItem>
           </StaggerContainer>
@@ -75,8 +81,8 @@ export default function ConstructionPage() {
       <section className="py-24 md:py-32 relative z-10 bg-offwhite">
         <div className="container mx-auto px-4 md:px-8">
           <AnimatedSection direction="up" className="mb-16 md:mb-24 text-center">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-forest uppercase tracking-tighter">
-              Supply <span className="text-gold italic font-normal">Lifecycle.</span>
+            <h2 className={clsx("text-3xl md:text-5xl font-serif font-bold text-forest uppercase tracking-tighter", isRTL && "font-arabic")}>
+              {lang === 'ar' ? <>دورة حياة <span className="text-gold italic font-normal font-sans">التوريد.</span></> : <>Supply <span className="text-gold italic font-normal">Lifecycle.</span></>}
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mt-8" />
           </AnimatedSection>
@@ -92,13 +98,13 @@ export default function ConstructionPage() {
                   direction="up"
                   className="relative group bg-white p-8 border border-forest/10 rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-500"
                 >
-                  <div className="w-16 h-16 bg-forest text-gold rounded-full flex items-center justify-center font-serif text-xl font-bold mb-8 md:-translate-y-16 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-500 shadow-lg border-4 border-offwhite">
+                  <div className="w-16 h-16 bg-forest text-gold rounded-full flex items-center justify-center font-serif text-xl font-bold mb-8 md:-translate-y-16 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-500 shadow-lg border-4 border-offwhite dir-ltr" style={{ direction: 'ltr' }}>
                     {step.num}
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-forest mb-4 text-center md:text-left">
+                  <h3 className={clsx("text-2xl font-serif font-bold text-forest mb-4 text-center md:text-left", isRTL && "text-start font-arabic")}>
                     {step.title}
                   </h3>
-                  <p className="text-forest/70 font-normal leading-relaxed text-sm text-center md:text-left text-balance">
+                  <p className={clsx("text-forest/70 font-normal leading-relaxed text-sm text-center md:text-left text-balance", isRTL && "text-start")}>
                     {step.desc}
                   </p>
                 </StaggerItem>
@@ -112,11 +118,11 @@ export default function ConstructionPage() {
       <section className="py-24 bg-forest relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <AnimatedSection direction="up" className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-offwhite uppercase tracking-tighter">
-              Global <span className="text-slate-400 italic font-normal">Logistics.</span>
+            <h2 className={clsx("text-3xl md:text-5xl font-serif font-bold text-offwhite uppercase tracking-tighter", isRTL && "font-arabic")}>
+              {lang === 'ar' ? <>الخدمات اللوجستية <span className="text-slate-400 italic font-normal font-sans">العالمية.</span></> : <>Global <span className="text-slate-400 italic font-normal">Logistics.</span></>}
             </h2>
-            <p className="text-offwhite/50 font-normal max-w-md text-balance text-sm md:text-base">
-              A view into the massive scale of materials sourced and distributed by our supply networks for infrastructure projects.
+            <p className={clsx("text-offwhite/50 font-normal max-w-md text-balance text-sm md:text-base", isRTL && "text-start")}>
+              {lang === 'ar' ? "نظرة على النطاق الهائل للمواد التي يتم توريدها وتوزيعها من قبل شبكات التوريد الخاصة بنا لمشاريع البنية التحتية." : "A view into the massive scale of materials sourced and distributed by our supply networks for infrastructure projects."}
             </p>
           </AnimatedSection>
 
@@ -133,7 +139,7 @@ export default function ConstructionPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 w-full translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                 <h3 className="text-xl md:text-2xl font-serif font-bold text-offwhite">
-                  Industrial Plywood Formwork System
+                  {lang === 'ar' ? "نظام قوالب الخشب الصناعي" : "Industrial Plywood Formwork System"}
                 </h3>
               </div>
             </StaggerItem>
@@ -149,7 +155,7 @@ export default function ConstructionPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 w-full">
                 <h3 className="text-lg font-serif font-bold text-offwhite">
-                  Heavy Steel Infrastructure
+                  {lang === 'ar' ? "البنية التحتية الفولاذية الثقيلة" : "Heavy Steel Infrastructure"}
                 </h3>
               </div>
             </StaggerItem>
@@ -160,10 +166,10 @@ export default function ConstructionPage() {
                 <HardHat className="w-24 h-24" />
               </div>
               <h3 className="text-2xl font-serif font-bold mb-4 z-10">
-                GCC Lead time 2-3 Weeks
+                {lang === 'ar' ? <span className="dir-ltr" style={{ direction: 'ltr' }}>GCC Lead time 2-3 Weeks</span> : "GCC Lead time 2-3 Weeks"}
               </h3>
-              <p className="font-normal text-sm text-offwhite/80 z-10 max-w-[200px]">
-                Rigorous distribution and logistics across multiple international networks.
+              <p className={clsx("font-normal text-sm text-offwhite/80 z-10 max-w-[200px]", isRTL && "text-start")}>
+                {lang === 'ar' ? "توزيع ولوجستيات صارمة عبر شبكات دولية متعددة." : "Rigorous distribution and logistics across multiple international networks."}
               </p>
             </StaggerItem>
           </StaggerContainer>

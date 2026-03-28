@@ -8,8 +8,14 @@ import {
   StaggerItem,
 } from "@/components/AnimatedSection";
 import { Mountain } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function SulfurPage() {
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
+
   return (
     <div className="bg-offwhite flex flex-col min-h-screen">
       {/* 1. HERO SECTION */}
@@ -30,24 +36,23 @@ export default function SulfurPage() {
             <StaggerItem direction="up" className="mb-6 flex items-center gap-3">
               <Mountain className="w-6 h-6 text-gold" />
               <span className="text-gold font-serif italic tracking-wide">
-                Division III
+                {t.sulfur.hero.titleGold}
               </span>
             </StaggerItem>
             <StaggerItem direction="up" className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.9]">
-                Sulfur <br /> Trading
+              <h1 className={clsx("text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.85]", isRTL && "font-arabic")}>
+                {lang === 'ar' ? <>تجارة <br /> الكبريت</> : <>Sulfur <br /> Trading</>}
               </h1>
             </StaggerItem>
             <StaggerItem direction="up">
-              <p className="text-offwhite/80 text-lg md:text-xl font-normal leading-relaxed max-w-xl text-balance">
-                Global sourcing, logistics, and supply of premium industrial sulfur. 
-                Powering the chemical, fertilizer, and manufacturing industries worldwide. Long term ICC contracts with guarantee of consistent volumes.
+              <p className={clsx("text-offwhite/80 text-base md:text-lg font-normal leading-relaxed max-w-xl text-balance", isRTL && "text-start")}>
+                {t.sulfur.hero.desc}
               </p>
               <Link
                 href="/contact"
-                className="inline-flex mt-8 px-8 py-3 bg-gold text-forest font-bold tracking-widest text-sm rounded-sm hover:bg-offwhite transition-colors uppercase"
+                className="inline-flex mt-8 px-8 py-3 bg-gold text-forest font-bold tracking-widest text-xs rounded-sm hover:bg-offwhite transition-colors uppercase"
               >
-                Request Quotation
+                {t.common.requestAQuote}
               </Link>
             </StaggerItem>
           </StaggerContainer>
@@ -59,11 +64,11 @@ export default function SulfurPage() {
         <div className="container mx-auto px-4 md:px-8">
           <AnimatedSection direction="up" className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 text-forest">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold uppercase tracking-tighter">
-                Raw <span className="text-gold italic font-normal">Power.</span>
+              <h2 className={clsx("text-3xl md:text-5xl font-serif font-bold uppercase tracking-tighter", isRTL && "font-arabic")}>
+                {lang === 'ar' ? <>قوة <span className="text-gold italic font-normal font-sans">خام.</span></> : <>Raw <span className="text-gold italic font-normal">Power.</span></>}
               </h2>
-              <p className="mt-6 text-lg font-normal leading-relaxed text-balance opacity-80">
-                Purity ranges exceeding 99%. We handle massive bulk distribution of granular sulfur optimized for industrial use. All of our shipments undergo SGS or equivalent quality certifications.
+              <p className={clsx("mt-6 text-lg font-normal leading-relaxed text-balance opacity-80", isRTL && "text-start")}>
+                {t.sulfur.content.rawPowerDesc}
               </p>
             </div>
           </AnimatedSection>
@@ -80,42 +85,39 @@ export default function SulfurPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 w-full border-b-4 border-gold">
                 <span className="text-gold font-sans font-bold text-xs tracking-widest uppercase mb-2 block">
-                  Grade A Specification
+                  {t.sulfur.content.gradeA}
                 </span>
                 <h3 className="text-2xl font-serif font-bold text-offwhite">
-                  Premium Granular Sulfur
+                  {t.sulfur.content.premiumSulfur}
                 </h3>
               </div>
             </AnimatedSection>
 
             <StaggerContainer className="flex flex-col gap-10">
-              <StaggerItem className="border-l-2 border-forest/10 hover:border-gold transition-colors pl-6 pt-2 pb-2">
-                <h3 className="text-xl font-serif font-bold text-forest mb-3">
-                  Industrial Scale Output
+              <StaggerItem className={clsx("border-forest/10 hover:border-gold transition-colors pt-2 pb-2", isRTL ? "border-r-2 pr-6" : "border-l-2 pl-6")}>
+                <h3 className={clsx("text-xl font-serif font-bold text-forest mb-3", isRTL && "text-start font-arabic")}>
+                  {t.sulfur.content.industrialOutput}
                 </h3>
-                <p className="text-forest/70 font-normal text-sm md:text-base leading-relaxed">
-                  Bulk shipload capacities supporting the world's largest chemical processing facilities. 
-                  Streamlined loading and logistics minimize moisture and contamination.
+                <p className={clsx("text-forest/70 font-normal text-sm md:text-base leading-relaxed", isRTL && "text-start")}>
+                  {t.sulfur.content.industrialOutputDesc}
                 </p>
               </StaggerItem>
 
-              <StaggerItem className="border-l-2 border-forest/10 hover:border-gold transition-colors pl-6 pt-2 pb-2">
-                <h3 className="text-xl font-serif font-bold text-forest mb-3">
-                  Purity & Processing
+              <StaggerItem className={clsx("border-forest/10 hover:border-gold transition-colors pt-2 pb-2", isRTL ? "border-r-2 pr-6" : "border-l-2 pl-6")}>
+                <h3 className={clsx("text-xl font-serif font-bold text-forest mb-3", isRTL && "text-start font-arabic")}>
+                  {t.sulfur.content.purityProcessing}
                 </h3>
-                <p className="text-forest/70 font-normal text-sm md:text-base leading-relaxed">
-                  Refined and synthesized to maintain the highest thresholds of sulfur concentration, 
-                  critical for sulfuric acid production and agricultural fertilizer synthesis.
+                <p className={clsx("text-forest/70 font-normal text-sm md:text-base leading-relaxed", isRTL && "text-start")}>
+                  {t.sulfur.content.purityProcessingDesc}
                 </p>
               </StaggerItem>
 
-              <StaggerItem className="border-l-2 border-forest/10 hover:border-gold transition-colors pl-6 pt-2 pb-2">
-                <h3 className="text-xl font-serif font-bold text-forest mb-3">
-                  Global Supply Chain
+              <StaggerItem className={clsx("border-forest/10 hover:border-gold transition-colors pt-2 pb-2", isRTL ? "border-r-2 pr-6" : "border-l-2 pl-6")}>
+                <h3 className={clsx("text-xl font-serif font-bold text-forest mb-3", isRTL && "text-start font-arabic")}>
+                  {t.common.globalLogistics}
                 </h3>
-                <p className="text-forest/70 font-normal text-sm md:text-base leading-relaxed">
-                  With direct access to major shipping lanes and bulk carrier logistics networks, 
-                  we ensure stable material flow globally.
+                <p className={clsx("text-forest/70 font-normal text-sm md:text-base leading-relaxed", isRTL && "text-start")}>
+                  {t.sulfur.content.supplyChainDesc}
                 </p>
               </StaggerItem>
             </StaggerContainer>

@@ -7,8 +7,14 @@ import {
   StaggerItem,
 } from "@/components/AnimatedSection";
 import { Landmark, Compass, Target } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function AboutPage() {
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
+
   return (
     <div className="bg-offwhite flex flex-col min-h-screen">
       {/* 1. HERO SECTION */}
@@ -19,7 +25,7 @@ export default function AboutPage() {
             alt="Bulker ship representing global reach"
             fill
             priority
-            className="object-cover object-center opacity-40 hover:opacity-60 transition-opacity duration-1000"
+            className="object-cover object-[98%_center] md:object-center opacity-40 hover:opacity-60 transition-opacity duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-transparent" />
         </div>
@@ -29,18 +35,17 @@ export default function AboutPage() {
             <StaggerItem direction="up" className="mb-6 flex items-center gap-3">
               <Landmark className="w-6 h-6 text-gold" />
               <span className="text-gold font-serif italic tracking-wide">
-                Company Profile
+                {t.about.hero.profile}
               </span>
             </StaggerItem>
             <StaggerItem direction="up" className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.9]">
-                About <br /> Us
+              <h1 className={clsx("text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.85]", isRTL && "font-arabic")}>
+                {lang === 'ar' ? <>من <br /> نحن</> : <>About <br /> Us</>}
               </h1>
             </StaggerItem>
             <StaggerItem direction="up">
-              <p className="text-offwhite/90 text-lg md:text-xl font-normal leading-relaxed max-w-xl text-balance">
-                Pioneering quality distribution for global agriculture and
-                industrial construction.
+              <p className="text-offwhite/90 text-base md:text-lg font-normal leading-relaxed max-w-xl text-balance">
+                {t.about.hero.desc}
               </p>
             </StaggerItem>
           </StaggerContainer>
@@ -48,7 +53,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. TEXT CONTENT & CORPORATE STATEMENTS */}
-      <section className="py-24 md:py-32 relative z-10 bg-offwhite">
+      <section className="py-24 md:py-32 relative z-10 bg-offwhite overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24">
@@ -56,57 +61,52 @@ export default function AboutPage() {
             {/* Left Column: Who We Are */}
             <div className="md:col-span-7 lg:col-span-8">
               <AnimatedSection direction="up" className="mb-12">
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-forest uppercase tracking-tighter mb-8">
-                  Who We <span className="text-gold italic font-normal">Are.</span>
+                <h2 className={clsx("text-4xl md:text-6xl font-serif font-bold text-forest uppercase tracking-tighter mb-8", isRTL && "font-arabic")}>
+                  {lang === 'ar' ? <>من <span className="text-gold italic font-normal font-sans">نحن.</span></> : <>Who We <span className="text-gold italic font-normal">Are.</span></>}
                 </h2>
-                <div className="space-y-6 text-forest/90 font-normal text-lg leading-relaxed text-balance">
+                <div className={clsx("space-y-6 text-forest/90 font-normal text-base md:text-lg leading-relaxed text-balance", isRTL && "text-start")}>
                   <p>
-                    <strong className="font-bold text-forest">Black Rock And Yellow Sands International</strong> is a
-                    premier wholesale supplier operating at the nexus of global trade. We deliver materials of exceptional quality, meeting strict purity thresholds and ISO standards, concerning emissions standards in our products.
+                    <strong className={clsx("font-bold text-forest", isRTL && "font-arabic")}>
+                      {lang === 'ar' ? "بلاك روك آند يلو ساندز إنترناشيونال" : "Black Rock And Yellow Sands International"}
+                    </strong> {lang === 'ar' ? "هي مورد بالجملة رائد يعمل في جوهر التجارة العالمية. نحن نقدم مواد ذات جودة استثنائية، تلبي عتبات النقاء الصارمة ومعايير ISO، مع مراعاة معايير الانبعاثات في منتجاتنا." : "is a premier wholesale supplier operating at the nexus of global trade. We deliver materials of exceptional quality, meeting strict purity thresholds and ISO standards, concerning emissions standards in our products."}
                   </p>
                   <p>
-                    Our core focus and primary operational division is dedicated to <strong>Agricultural Commodities</strong>, leading with high-quality global wheat distribution. This is followed by our specialized <strong>Granular Sulfur</strong> division powering fertilizer manufacturing, alongside our heavy <strong>Construction Steel</strong> and industrial-grade <strong>Plywood</strong> divisions.
+                    {t.about.content.p2}
                   </p>
                   <p>
-                    As our products fuel critical manufacturing lines and large-scale development projects, where quality is non-negotiable. Every shipment is rigorously analyzed, tested, and certified by internationally recognized surveyors like <strong>SGS, Bureau Veritas, and Intertek</strong>. 
+                    {t.about.content.p3}
                   </p>
                   <p>
-                    We guarantee the integrity of our supply chains from origin to destination. Our commodities and materials are delivered efficiently via a modern vessel fleet, featuring reliable maritime equipment and operated by highly trained, professional staff members.
+                    {t.about.content.p4}
                   </p>
                 </div>
               </AnimatedSection>
             </div>
 
             {/* Right Column: Vision & Mission */}
-            <div className="md:col-span-5 lg:col-span-4 flex flex-col gap-12 border-t md:border-t-0 md:border-l border-forest/10 pt-12 md:pt-0 md:pl-12 lg:pl-16">
+            <div className={clsx("md:col-span-5 lg:col-span-4 flex flex-col gap-12 border-t md:border-t-0 border-forest/10 pt-12 md:pt-0", isRTL ? "md:border-r md:pr-12 lg:pr-16" : "md:border-l md:pl-12 lg:pl-16")}>
 
-              <AnimatedSection direction="left" delay={0.2} className="relative">
+              <AnimatedSection direction={isRTL ? "right" : "left"} delay={0.2} className="relative">
                 <Compass className="w-8 h-8 text-gold mb-6" />
-                <h3 className="text-2xl font-serif font-bold text-forest mb-4">
-                  Our Vision
+                <h3 className={clsx("text-2xl font-serif font-bold text-forest mb-4", isRTL && "text-start font-arabic")}>
+                  {t.about.content.visionTitle}
                 </h3>
-                <p className="text-forest/80 font-normal text-base leading-relaxed text-balance">
-                  To be the preferred global wholesale supplier of agricultural
-                  commodities, fertilizers, and premium construction materials for
-                  manufacturers and developers who demand uncompromising quality and reliable supply chains.
+                <p className={clsx("text-forest/80 font-normal text-base leading-relaxed text-balance", isRTL && "text-start")}>
+                  {t.about.content.visionDesc}
                 </p>
               </AnimatedSection>
 
               <div className="w-12 h-px bg-forest/10" />
 
-              <AnimatedSection direction="left" delay={0.4} className="relative">
+              <AnimatedSection direction={isRTL ? "right" : "left"} delay={0.4} className="relative">
                 <Target className="w-8 h-8 text-gold mb-6" />
-                <h3 className="text-2xl font-serif font-bold text-forest mb-4">
-                  Our Mission
+                <h3 className={clsx("text-2xl font-serif font-bold text-forest mb-4", isRTL && "text-start font-arabic")}>
+                  {t.about.content.missionTitle}
                 </h3>
-                <p className="text-forest/80 font-normal text-base leading-relaxed text-balance">
-                  To reliably deliver consistent, high-yield wheat grain, barley,
-                  soybean, granular sulfur, structural steel, and construction plywood. 
-                  Every shipment undergoes elite international surveyor testing to meet the 
-                  highest global standards, powered by sophisticated logistics and competitive wholesale pricing.
+                <p className={clsx("text-forest/80 font-normal text-base leading-relaxed text-balance", isRTL && "text-start")}>
+                  {t.about.content.missionDesc}
                 </p>
               </AnimatedSection>
-
             </div>
           </div>
 

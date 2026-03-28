@@ -10,6 +10,9 @@ import {
   StaggerItem,
 } from "@/components/AnimatedSection";
 import { ArrowRight, Droplets, HardHat, Wheat } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function Home() {
   const constructionRef = useRef(null);
@@ -19,6 +22,8 @@ export default function Home() {
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
 
   const steelY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
   const plywoodY = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
@@ -28,7 +33,7 @@ export default function Home() {
       {/* 1. HERO SECTION: The Bridge */}
       <section className="relative w-full h-screen min-h-[700px] flex overflow-hidden bg-forest">
         {/* Main Background - Bulker Ship */}
-        <div className="absolute inset-0 z-0 hidden md:block">
+        <div className="absolute inset-0 z-0">
           <video
             ref={videoRef}
             src="/images/hero_water.mp4"
@@ -36,7 +41,7 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
+            className="absolute inset-0 w-full h-full object-cover object-[98%_center] md:object-center opacity-80"
           />
           <div className="absolute inset-0 bg-forest/40 md:bg-forest/50 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest via-transparent to-forest/30" />
@@ -45,11 +50,11 @@ export default function Home() {
         </div>
 
         {/* Content Layers */}
-        <div className="relative z-10 w-full flex flex-col md:flex-row">
+        <div className="relative z-10 w-full h-full flex flex-col md:flex-row">
           {/* Agri Left */}
           <div className="flex-1 flex flex-col justify-end p-10 md:p-20 border-b md:border-b-0 md:border-r border-white/5 group relative overflow-hidden">
             {/* Hover Background Reveal */}
-            <div className="absolute inset-0 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0">
               <Image
                 src="/images/wheat_brays_hero.png"
                 alt="Medium-Hard Wheat Field"
@@ -61,28 +66,30 @@ export default function Home() {
 
             <AnimatedSection direction="up" delay={0.2} className="relative z-10 w-full max-w-lg">
               <span className="text-gold font-serif italic mb-6 block flex items-center gap-3 premium-tracking text-xs uppercase">
-                <Wheat className="w-5 h-5" /> Division I
+                <Wheat className="w-5 h-5" /> {t.home.hero.div1}
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-offwhite uppercase tracking-tight leading-[0.85] mb-8 text-shadow-premium">
-                Agricultural <br /> <span className="text-gold/90">Wholesale</span>
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-offwhite uppercase tracking-tight leading-[1.1] mb-8 text-shadow-premium">
+                {lang === 'ar' ? (
+                  <>تجارة الجملة <br /> <span className="text-gold/90">الزراعية</span></>
+                ) : (
+                  <>Agricultural <br /> <span className="text-gold/90">Wholesale</span></>
+                )}
               </h2>
               <p className="text-offwhite/70 font-normal text-base md:text-lg leading-relaxed mb-10 max-w-sm text-balance">
-                Sourcing, surveying, and exporting the finest medium-hard wheat and
-                agricultural commodities globally.
+                {t.home.hero.agriDesc}
               </p>
               <Link
                 href="/agriculture"
                 className="inline-flex items-center space-x-3 text-offwhite hover:text-gold transition-all font-semibold text-xs tracking-[0.2em] uppercase group/link py-2 border-b border-white/10 hover:border-gold"
               >
-                <span>Explore Agriculture</span>
-                <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-2 transition-transform" />
+                <span>{t.home.hero.exploreAgri}</span>
+                <ArrowRight className={clsx("w-4 h-4 transform group-hover/link:translate-x-2 transition-transform", isRTL && "rotate-180")} />
               </Link>
             </AnimatedSection>
           </div>
 
-          {/* Construction Right */}
           <div className="flex-1 flex flex-col justify-end p-10 md:p-20 group relative overflow-hidden border-t md:border-t-0 border-white/5">
-            <div className="absolute inset-0 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0">
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0">
               <Image
                 src="/images/steel_brays_hero_product.png"
                 alt="Structural Steel"
@@ -94,20 +101,24 @@ export default function Home() {
 
             <AnimatedSection direction="up" delay={0.4} className="relative z-10 w-full max-w-lg">
               <span className="text-slate-300 font-serif italic mb-6 block flex items-center gap-3 premium-tracking text-xs uppercase">
-                <HardHat className="w-5 h-5" /> Division II
+                <HardHat className="w-5 h-5" /> {t.home.hero.div2}
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-offwhite uppercase tracking-tight leading-[0.85] mb-8 text-shadow-premium">
-                Industrial <br /> <span className="text-slate-400">Construction</span>
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-offwhite uppercase tracking-tight leading-[1.1] mb-8 text-shadow-premium">
+                {lang === 'ar' ? (
+                  <>الإنشاءات <br /> <span className="text-slate-400">الصناعية</span></>
+                ) : (
+                  <>Industrial <br /> <span className="text-slate-400">Construction</span></>
+                )}
               </h2>
               <p className="text-offwhite/70 font-normal text-base md:text-lg leading-relaxed mb-10 max-w-sm text-balance">
-                Providing elite construction materials from high-strength steel to industrial plywood, with clients' needs in mind.
+                {t.home.hero.constructionDesc}
               </p>
               <Link
                 href="/construction"
                 className="inline-flex items-center space-x-3 text-offwhite hover:text-gold transition-all font-semibold text-xs tracking-[0.2em] uppercase group/link py-2 border-b border-white/10 hover:border-gold"
               >
-                <span>Explore Construction</span>
-                <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-2 transition-transform" />
+                <span>{t.home.hero.exploreConstruction}</span>
+                <ArrowRight className={clsx("w-4 h-4 transform group-hover/link:translate-x-2 transition-transform", isRTL && "rotate-180")} />
               </Link>
             </AnimatedSection>
           </div>
@@ -118,12 +129,15 @@ export default function Home() {
       <section id="agri" className="py-32 md:py-48 bg-offwhite relative z-10 overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
           <AnimatedSection direction="up" className="mb-20 md:mb-32">
-            <h2 className="text-5xl md:text-8xl font-serif font-bold text-forest uppercase tracking-tighter leading-none">
-              Global <span className="text-gold italic font-normal">Agriculture.</span>
+            <h2 className={clsx("text-4xl md:text-6xl font-serif font-bold text-forest uppercase tracking-tighter leading-none", isRTL && "text-start font-arabic")}>
+              {lang === 'ar' ? (
+                <>الزراعة <span className="text-gold italic font-normal font-sans">العالمية.</span></>
+              ) : (
+                <>Global <span className="text-gold italic font-normal">Agriculture.</span></>
+              )}
             </h2>
-            <p className="text-forest/60 max-w-2xl mt-8 text-xl font-normal leading-relaxed text-balance border-l border-gold pl-8">
-              We manage the entire lifecycle from field to surveyor testing to logistics,
-              ensuring absolute quality in agricultural wholesale.
+            <p className="text-forest/60 max-w-2xl mt-8 text-lg md:text-xl font-normal leading-relaxed text-balance border-l border-gold pl-8 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-8">
+              {t.home.agri.desc}
             </p>
           </AnimatedSection>
 
@@ -143,10 +157,10 @@ export default function Home() {
                   <Wheat className="text-gold w-6 h-6" />
                 </div>
                 <h3 className="text-3xl md:text-4xl font-serif font-bold text-offwhite mb-4">
-                  Grain Exports
+                  {t.home.agri.grainExports.title}
                 </h3>
                 <p className="text-offwhite/70 font-normal text-base max-w-md leading-relaxed">
-                  Mass scale harvesting and preparation of high-yield crops for international distribution.
+                  {t.home.agri.grainExports.desc}
                 </p>
               </div>
             </StaggerItem>
@@ -165,10 +179,10 @@ export default function Home() {
                   <Droplets className="text-gold w-6 h-6" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4 z-10 text-offwhite tracking-tight">
-                  Surveyor <br /> Testing
+                  {lang === 'ar' ? <>اختبارات <br /> الجودة</> : <>Surveyor <br /> Testing</>}
                 </h3>
                 <p className="text-offwhite/70 font-normal text-sm z-10 leading-relaxed">
-                  Rigorous international quality control standards applied to every shipment.
+                  {t.home.agri.surveyorTesting.desc}
                 </p>
               </div>
             </StaggerItem>
@@ -184,10 +198,10 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/30 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 w-full">
                 <h3 className="text-2xl font-serif font-bold text-offwhite mb-2">
-                  Global Logistics
+                  {t.home.agri.logistics.title}
                 </h3>
                 <p className="text-offwhite/80 font-normal text-sm max-w-2xl">
-                  Coordinated shipping and distribution using bulk carrier vessels.
+                  {t.home.agri.logistics.desc}
                 </p>
               </div>
             </StaggerItem>
@@ -208,19 +222,22 @@ export default function Home() {
           <AnimatedSection direction="up" className="mb-20 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div className="max-w-3xl">
               <h2 className="text-5xl md:text-8xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-none">
-                Industrial <br /> <span className="text-slate-400 italic font-normal">Materials.</span>
+                {lang === 'ar' ? (
+                  <>المواد <br /> <span className="text-slate-400 italic font-normal font-sans">الصناعية.</span></>
+                ) : (
+                  <>Industrial <br /> <span className="text-slate-400 italic font-normal">Materials.</span></>
+                )}
               </h2>
-              <p className="text-offwhite/60 mt-8 text-xl font-normal leading-relaxed text-balance border-l border-slate-500 pl-8">
-                High-contrast execution. We supply the skeletal strength and
-                formwork materials for your demanding projects, exactly when you need them.
+              <p className="text-offwhite/60 mt-8 text-xl font-normal leading-relaxed text-balance border-l border-slate-500 pl-8 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-8">
+                {t.home.construction.desc}
               </p>
             </div>
             <Link
               href="/construction"
               className="inline-flex items-center space-x-4 text-gold hover:text-offwhite transition-all font-bold tracking-[0.2em] uppercase border-2 border-gold/30 hover:border-offwhite px-10 py-5 rounded-full backdrop-blur-sm hover:bg-gold hover:text-forest shadow-premium group"
             >
-              <span>View Division</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              <span>{t.common.viewDivision}</span>
+              <ArrowRight className={clsx("w-5 h-5 group-hover:translate-x-2 transition-transform", isRTL && "rotate-180")} />
             </Link>
           </AnimatedSection>
 
@@ -229,15 +246,15 @@ export default function Home() {
             {/* Left side text items */}
             <StaggerContainer className="flex flex-col gap-24">
               <Link href="/sulfur" className="flex flex-col gap-10 group/card">
-                <StaggerItem className="border-l-2 border-gold pl-8">
-                  <span className="text-gold font-mono text-xs tracking-[0.3em] uppercase mb-4 block opacity-60">
+                <StaggerItem className="border-l-2 border-gold pl-8 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-8">
+                  <span className="text-gold font-mono text-xs tracking-[0.3em] uppercase mb-4 block opacity-60 dir-ltr text-start" style={{ direction: 'ltr' }}>
                     01
                   </span>
                   <h3 className="text-3xl md:text-4xl font-serif font-bold mb-4 tracking-tight group-hover/card:text-gold transition-colors">
-                    Granular Sulfur
+                    {t.home.construction.sulfur.title}
                   </h3>
                   <p className="text-offwhite/50 font-normal text-lg leading-relaxed max-w-md">
-                    High-purity industrial grade sulfur optimized for chemical and fertilizer synthesis.
+                    {t.home.construction.sulfur.desc}
                   </p>
                 </StaggerItem>
                 <StaggerItem className="relative h-64 md:h-80 overflow-hidden rounded-sm group shadow-premium">
@@ -253,15 +270,15 @@ export default function Home() {
               </Link>
 
               <Link href="/construction" className="flex flex-col gap-10 group/card">
-                <StaggerItem className="border-l-2 border-white/10 pl-8 group-hover/card:border-white/30 transition-colors">
-                  <span className="text-white/30 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">
+                <StaggerItem className="border-l-2 border-white/10 pl-8 group-hover/card:border-white/30 transition-colors rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-8">
+                  <span className="text-white/30 font-mono text-xs tracking-[0.3em] uppercase mb-4 block dir-ltr text-start" style={{ direction: 'ltr' }}>
                     02
                   </span>
                   <h3 className="text-3xl md:text-4xl font-serif font-bold mb-4 tracking-tight text-white/90 group-hover/card:text-white transition-colors">
-                    Industrial Plywood
+                    {t.home.construction.plywood.title}
                   </h3>
                   <p className="text-offwhite/40 font-normal text-lg leading-relaxed max-w-md">
-                    Elite grade engineered plywood sourced for reliable, large-scale structural formwork.
+                    {t.home.construction.plywood.desc}
                   </p>
                 </StaggerItem>
                 <StaggerItem className="relative h-64 md:h-80 overflow-hidden rounded-sm group shadow-premium">
@@ -297,14 +314,14 @@ export default function Home() {
               </motion.div>
 
               <div className="absolute bottom-16 left-0 right-0 px-12">
-                <span className="text-slate-400 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">
+                <span className="text-slate-400 font-mono text-xs tracking-[0.3em] uppercase mb-4 block dir-ltr text-start" style={{ direction: 'ltr' }}>
                   03
                 </span>
                 <h3 className="text-4xl md:text-5xl font-serif font-bold text-offwhite mb-6 leading-tight tracking-tighter">
-                  Structural Steel
+                  {t.home.construction.steel.title}
                 </h3>
                 <p className="text-offwhite/60 font-normal text-lg max-w-sm leading-relaxed">
-                  Heavy-duty steel frameworks supplied for monumental infrastructure and maximum load capacities.
+                  {t.home.construction.steel.desc}
                 </p>
                 <div className="mt-10 h-1 w-20 bg-gold/50 group-hover/card:w-40 transition-all duration-700" />
               </div>

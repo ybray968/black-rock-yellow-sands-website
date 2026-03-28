@@ -9,8 +9,14 @@ import {
 } from "@/components/AnimatedSection";
 import { Users, Briefcase, MapPin, Globe, CheckCircle2, FileText } from "lucide-react";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { useLanguage } from "@/components/LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function CareersPage() {
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
+
   const [token, setToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -20,10 +26,10 @@ export default function CareersPage() {
     const file = e.target.files?.[0];
     if (file) {
       if (file.type !== "application/pdf") {
-        setFileError("Only PDF files are accepted.");
+        setFileError(t.careers.form.errorPdf);
         e.target.value = "";
       } else if (file.size > 5 * 1024 * 1024) {
-        setFileError("File size must be under 5MB.");
+        setFileError(t.careers.form.errorSize);
         e.target.value = "";
       } else {
         setFileError("");
@@ -34,7 +40,7 @@ export default function CareersPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!token) {
-      alert("Please complete the bot protection check.");
+      alert(t.careers.form.errorBot);
       return;
     }
     setIsSubmitting(true);
@@ -58,11 +64,11 @@ export default function CareersPage() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert("Failed to send application. Please try again later.");
+        alert(t.careers.form.errorSubmit);
       }
     } catch (error) {
       console.error(error);
-      alert("An error occurred. Please try again later.");
+      alert(t.careers.form.errorGeneric);
     } finally {
       setIsSubmitting(false);
     }
@@ -88,17 +94,17 @@ export default function CareersPage() {
             <StaggerItem direction="up" className="mb-6 flex items-center gap-3">
               <Users className="w-6 h-6 text-gold" />
               <span className="text-gold font-serif italic tracking-wide">
-                Join Us
+                {t.careers.hero.join}
               </span>
             </StaggerItem>
             <StaggerItem direction="up" className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.9]">
-                Careers
+              <h1 className={clsx("text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.85]", isRTL && "font-arabic")}>
+                {t.careers.hero.title}
               </h1>
             </StaggerItem>
             <StaggerItem direction="up">
-              <p className="text-offwhite/80 text-lg md:text-xl font-normal leading-relaxed max-w-xl text-balance">
-                Operating with the highest ethical standards in a modern, accessible environment. Join our friendly and professional team of global experts.
+              <p className={clsx("text-offwhite/80 text-base md:text-lg font-normal leading-relaxed max-w-xl text-balance", isRTL && "text-start")}>
+                {t.careers.hero.desc}
               </p>
             </StaggerItem>
           </StaggerContainer>
@@ -106,7 +112,7 @@ export default function CareersPage() {
       </section>
 
       {/* 2. OPENINGS & APPLICATION FORM */}
-      <section className="py-24 md:py-32 relative z-10 bg-offwhite">
+      <section className="py-24 md:py-32 relative z-10 bg-offwhite overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
           {/* Left: Job Postings & General Info */}
@@ -115,52 +121,51 @@ export default function CareersPage() {
             {/* ICC Lawyer Opening */}
             <div>
               <AnimatedSection direction="up">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-forest mb-4">
-                  Current Openings
+                <h2 className={clsx("text-3xl md:text-4xl font-serif font-bold text-forest mb-4", isRTL && "font-arabic")}>
+                  {t.careers.openings.title}
                 </h2>
                 <div className="w-16 h-px bg-gold mb-12" />
               </AnimatedSection>
               
               <AnimatedSection direction="up" delay={0.1} className="bg-white border border-forest/10 p-8 md:p-10 rounded-sm shadow-xl shadow-forest/5 hover:border-gold/50 transition-colors group">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-                  <h3 className="text-2xl font-serif font-bold text-forest group-hover:text-gold transition-colors">
-                    International Chamber of Commerce (ICC) Rules Lawyer
+                  <h3 className={clsx("text-2xl font-serif font-bold text-forest group-hover:text-gold transition-colors", isRTL && "text-start font-arabic")}>
+                    {t.careers.openings.iccLawyer}
                   </h3>
                   <span className="bg-forest/5 text-forest font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-full whitespace-nowrap">
-                    Active
+                    {t.careers.openings.active}
                   </span>
                 </div>
                 
-                <p className="text-forest/70 font-normal leading-relaxed mb-8">
-                  We are seeking an expert legal professional specializing in International Chamber of Commerce (ICC) rules. 
-                  The role focuses primarily on comprehensive contract creation, strategic evaluation, and international trade law.
+                <p className={clsx("text-forest/70 font-normal leading-relaxed mb-8", isRTL && "text-start")}>
+                  {t.careers.openings.iccDesc}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3 text-forest/80 font-medium text-sm">
+                  <div className={clsx("flex items-center gap-3 text-forest/80 font-medium text-sm", isRTL && "flex-row-reverse text-end")}>
                     <Briefcase className="w-5 h-5 text-gold" />
-                    <span>Full Time Position</span>
+                    <span>{t.careers.openings.fullTime}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-forest/80 font-medium text-sm">
+                  <div className={clsx("flex items-center gap-3 text-forest/80 font-medium text-sm", isRTL && "flex-row-reverse text-end")}>
                     <MapPin className="w-5 h-5 text-gold" />
-                    <span>Muscat, Oman</span>
+                    <span>{t.careers.openings.location}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-forest/80 font-medium text-sm md:col-span-2">
+                  <div className={clsx("flex items-center gap-3 text-forest/80 font-medium text-sm md:col-span-2", isRTL && "flex-row-reverse text-end")}>
                     <Globe className="w-5 h-5 text-gold" />
-                    <span>Bilingual Required (Arabic / English)</span>
+                    <span>{t.careers.openings.bilingual}</span>
                   </div>
                 </div>
               </AnimatedSection>
             </div>
 
             {/* General Submission */}
-            <AnimatedSection direction="up" delay={0.2} className="bg-forest text-offwhite p-10 rounded-sm border-l-4 border-gold relative overflow-hidden">
-              <Users className="absolute -bottom-8 -right-8 w-48 h-48 text-offwhite/5 pointer-events-none" />
-              <h3 className="text-2xl font-serif font-bold mb-4 relative z-10">
-                Empower Our Team
+            <AnimatedSection direction="up" delay={0.2} className={clsx("bg-forest text-offwhite p-10 rounded-sm relative overflow-hidden", isRTL ? "border-r-4 border-gold" : "border-l-4 border-gold")}>
+              <Users className={clsx("absolute -bottom-8 w-48 h-48 text-offwhite/5 pointer-events-none", isRTL ? "-left-8" : "-right-8")} />
+              <h3 className={clsx("text-2xl font-serif font-bold mb-4 relative z-10", isRTL && "text-start font-arabic")}>
+                {t.careers.general.title}
               </h3>
-              <p className="text-offwhite/80 font-normal leading-relaxed relative z-10 max-w-lg">
-                If the position you are interested in is not currently open, but you feel like you can empower our team, then don't hesitate to contact us with your CV. We are always looking for exceptional talent to drive our vision forward.
+              <p className={clsx("text-offwhite/80 font-normal leading-relaxed relative z-10 max-w-lg", isRTL && "text-start")}>
+                {t.careers.general.desc}
               </p>
             </AnimatedSection>
 
@@ -169,62 +174,62 @@ export default function CareersPage() {
           {/* Right: Application Form */}
           <div className="lg:col-span-5 relative">
             <div className="sticky top-32">
-              <AnimatedSection direction="left" delay={0.3} className="bg-white p-8 md:p-10 border border-forest/10 rounded-sm shadow-xl shadow-forest/5">
-                <h3 className="font-serif font-bold text-2xl text-forest mb-6">Apply Now</h3>
+              <AnimatedSection direction={isRTL ? "right" : "left"} delay={0.3} className="bg-white p-8 md:p-10 border border-forest/10 rounded-sm shadow-xl shadow-forest/5">
+                <h3 className={clsx("font-serif font-bold text-2xl text-forest mb-6", isRTL && "text-start font-arabic")}>{t.careers.form.title}</h3>
                 
                 {submitted ? (
                   <div className="bg-forest/5 p-8 text-center rounded-sm border border-forest/10 mt-4">
                     <CheckCircle2 className="w-12 h-12 text-gold mx-auto mb-4" />
-                    <h4 className="text-gold font-serif font-bold text-xl mb-3">Application Received.</h4>
+                    <h4 className={clsx("text-gold font-serif font-bold text-xl mb-3", isRTL && "font-arabic")}>{t.careers.form.successTitle}</h4>
                     <p className="text-forest/70 font-normal text-sm">
-                      Thank you for your interest. Our talent acquisition team will review your CV and be in touch.
+                      {t.careers.form.successDesc}
                     </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-forest/70 block">
-                        Full Name
+                      <label htmlFor="name" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block", isRTL && "text-start")}>
+                        {t.careers.form.fullName}
                       </label>
                       <input 
                         type="text" 
                         id="name"
                         required 
-                        className="w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal"
-                        placeholder="e.g. John Doe"
+                        className={clsx("w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal", isRTL && "text-end")}
+                        placeholder={t.careers.form.placeholderName}
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-forest/70 block">
-                        Email Address
+                      <label htmlFor="email" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block", isRTL && "text-start")}>
+                        {t.careers.form.email}
                       </label>
                       <input 
                         type="email" 
                         id="email" 
                         required
-                        className="w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal"
-                        placeholder="john@example.com"
+                        className={clsx("w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal", isRTL && "text-end")}
+                        placeholder={t.careers.form.placeholderEmail}
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="position" className="text-xs font-bold uppercase tracking-widest text-forest/70 block">
-                        Position
+                      <label htmlFor="position" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block", isRTL && "text-start")}>
+                        {t.careers.form.position}
                       </label>
                       <select 
                         id="position" 
                         required
-                        className="w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal appearance-none"
+                        className={clsx("w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal appearance-none", isRTL && "text-start pr-10")}
                       >
-                        <option value="icc_lawyer">ICC Rules Lawyer</option>
-                        <option value="general">General Application</option>
+                        <option value="icc_lawyer">{t.careers.openings.iccLawyer}</option>
+                        <option value="general">{t.careers.form.generalApp}</option>
                       </select>
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="cv" className="text-xs font-bold uppercase tracking-widest text-forest/70 block flex items-center gap-2">
-                        Upload CV <span className="text-[10px] lowercase font-normal">(PDF only, Max: 5MB)</span>
+                      <label htmlFor="cv" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block flex items-center gap-2", isRTL && "flex-row-reverse")}>
+                        {t.careers.form.uploadCv} <span className="text-[10px] lowercase font-normal">{t.careers.form.pdfOnly}</span>
                       </label>
                       <div className="relative group">
                         <input 
@@ -233,13 +238,13 @@ export default function CareersPage() {
                           accept=".pdf"
                           required
                           onChange={handleFileChange}
-                          className="w-full text-forest/70 bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-gold/10 file:text-gold hover:file:bg-gold/20"
+                          className={clsx("w-full text-forest/70 bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-sm file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-gold/10 file:text-gold hover:file:bg-gold/20", isRTL ? "file:ml-4" : "file:mr-4")}
                         />
                       </div>
-                      {fileError && <p className="text-red-500 text-xs font-medium mt-1">{fileError}</p>}
+                      {fileError && <p className={clsx("text-red-500 text-xs font-medium mt-1", isRTL && "text-start")}>{fileError}</p>}
                     </div>
 
-                    <div className="pt-2">
+                    <div className={clsx("pt-2 flex", isRTL && "justify-end")}>
                       <Turnstile
                         siteKey="0x4AAAAAACul__dWFbvMuQKG"
                         onSuccess={(token) => setToken(token)}
@@ -252,7 +257,7 @@ export default function CareersPage() {
                       disabled={isSubmitting || !token || !!fileError}
                       className="w-full bg-forest hover:bg-forest/90 disabled:bg-forest/50 text-offwhite font-medium uppercase tracking-widest text-sm py-4 rounded-sm transition-colors mt-6 flex justify-center items-center"
                     >
-                      {isSubmitting ? "Submitting..." : "Submit Application"}
+                      {isSubmitting ? t.careers.form.submitting : t.careers.form.submit}
                     </button>
                   </form>
                 )}

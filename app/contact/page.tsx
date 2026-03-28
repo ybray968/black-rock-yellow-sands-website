@@ -10,8 +10,14 @@ import {
 import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 import { COMPANY } from "@/lib/siteData";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { useLanguage } from "@/components/LanguageContext";
+import { translations } from "@/lib/translations";
+import clsx from "clsx";
 
 export default function ContactPage() {
+  const { lang, isRTL } = useLanguage();
+  const t = translations[lang];
+
   const [token, setToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -19,7 +25,7 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!token) {
-      alert("Please complete the bot protection check.");
+      alert(t.contact.form.errorBot || "Please complete the bot protection check.");
       return;
     }
     
@@ -40,11 +46,11 @@ export default function ContactPage() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert("Failed to send message. Please try again later.");
+        alert(t.contact.form.errorSubmit || "Failed to send message. Please try again later.");
       }
     } catch (error) {
       console.error(error);
-      alert("An error occurred. Please try again later.");
+      alert(t.contact.form.errorGeneric || "An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -68,14 +74,13 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <StaggerContainer className="max-w-3xl">
             <StaggerItem direction="up" className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.9]">
-                Contact <br /> Us
+              <h1 className={clsx("text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-offwhite uppercase tracking-tighter leading-[0.85]", isRTL && "font-arabic")}>
+                {t.contact.hero.title}
               </h1>
             </StaggerItem>
             <StaggerItem direction="up">
-              <p className="text-offwhite/80 text-lg md:text-xl font-normal leading-relaxed max-w-xl text-balance">
-                Request a wholesale quote, establish logistical partnerships, or reach
-                out for structural engineering material inquiries.
+              <p className={clsx("text-offwhite/80 text-base md:text-lg font-normal leading-relaxed max-w-xl text-balance", isRTL && "text-start")}>
+                {t.contact.hero.desc}
               </p>
             </StaggerItem>
           </StaggerContainer>
@@ -90,51 +95,58 @@ export default function ContactPage() {
             {/* Contact Details */}
             <div>
               <AnimatedSection direction="up" className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-forest mb-4">
-                  Corporate Office
+                <h2 className={clsx("text-3xl md:text-4xl font-serif font-bold text-forest mb-4", isRTL && "font-arabic")}>
+                  {t.contact.details.title}
                 </h2>
                 <div className="w-16 h-px bg-gold mb-8" />
-                <p className="text-forest/70 font-normal text-lg mb-12 text-balance leading-relaxed">
-                  Our team is ready to process your wholesale supply quotas. Reach
-                  out to us via our dedicated lines or through the inquiry form.
+                <p className={clsx("text-forest/70 font-normal text-lg mb-12 text-balance leading-relaxed", isRTL && "text-start")}>
+                  {t.contact.details.desc}
                 </p>
               </AnimatedSection>
 
               <StaggerContainer className="space-y-8">
                 {/* Email */}
-                <StaggerItem direction="left" className="flex items-start gap-6 group">
+                <StaggerItem direction={isRTL ? "right" : "left"} className={clsx("flex items-start gap-6 group", isRTL && "flex-row-reverse text-end")}>
                   <div className="p-4 bg-forest/5 rounded-full group-hover:bg-gold/10 transition-colors">
                     <Mail className="w-6 h-6 text-forest group-hover:text-gold transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-xl text-forest mb-1">Email Inquiry</h3>
-                    <a href={`mailto:${COMPANY.email}`} className="text-forest/70 font-normal hover:text-gold transition-colors">
+                    <h3 className={clsx("font-serif font-bold text-xl text-forest mb-1", isRTL && "font-arabic")}>{t.contact.details.emailInquiry}</h3>
+                    <a 
+                      href={`mailto:${COMPANY.email}`} 
+                      className="text-forest/70 font-normal hover:text-gold transition-colors lowercase"
+                      style={{ direction: 'ltr', display: 'inline-block' }}
+                    >
                       {COMPANY.email}
                     </a>
                   </div>
                 </StaggerItem>
 
                 {/* Phone */}
-                <StaggerItem direction="left" className="flex items-start gap-6 group">
+                <StaggerItem direction={isRTL ? "right" : "left"} className={clsx("flex items-start gap-6 group", isRTL && "flex-row-reverse text-end")}>
                   <div className="p-4 bg-forest/5 rounded-full group-hover:bg-gold/10 transition-colors">
                     <Phone className="w-6 h-6 text-forest group-hover:text-gold transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-xl text-forest mb-1">Direct Line</h3>
-                    <a href={`tel:${COMPANY.phone}`} className="text-forest/70 font-normal hover:text-gold transition-colors">
+                    <h3 className={clsx("font-serif font-bold text-xl text-forest mb-1", isRTL && "font-arabic")}>{t.contact.details.directLine}</h3>
+                    <a 
+                      href={`tel:${COMPANY.phone}`} 
+                      className="text-forest/70 font-normal hover:text-gold transition-colors"
+                      style={{ direction: 'ltr', display: 'inline-block' }}
+                    >
                       {COMPANY.phone}
                     </a>
                   </div>
                 </StaggerItem>
 
                 {/* Location */}
-                <StaggerItem direction="left" className="flex items-start gap-6 group">
+                <StaggerItem direction={isRTL ? "right" : "left"} className={clsx("flex items-start gap-6 group", isRTL && "flex-row-reverse text-end")}>
                   <div className="p-4 bg-forest/5 rounded-full group-hover:bg-gold/10 transition-colors">
                     <MapPin className="w-6 h-6 text-forest group-hover:text-gold transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-xl text-forest mb-1">Headquarters</h3>
-                    <address className="text-forest/70 font-normal not-italic leading-relaxed max-w-[200px]">
+                    <h3 className={clsx("font-serif font-bold text-xl text-forest mb-1", isRTL && "font-arabic")}>{t.contact.details.hq}</h3>
+                    <address className={clsx("text-forest/70 font-normal not-italic leading-relaxed max-w-[200px]", isRTL && "font-arabic")}>
                       {COMPANY.address}
                     </address>
                   </div>
@@ -144,72 +156,72 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <AnimatedSection direction="up" delay={0.2} className="bg-white p-8 md:p-12 border border-forest/10 rounded-sm shadow-xl shadow-forest/5 h-fit">
-              <h3 className="font-serif font-bold text-2xl text-forest mb-6">Inquiry Form</h3>
+              <h3 className={clsx("font-serif font-bold text-2xl text-forest mb-6", isRTL && "text-start font-arabic")}>{t.contact.form.title}</h3>
               
               {submitted ? (
                 <div className="bg-forest/5 p-8 text-center rounded-sm border border-forest/10">
-                  <h4 className="text-gold font-serif font-bold text-xl mb-3">Inquiry Received.</h4>
+                  <h4 className={clsx("text-gold font-serif font-bold text-xl mb-3", isRTL && "font-arabic")}>{t.contact.form.successTitle}</h4>
                   <p className="text-forest/70 font-normal text-sm">
-                    A corporate representative will carefully review your request and get back to you shortly.
+                    {t.contact.form.successDesc}
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-forest/70 block">
-                        Full Name / Company
+                      <label htmlFor="name" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block", isRTL && "text-start")}>
+                        {t.contact.form.fullNameCompany}
                       </label>
                       <input 
                         type="text" 
                         id="name"
                         required 
-                        className="w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal"
+                        className={clsx("w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal", isRTL && "text-end")}
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-forest/70 block">
-                        Email Address
+                      <label htmlFor="email" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block", isRTL && "text-start")}>
+                        {t.contact.form.email}
                       </label>
                       <input 
                         type="email" 
                         id="email" 
                         required
-                        className="w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal"
+                        className={clsx("w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal", isRTL && "text-end")}
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="division" className="text-xs font-bold uppercase tracking-widest text-forest/70 block">
-                      Division of Interest
+                    <label htmlFor="division" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block", isRTL && "text-start")}>
+                      {t.contact.form.division}
                     </label>
                     <select 
                       id="division" 
                       required
-                      className="w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal appearance-none"
+                      className={clsx("w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal appearance-none", isRTL && "text-start pr-10")}
                     >
-                      <option value="">Select Division...</option>
-                      <option value="agriculture">Agriculture</option>
-                      <option value="construction">Industrial Construction</option>
-                      <option value="sulfur">Sulfur Trading</option>
-                      <option value="other">Other / General</option>
+                      <option value="">{t.contact.form.selectDivision}</option>
+                      <option value="agriculture">{t.nav.agriculture}</option>
+                      <option value="construction">{t.nav.construction}</option>
+                      <option value="sulfur">{t.nav.sulfur}</option>
+                      <option value="other">{t.common.explore}</option>
                     </select>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-forest/70 block">
-                      Message / Request Details
+                    <label htmlFor="message" className={clsx("text-xs font-bold uppercase tracking-widest text-forest/70 block", isRTL && "text-start")}>
+                      {t.contact.form.message}
                     </label>
                     <textarea 
                       id="message" 
                       rows={5}
                       required
-                      className="w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal resize-none"
+                      className={clsx("w-full bg-forest/5 border border-forest/10 px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-forest font-normal resize-none", isRTL && "text-end")}
                     ></textarea>
                   </div>
 
-                  <div className="pt-2">
+                  <div className={clsx("pt-2 flex", isRTL && "justify-end")}>
                     <Turnstile
                       siteKey="0x4AAAAAACul__dWFbvMuQKG"
                       onSuccess={(token) => setToken(token)}
@@ -222,7 +234,7 @@ export default function ContactPage() {
                     disabled={isSubmitting || !token}
                     className="w-full bg-forest hover:bg-forest/90 disabled:bg-forest/50 text-offwhite font-medium uppercase tracking-widest text-sm py-4 rounded-sm transition-colors mt-6 flex justify-center items-center"
                   >
-                    {isSubmitting ? "Submitting..." : "Send Request"}
+                    {isSubmitting ? t.contact.form.submitting : t.contact.form.send}
                   </button>
                 </form>
               )}
