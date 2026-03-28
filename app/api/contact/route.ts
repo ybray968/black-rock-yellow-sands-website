@@ -4,7 +4,19 @@ import nodemailer from "nodemailer";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, division, message } = body;
+    const { name, email, division, message, token } = body;
+
+    // Verify Turnstile Token
+    const verifyUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+    const result = await fetch(verifyUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `secret=${process.env.TURNSTILE_SECRET_KEY}&response=${token}`,
+    });
+    const data = await result.json();
+    if (!data.success) {
+      return NextResponse.json({ success: false, error: "Bot detection failed" }, { status: 400 });
+    }
 
     const transporter = nodemailer.createTransport({
       service: "gmail",

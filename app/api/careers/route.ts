@@ -8,6 +8,19 @@ export async function POST(req: Request) {
     const email = formData.get("email") as string;
     const position = formData.get("position") as string;
     const cv = formData.get("cv") as File;
+    const token = formData.get("token") as string;
+
+    // Verify Turnstile Token
+    const verifyUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+    const result = await fetch(verifyUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `secret=${process.env.TURNSTILE_SECRET_KEY}&response=${token}`,
+    });
+    const data = await result.json();
+    if (!data.success) {
+      return NextResponse.json({ success: false, error: "Bot detection failed" }, { status: 400 });
+    }
 
     if (!cv) {
       return NextResponse.json({ success: false, error: "No CV provided" }, { status: 400 });

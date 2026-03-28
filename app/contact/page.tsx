@@ -40,6 +40,7 @@ export default function ContactPage() {
           email: (document.getElementById("email") as HTMLInputElement).value,
           division: (document.getElementById("division") as HTMLSelectElement).value,
           message: (document.getElementById("message") as HTMLTextAreaElement).value,
+          token: token,
         }),
       });
 

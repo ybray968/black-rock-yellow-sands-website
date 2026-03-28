@@ -47,6 +47,7 @@ export default function CareersPage() {
     
     try {
       const formData = new FormData();
+      formData.append("token", token);
       formData.append("name", (document.getElementById("name") as HTMLInputElement).value);
       formData.append("email", (document.getElementById("email") as HTMLInputElement).value);
       formData.append("position", (document.getElementById("position") as HTMLSelectElement).value);
